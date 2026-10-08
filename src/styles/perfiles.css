@@ -1,0 +1,7301 @@
+/* ==========================================
+   VARIABLES DE PERFILES
+========================================== */
+
+.profile-page {
+
+    --profile-bg: #080d2c;
+
+    --profile-surface: #101637;
+
+    --profile-surface-light: #151d46;
+
+    --profile-accent: #31afe6;
+
+    --profile-accent-secondary: #df3c5d;
+
+    --profile-purple: #7a18c6;
+
+    --profile-text: #f8fafc;
+
+    --profile-muted: #a7b0ce;
+
+    --profile-border: rgba(49, 175, 230, 0.15);
+
+}
+
+
+
+/* ==========================================
+   MARTINA
+========================================== */
+
+.martina-theme {
+
+    background:
+        radial-gradient(circle at 85% 10%,
+            rgba(122, 24, 198, 0.15),
+            transparent 30%),
+        radial-gradient(circle at 10% 40%,
+            rgba(49, 175, 230, 0.08),
+            transparent 30%),
+        var(--profile-bg);
+
+}
+
+
+
+/* ==========================================
+   HERO PERFIL
+========================================== */
+
+.profile-hero {
+
+    position: relative;
+
+    min-height: calc(100vh - 76px);
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    border-bottom: 1px solid var(--profile-border);
+
+}
+
+
+
+.profile-hero__container {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.1fr) minmax(350px, 0.9fr);
+
+    align-items: center;
+
+    gap: 80px;
+
+    padding: 90px 0;
+
+}
+
+
+
+.profile-number {
+
+    display: inline-block;
+
+    margin-bottom: 20px;
+
+    font-family: "Space Mono", monospace;
+
+    color: var(--profile-accent);
+
+    font-size: 0.78rem;
+
+    letter-spacing: 0.15em;
+
+}
+
+
+
+.profile-status {
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    width: max-content;
+
+    margin-bottom: 22px;
+
+    padding: 7px 12px;
+
+    border: 1px solid rgba(49, 175, 230, 0.2);
+
+    border-radius: 100px;
+
+    background: rgba(49, 175, 230, 0.05);
+
+    color: var(--profile-muted);
+
+    font-size: 0.78rem;
+
+}
+
+
+
+.profile-status__dot {
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: var(--profile-accent);
+
+    box-shadow:
+        0 0 12px var(--profile-accent);
+
+}
+
+
+
+.profile-hero__title {
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: clamp(3.5rem, 7vw, 6.8rem);
+
+    line-height: 0.93;
+
+    letter-spacing: -0.065em;
+
+}
+
+
+
+.profile-hero__title span {
+
+    display: block;
+
+    background:
+        linear-gradient(90deg,
+            var(--profile-accent),
+            var(--profile-purple),
+            var(--profile-accent-secondary));
+
+    background-clip: text;
+
+    -webkit-background-clip: text;
+
+    color: transparent;
+
+}
+
+
+
+.profile-hero__role {
+
+    margin-top: 24px;
+
+    color: var(--profile-muted);
+
+    font-size: 1rem;
+
+    font-weight: 600;
+
+}
+
+
+
+.profile-quote {
+
+    max-width: 500px;
+
+    margin-top: 25px;
+
+    padding-left: 20px;
+
+    border-left: 2px solid var(--profile-accent-secondary);
+
+    color: #d7dded;
+
+    font-size: 1.12rem;
+
+    font-style: italic;
+
+}
+
+
+
+/* ==========================================
+   META
+========================================== */
+
+.profile-meta {
+
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 30px;
+
+    margin-top: 35px;
+
+}
+
+
+
+.profile-meta__item {
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+
+.profile-meta__item span {
+
+    color: var(--profile-muted);
+
+    font-size: 0.72rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.1em;
+
+}
+
+
+
+.profile-meta__item strong {
+
+    margin-top: 3px;
+
+    font-size: 0.92rem;
+
+}
+
+
+
+/* ==========================================
+   BOTONES PERFIL
+========================================== */
+
+.profile-actions {
+
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top: 35px;
+
+}
+
+
+
+.button--profile {
+
+    background:
+        linear-gradient(135deg,
+            var(--profile-accent),
+            var(--profile-purple));
+
+}
+
+
+
+.button--profile-secondary {
+
+    border: 1px solid var(--profile-border);
+
+    background:
+        rgba(255, 255, 255, 0.025);
+
+}
+
+
+
+.button--profile-secondary:hover {
+
+    border-color: var(--profile-accent);
+
+}
+
+
+
+/* ==========================================
+   AVATAR
+========================================== */
+
+.profile-hero__visual {
+
+    position: relative;
+
+    min-height: 560px;
+
+    display: grid;
+    place-items: center;
+
+}
+
+
+
+.avatar-glow {
+
+    position: absolute;
+
+    width: 380px;
+    height: 380px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle,
+            rgba(122, 24, 198, 0.28),
+            rgba(49, 175, 230, 0.08),
+            transparent 70%);
+
+    filter: blur(15px);
+
+}
+
+
+
+.profile-avatar {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 370px;
+    height: 470px;
+
+    padding: 7px;
+
+    overflow: hidden;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(145deg,
+            var(--profile-accent),
+            var(--profile-purple),
+            var(--profile-accent-secondary));
+
+    box-shadow:
+        0 35px 80px rgba(0, 0, 0, 0.4);
+
+}
+
+
+
+.profile-avatar img,
+.profile-avatar__placeholder {
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 24px;
+
+}
+
+
+
+.profile-avatar img {
+
+    object-fit: cover;
+
+}
+
+
+
+.profile-avatar__placeholder {
+
+    display: grid;
+    place-items: center;
+
+    background:
+        linear-gradient(145deg,
+            #11173a,
+            #080d2c);
+
+}
+
+
+
+.profile-avatar__placeholder span {
+
+    font-family: "Poppins", sans-serif;
+
+    color: var(--profile-accent);
+
+    font-size: 4.5rem;
+
+    font-weight: 800;
+
+}
+
+
+
+.avatar-tag {
+
+    position: absolute;
+
+    z-index: 4;
+
+    padding: 8px 14px;
+
+    border: 1px solid var(--profile-border);
+
+    border-radius: 8px;
+
+    background: rgba(8, 13, 44, 0.9);
+
+    backdrop-filter: blur(10px);
+
+    color: var(--profile-text);
+
+    font-family: "Space Mono", monospace;
+
+    font-size: 0.75rem;
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.3);
+
+}
+
+
+
+.avatar-tag--html {
+
+    top: 15%;
+    left: 3%;
+
+}
+
+
+
+.avatar-tag--js {
+
+    top: 32%;
+    right: 0;
+
+}
+
+
+
+.avatar-tag--css {
+
+    bottom: 14%;
+    left: 5%;
+
+}
+
+
+
+/* ==========================================
+   DECORACIONES
+========================================== */
+
+.profile-decoration {
+
+    position: absolute;
+
+    pointer-events: none;
+
+    font-family: "Space Mono", monospace;
+
+    font-weight: 700;
+
+    color: rgba(49, 175, 230, 0.035);
+
+}
+
+
+
+.profile-decoration--one {
+
+    top: 10%;
+    left: 2%;
+
+    font-size: 8rem;
+
+}
+
+
+
+.profile-decoration--two {
+
+    right: 2%;
+    bottom: 2%;
+
+    font-size: 13rem;
+
+}
+
+
+
+/* ==========================================
+   SECCIONES
+========================================== */
+
+.profile-section {
+
+    padding: 110px 0;
+
+    border-bottom:
+        1px solid var(--profile-border);
+
+}
+
+
+
+.profile-section--alternative {
+
+    background:
+        rgba(255, 255, 255, 0.014);
+
+}
+
+
+
+.profile-section__heading {
+
+    display: grid;
+
+    grid-template-columns: 65px 1fr;
+
+    gap: 25px;
+
+    max-width: 750px;
+
+    margin-bottom: 55px;
+
+}
+
+
+
+.profile-section__heading>span {
+
+    padding-top: 7px;
+
+    color: var(--profile-accent);
+
+    font-family: "Space Mono", monospace;
+
+    font-size: 0.78rem;
+
+}
+
+
+
+.profile-kicker {
+
+    margin-bottom: 8px;
+
+    color: var(--profile-accent);
+
+    font-size: 0.75rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.15em;
+
+}
+
+
+
+.profile-section__heading h2 {
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: clamp(2rem, 4vw, 3.3rem);
+
+    line-height: 1.1;
+
+    letter-spacing: -0.045em;
+
+}
+
+
+
+/* ==========================================
+   SOBRE MÍ
+========================================== */
+
+.about-profile-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
+
+}
+
+
+
+.about-profile-card {
+
+    padding: 30px;
+
+    border: 1px solid var(--profile-border);
+
+    border-radius: 20px;
+
+    background:
+        rgba(16, 22, 55, 0.68);
+
+}
+
+
+
+.about-profile-card--large {
+
+    grid-row: span 2;
+
+    padding: 40px;
+
+}
+
+
+
+.about-profile-card p {
+
+    color: var(--profile-muted);
+
+}
+
+
+
+.about-profile-card p+p {
+
+    margin-top: 20px;
+
+}
+
+
+
+.card-terminal {
+
+    display: inline-block;
+
+    margin-bottom: 30px;
+
+    color: var(--profile-accent);
+
+    font-family: "Space Mono", monospace;
+
+    font-size: 0.72rem;
+
+}
+
+
+
+.about-card__icon {
+
+    display: grid;
+    place-items: center;
+
+    width: 45px;
+    height: 45px;
+
+    margin-bottom: 20px;
+
+    border-radius: 10px;
+
+    background:
+        rgba(49, 175, 230, 0.08);
+
+    color: var(--profile-accent);
+
+    font-family: monospace;
+
+}
+
+
+
+.about-profile-card h3 {
+
+    margin-bottom: 8px;
+
+    font-family: "Poppins", sans-serif;
+
+}
+
+
+
+/* ==========================================
+   SKILLS
+========================================== */
+
+.skills-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 16px;
+
+}
+
+
+
+.skill-card {
+
+    min-height: 180px;
+
+    padding: 25px;
+
+    border: 1px solid var(--profile-border);
+
+    border-radius: 16px;
+
+    background:
+        rgba(16, 22, 55, 0.55);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
+
+}
+
+
+
+.skill-card:hover {
+
+    transform: translateY(-7px);
+
+    border-color: var(--profile-accent);
+
+}
+
+
+
+.skill-card__number {
+
+    color: var(--profile-accent);
+
+    font-family: "Space Mono", monospace;
+
+    font-size: 0.72rem;
+
+}
+
+
+
+.skill-card h3 {
+
+    margin-top: 22px;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 1.2rem;
+
+}
+
+
+
+.skill-card p {
+
+    margin-top: 7px;
+
+    color: var(--profile-muted);
+
+    font-size: 0.87rem;
+
+}
+
+
+
+/* ==========================================
+   FAVORITOS
+========================================== */
+
+.favorites-layout {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 30px;
+
+}
+
+
+
+.favorites-group {
+
+    padding: 30px;
+
+    border: 1px solid var(--profile-border);
+
+    border-radius: 20px;
+
+    background:
+        rgba(16, 22, 55, 0.5);
+
+}
+
+
+/* Martina: equilibrar visualmente cine y música */
+
+#martinaCinema,
+#martinaMusic {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+#martinaCinema .favorites-cards,
+#martinaMusic .favorites-cards {
+    flex: 0 0 auto;
+}
+
+#martinaCinema .martina-cinema-screen,
+#martinaMusic .martina-now-playing {
+    margin-top: 20px;
+}
+
+
+
+.favorites-group__header {
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 25px;
+
+}
+
+
+
+.favorites-group__header h3 {
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 1.25rem;
+
+}
+
+
+
+.favorites-cards {
+
+    display: grid;
+
+    gap: 12px;
+
+}
+
+
+
+.favorite-card {
+
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 18px;
+
+    border: 1px solid var(--profile-border);
+
+    border-radius: 12px;
+
+    background:
+        rgba(255, 255, 255, 0.02);
+
+    transition:
+        transform 0.25s ease,
+        border 0.25s ease;
+
+}
+
+
+
+.favorite-card:hover {
+
+    transform: translateX(5px);
+
+    border-color: var(--profile-accent);
+
+}
+
+
+
+.favorite-card__number {
+
+    color: var(--profile-accent-secondary);
+
+    font-family: "Space Mono", monospace;
+
+    font-size: 0.72rem;
+
+}
+
+
+
+.favorite-card h4 {
+
+    font-family: "Poppins", sans-serif;
+
+}
+
+
+
+.favorite-card p {
+
+    margin-top: 2px;
+
+    color: var(--profile-muted);
+
+    font-size: 0.82rem;
+
+}
+
+/* ==========================================
+   MARTINA MUSIC
+========================================== */
+
+.music-card {
+
+    cursor: pointer;
+
+    transition:
+        transform .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease;
+
+}
+
+
+.music-card:hover,
+.music-card:focus-visible,
+.music-card.is-playing {
+
+    transform:
+        translateY(-6px);
+
+    border-color:
+        var(--profile-accent);
+
+    box-shadow:
+        0 18px 40px
+        rgba(49, 175, 230, .12);
+
+}
+
+
+.music-card__hint {
+
+    display: block;
+
+    margin-top: 8px;
+
+    color:
+        var(--profile-accent);
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: .65rem;
+
+    opacity: .6;
+
+}
+.music-card:hover
+.music-card__hint {
+
+    opacity: 1;
+
+}
+
+
+.martina-now-playing {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin-top: 20px;
+
+    padding: 20px;
+
+    border:
+        1px solid
+        rgba(49, 175, 230, .17);
+
+    border-radius: 12px;
+
+    background:
+        rgba(8, 13, 44, .7);
+
+}
+
+/* ==========================================
+   MUSIC RECORD
+========================================== */
+
+.martina-now-playing__record {
+
+    position: relative;
+
+    width: 72px;
+    height: 72px;
+
+    display: grid;
+
+    place-items: center;
+
+    flex-shrink: 0;
+
+    border:
+        2px solid
+        rgba(49, 175, 230, 0.65);
+
+    border-radius: 50%;
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            var(--profile-accent) 0 6px,
+            #080D2C 7px 13px,
+            rgba(49, 175, 230, 0.18) 14px 16px,
+            #050816 17px
+        );
+
+    box-shadow:
+        0 0 25px
+        rgba(49, 175, 230, 0.14);
+
+}
+
+
+.martina-now-playing__record::before,
+.martina-now-playing__record::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 9px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+
+    border-radius: 50%;
+
+}
+
+
+.martina-now-playing__record::after {
+
+    inset: 18px;
+
+}
+
+
+.martina-now-playing__record span {
+
+    position: relative;
+
+    z-index: 2;
+
+    color: #ffffff;
+
+    font-size: 1rem;
+
+}
+/* ==========================================
+   MUSIC PROGRESS
+========================================== */
+
+.martina-now-playing__info {
+
+    flex: 1;
+
+    min-width: 0;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.martina-now-playing__label {
+
+    display: block;
+
+    color:
+        var(--profile-accent);
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: .65rem;
+
+}
+
+
+.martina-now-playing strong {
+
+    display: block;
+
+    margin-top: 3px;
+
+}
+
+
+.martina-now-playing p {
+
+    color:
+        var(--profile-muted);
+
+    font-size: .82rem;
+
+}
+
+/* ==========================================
+   INTERESES
+========================================== */
+
+.interests-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 16px;
+
+}
+
+
+
+.interest-card {
+
+    min-height: 130px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 25px;
+
+    border: 1px solid var(--profile-border);
+
+    border-radius: 16px;
+
+    background:
+        rgba(16, 22, 55, 0.5);
+
+}
+
+
+
+.interest-card>span {
+
+    margin-bottom: 10px;
+
+    font-size: 1.8rem;
+
+}
+
+
+
+.interest-card h3 {
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 1rem;
+
+}
+
+/* ==========================================
+   MARTINA - CINEMA EXPLORER
+========================================== */
+
+.cinema-card {
+
+    position: relative;
+
+    min-height: 112px;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    outline: none;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+
+}
+
+
+/* LUZ QUE PASA POR LA CARD */
+
+.cinema-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+
+    left: -70%;
+
+    width: 50%;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.08),
+            transparent
+        );
+
+    transform:
+        skewX(-18deg);
+
+    transition:
+        left 0.55s ease;
+
+}
+
+
+.cinema-card:hover::before,
+.cinema-card:focus-visible::before,
+.cinema-card.is-active::before {
+
+    left: 130%;
+
+}
+
+
+/* CARD ACTIVA */
+
+.cinema-card:hover,
+.cinema-card:focus-visible,
+.cinema-card.is-active {
+
+    transform:
+        translateX(6px)
+        scale(1.015);
+
+    border-color:
+        var(--cinema-color);
+
+    background:
+        rgba(255, 255, 255, 0.035);
+
+    box-shadow:
+        0 12px 28px
+        rgba(0, 0, 0, 0.25),
+
+        0 0 22px
+        var(--cinema-glow);
+
+}
+
+
+/* COLOR INDIVIDUAL */
+
+.cinema-card[data-cinema="speed"] {
+
+    --cinema-color:
+        #DF3C5D;
+
+    --cinema-glow:
+        rgba(223, 60, 93, 0.18);
+
+}
+
+
+.cinema-card[data-cinema="science"] {
+
+    --cinema-color:
+        #31AFE6;
+
+    --cinema-glow:
+        rgba(49, 175, 230, 0.18);
+
+}
+
+
+.cinema-card[data-cinema="city"] {
+
+    --cinema-color:
+        #7A18C6;
+
+    --cinema-glow:
+        rgba(122, 24, 198, 0.20);
+
+}
+
+
+/* HINT */
+
+.cinema-card__hint {
+
+    display: inline-block;
+
+    margin-top: 7px;
+
+    color:
+        var(--profile-accent);
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 0.62rem;
+
+    letter-spacing: 0.08em;
+
+    opacity: 0;
+
+    transform:
+        translateY(4px);
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
+
+}
+
+
+.cinema-card:hover
+.cinema-card__hint,
+
+.cinema-card:focus-visible
+.cinema-card__hint,
+
+.cinema-card.is-active
+.cinema-card__hint {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+}
+/* ==========================================
+   CINEMA SCREEN
+========================================== */
+
+.martina-cinema-screen {
+
+    position: relative;
+
+    min-height: 145px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    overflow: hidden;
+
+    margin-top: 20px;
+
+    padding: 20px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(8, 13, 44, 0.95),
+            rgba(5, 8, 22, 0.96)
+        );
+
+    transition:
+        border-color 0.35s ease,
+        box-shadow 0.35s ease,
+        background 0.35s ease;
+
+}
+
+
+/* LÍNEAS ESTILO PANTALLA */
+
+.martina-cinema-screen::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: 0.25;
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            transparent 0,
+            transparent 3px,
+            rgba(255, 255, 255, 0.025) 4px
+        );
+
+}
+
+
+/* ICONO */
+
+.martina-cinema-screen__icon {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 70px;
+    height: 70px;
+
+    display: grid;
+
+    place-items: center;
+
+    flex-shrink: 0;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.1);
+
+    border-radius: 14px;
+
+    background:
+        rgba(255, 255, 255, 0.035);
+
+    font-size: 2rem;
+
+    transition:
+        transform 0.35s ease;
+
+}
+
+
+/* CONTENIDO */
+
+.martina-cinema-screen__content {
+
+    position: relative;
+
+    z-index: 2;
+
+    flex: 1;
+
+}
+
+
+.martina-cinema-screen__mode {
+
+    display: block;
+
+    margin-bottom: 6px;
+
+    color:
+        var(--profile-accent);
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 0.62rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.12em;
+
+}
+
+
+.martina-cinema-screen__content strong {
+
+    display: block;
+
+    color: #ffffff;
+
+    font-family:
+        "Poppins",
+        sans-serif;
+
+    font-size: 1rem;
+
+}
+
+
+.martina-cinema-screen__content p {
+
+    margin-top: 5px;
+
+    color:
+        var(--profile-muted);
+
+    font-size: 0.78rem;
+
+}
+
+
+/* ONLINE */
+
+.martina-cinema-screen__status {
+
+    position: absolute;
+
+    top: 12px;
+    right: 14px;
+
+    color:
+        #42e87a;
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 0.5rem;
+
+    letter-spacing: 0.08em;
+
+}
+/* ==========================================
+   CINEMA DETAILS
+========================================== */
+
+.cinema-details {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    margin-top: 14px;
+}
+
+.cinema-detail {
+    min-width: 0;
+    padding: 9px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 9px;
+    background: rgba(255, 255, 255, 0.025);
+}
+
+.cinema-detail span {
+    display: block;
+    margin-bottom: 3px;
+    color: var(--profile-muted);
+    font-family: "Space Mono", monospace;
+    font-size: 0.52rem;
+    letter-spacing: 0.08em;
+}
+
+.cinema-detail strong {
+    overflow: hidden;
+    color: #ffffff;
+    font-family: "Space Mono", monospace;
+    font-size: 0.62rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* ==========================================
+   CINEMA MODES
+========================================== */
+
+
+/* RÁPIDOS Y FURIOSOS */
+
+.martina-cinema-screen[
+    data-cinema-mode="speed"
+] {
+
+    border-color:
+        rgba(223, 60, 93, 0.35);
+
+    background:
+        radial-gradient(
+            circle at 15% 50%,
+            rgba(223, 60, 93, 0.18),
+            transparent 38%
+        ),
+        #070916;
+
+    box-shadow:
+        0 15px 35px
+        rgba(223, 60, 93, 0.08);
+
+}
+
+
+.martina-cinema-screen[
+    data-cinema-mode="speed"
+]
+.martina-cinema-screen__mode {
+
+    color:
+        #DF3C5D;
+
+}
+
+
+
+/* THE BIG BANG THEORY */
+
+.martina-cinema-screen[
+    data-cinema-mode="science"
+] {
+
+    border-color:
+        rgba(49, 175, 230, 0.35);
+
+    background:
+        radial-gradient(
+            circle at 15% 50%,
+            rgba(49, 175, 230, 0.18),
+            transparent 38%
+        ),
+        #070916;
+
+    box-shadow:
+        0 15px 35px
+        rgba(49, 175, 230, 0.08);
+
+}
+
+
+.martina-cinema-screen[
+    data-cinema-mode="science"
+]
+.martina-cinema-screen__mode {
+
+    color:
+        #31AFE6;
+
+}
+
+
+
+/* SEX AND THE CITY */
+
+.martina-cinema-screen[
+    data-cinema-mode="city"
+] {
+
+    border-color:
+        rgba(122, 24, 198, 0.4);
+
+    background:
+        radial-gradient(
+            circle at 15% 50%,
+            rgba(122, 24, 198, 0.22),
+            transparent 38%
+        ),
+        #070916;
+
+    box-shadow:
+        0 15px 35px
+        rgba(122, 24, 198, 0.1);
+
+}
+
+
+.martina-cinema-screen[
+    data-cinema-mode="city"
+]
+.martina-cinema-screen__mode {
+
+    color:
+        #DF3C5D;
+
+}
+.martina-cinema-screen.is-changing
+.martina-cinema-screen__icon {
+
+    animation:
+        cinemaIconPop
+        0.35s ease;
+
+}
+
+
+@keyframes cinemaIconPop {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            scale(0.6)
+            rotate(-8deg);
+
+    }
+
+
+    70% {
+
+        opacity: 1;
+
+        transform:
+            scale(1.1)
+            rotate(3deg);
+
+    }
+
+
+    100% {
+
+        opacity: 1;
+
+        transform:
+            scale(1)
+            rotate(0);
+
+    }
+
+}
+/* ==========================================
+   TERMINAL
+========================================== */
+
+.terminal {
+
+    overflow: hidden;
+
+    max-width: 900px;
+
+    border: 1px solid var(--profile-border);
+
+    border-radius: 20px;
+
+    background: #070b1e;
+
+    box-shadow:
+        0 30px 70px rgba(0, 0, 0, 0.3);
+
+}
+
+
+
+.terminal__header {
+
+    min-height: 52px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 18px;
+
+    border-bottom:
+        1px solid var(--profile-border);
+
+    color: var(--profile-muted);
+
+    font-family: "Space Mono", monospace;
+
+    font-size: 0.72rem;
+
+}
+
+
+
+.terminal__dots {
+
+    display: flex;
+
+    gap: 7px;
+
+    margin-right: auto;
+
+}
+
+
+
+.terminal__dots span {
+
+    width: 9px;
+    height: 9px;
+
+    border-radius: 50%;
+
+}
+
+
+
+.terminal__dots span:nth-child(1) {
+
+    background: #df3c5d;
+
+}
+
+
+
+.terminal__dots span:nth-child(2) {
+
+    background: #facc15;
+
+}
+
+
+
+.terminal__dots span:nth-child(3) {
+
+    background: #31afe6;
+
+}
+
+
+
+.terminal__body {
+
+    padding: 35px;
+
+    font-family: "Space Mono", monospace;
+
+}
+
+
+
+.terminal__line {
+
+    color: var(--profile-muted);
+
+}
+
+
+
+.terminal__prompt {
+
+    color: var(--profile-accent);
+
+}
+
+
+
+.terminal__options {
+
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 25px;
+
+}
+
+
+
+.terminal-button {
+
+    padding: 9px 14px;
+
+    border:
+        1px solid var(--profile-border);
+
+    border-radius: 7px;
+
+    background: transparent;
+
+    color: var(--profile-text);
+
+    font-family: "Space Mono", monospace;
+
+    font-size: 0.75rem;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+
+}
+
+
+
+
+.terminal-button:hover {
+
+    border-color: var(--profile-accent);
+
+    background:
+        rgba(49, 175, 230, 0.08);
+
+    color: var(--profile-accent);
+
+}
+
+
+
+.terminal__output {
+
+    min-height: 75px;
+
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 30px;
+
+    padding-top: 25px;
+
+    border-top:
+        1px dashed var(--profile-border);
+
+    color: #d7dded;
+
+}
+
+
+
+.terminal__output>span {
+
+    color: var(--profile-accent-secondary);
+
+}
+
+
+
+/* ==========================================
+   NAVEGACIÓN PERFIL
+========================================== */
+
+.profile-navigation {
+
+    padding: 35px 0;
+
+}
+
+
+
+.profile-navigation__container {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+}
+
+
+
+.profile-navigation a {
+
+    color: var(--profile-muted);
+
+    transition: color 0.25s ease;
+
+}
+
+
+
+.profile-navigation a:hover {
+
+    color: var(--profile-accent);
+
+}
+
+
+
+.profile-navigation span {
+
+    color: var(--profile-muted);
+
+    font-family: "Space Mono", monospace;
+
+    font-size: 0.72rem;
+
+}
+
+
+
+/* ==========================================
+   RESPONSIVE 1200px
+========================================== */
+
+@media (max-width: 1200px) {
+
+    .profile-hero__container {
+
+        gap: 40px;
+
+    }
+
+
+    .skills-grid {
+
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+
+    }
+
+}
+
+
+
+/* ==========================================
+   RESPONSIVE 900px
+========================================== */
+
+@media (max-width: 900px) {
+
+    .profile-hero {
+        min-height: auto;
+    }
+
+
+    .profile-hero__container {
+        grid-template-columns: 1fr;
+        padding: 90px 0;
+    }
+
+
+    .profile-hero__visual {
+        min-height: 500px;
+    }
+
+
+    .profile-avatar {
+        width: min(370px, 85vw);
+    }
+
+
+    .about-profile-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .about-profile-card--large {
+        grid-row: auto;
+    }
+
+
+    .skills-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+
+    .favorites-layout {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* NUEVO */
+
+    .martina-live-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .martina-system {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+
+/* ==========================================
+   RESPONSIVE 600px
+========================================== */
+
+@media (max-width: 600px) {
+
+    .interests-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+
+    .profile-section__heading {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+    .martina-mode-panel {
+
+    left: 14px;
+    bottom: 14px;
+
+    width:
+        calc(100vw - 28px);
+
+}
+
+    .profile-meta {
+        gap: 20px;
+    }
+
+
+    /* TERMINAL MARTINA */
+
+    .terminal-command {
+        grid-template-columns: 1fr;
+    }
+
+
+    .terminal-command .terminal__prompt {
+        display: block;
+    }
+
+
+    .terminal-command__send {
+        width: 100%;
+    }
+
+
+    .martina-system {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+.odin-assistant {
+
+    right: 14px;
+    bottom: 14px;
+
+    width:
+        calc(100vw - 28px);
+
+}
+
+
+.odin-assistant__avatar {
+
+    width: 95px;
+    height: 95px;
+
+}
+
+
+.odin-assistant__message {
+
+    max-width: none;
+
+    flex: 1;
+
+    padding: 13px 14px;
+
+}
+
+
+.odin-assistant__message p {
+
+    font-size: 0.72rem;
+
+}
+.martina-now-playing {
+
+    align-items:
+        flex-start;
+
+}
+
+
+.martina-now-playing__record {
+
+    width: 58px;
+    height: 58px;
+
+}
+
+
+
+
+.martina-cinema-screen {
+
+    align-items:
+        flex-start;
+
+    min-height: auto;
+
+    padding: 16px;
+
+}
+
+
+.martina-cinema-screen__icon {
+
+    width: 52px;
+    height: 52px;
+
+    font-size: 1.45rem;
+
+}
+
+
+.martina-cinema-screen__status {
+
+    display: none;
+
+}
+
+
+.cinema-card:hover,
+.cinema-card:focus-visible,
+.cinema-card.is-active {
+
+    transform:
+        translateY(-3px);
+
+}
+}
+
+
+/* ==========================================
+   RESPONSIVE 400px
+========================================== */
+
+@media (max-width: 400px) {
+
+    .profile-hero__title {
+
+        font-size: 3rem;
+
+    }
+
+
+    .profile-actions {
+
+        flex-direction: column;
+
+    }
+
+
+    .profile-actions .button {
+
+        width: 100%;
+
+    }
+
+
+    .profile-avatar {
+
+        height: 400px;
+
+    }
+
+
+    .skills-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .interests-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .terminal__body {
+
+        padding: 22px 16px;
+
+    }
+
+
+    .terminal__options {
+
+        flex-direction: column;
+
+    }
+
+
+    .terminal-button {
+
+        width: 100%;
+
+        text-align: left;
+
+    }
+
+
+    .profile-navigation__container {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+}
+/* ==========================================
+   MARTINA - LIVE STATUS
+========================================== */
+
+.martina-live-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 16px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.martina-live-card {
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 24px;
+
+    border:
+        1px solid
+        rgba(49, 175, 230, 0.2);
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(8, 13, 44, 0.9),
+            rgba(15, 23, 55, 0.75)
+        );
+
+}
+
+
+.martina-live-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 3px;
+    height: 100%;
+
+    background:
+        var(--profile-accent);
+
+}
+
+
+.martina-live-card__label {
+
+    display: block;
+
+    margin-bottom: 10px;
+
+    color:
+        var(--profile-accent);
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 0.72rem;
+
+    letter-spacing: 0.12em;
+
+}
+
+
+.martina-live-card strong {
+
+    display: block;
+
+    color: #ffffff;
+
+    font-size: 1.05rem;
+
+}
+
+
+.martina-live-card p {
+
+    margin-top: 7px;
+
+    color:
+        var(--profile-muted);
+
+    font-size: 0.86rem;
+
+}
+/* ==========================================
+   MARTINA SYSTEM DASHBOARD
+========================================== */
+
+.martina-system {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, minmax(0, 1fr));
+
+    gap: 1px;
+
+    border-bottom:
+        1px solid
+        rgba(49, 175, 230, 0.15);
+
+    background:
+        rgba(49, 175, 230, 0.1);
+
+}
+
+
+.martina-system__item {
+
+    padding: 15px;
+
+    background:
+        rgba(5, 10, 35, 0.96);
+
+}
+
+
+.martina-system__item span {
+
+    display: block;
+
+    color:
+        var(--profile-muted);
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 0.64rem;
+
+}
+
+
+.martina-system__item strong {
+
+    display: block;
+
+    margin-top: 4px;
+
+    color:
+        var(--profile-accent);
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 0.76rem;
+
+}
+
+
+.terminal__status {
+
+    margin-left: auto;
+
+    color: #42e87a;
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 0.65rem;
+
+}
+/* ==========================================
+   TERMINAL HISTORY
+========================================== */
+
+.terminal-history {
+
+    height: 320px;
+
+    overflow-y: auto;
+
+    margin-top: 22px;
+
+    padding: 20px;
+
+    border:
+        1px solid
+        rgba(49, 175, 230, 0.13);
+
+    border-radius: 10px;
+
+    background:
+        rgba(1, 5, 22, 0.85);
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 0.82rem;
+
+    scrollbar-width: thin;
+
+}
+
+
+.terminal-history__entry {
+
+    margin-bottom: 18px;
+
+}
+
+
+.terminal-history__command {
+
+    color:
+        var(--profile-accent);
+
+}
+
+
+.terminal-history__response {
+
+    margin-top: 5px;
+
+    color:
+        #dbeafe;
+
+    white-space: pre-line;
+
+}
+
+
+.terminal-history__error {
+
+    color:
+        #ff6b81;
+
+}
+
+
+.terminal-history__system {
+
+    color:
+        #42e87a;
+
+}
+
+
+.terminal-history__secret {
+
+    color:
+        var(--profile-accent-secondary);
+
+    text-shadow:
+        0 0 12px
+        rgba(223, 60, 93, 0.45);
+
+}
+/* ==========================================
+   TERMINAL INPUT
+========================================== */
+
+.terminal-command {
+
+    display: grid;
+
+    grid-template-columns:
+        auto 1fr auto;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 18px;
+
+    padding: 12px 14px;
+
+    border:
+        1px solid
+        rgba(49, 175, 230, 0.2);
+
+    border-radius: 10px;
+
+    background:
+        rgba(1, 5, 22, 0.95);
+
+}
+
+
+.terminal-command__input {
+
+    width: 100%;
+
+    border: 0;
+
+    outline: none;
+
+    background: transparent;
+
+    color: #ffffff;
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 0.86rem;
+
+    caret-color:
+        var(--profile-accent);
+
+}
+
+
+.terminal-command__input::placeholder {
+
+    color:
+        rgba(168, 176, 199, 0.55);
+
+}
+
+
+.terminal-command__send {
+
+    padding: 8px 12px;
+
+    border:
+        1px solid
+        var(--profile-accent);
+
+    border-radius: 6px;
+
+    background:
+        rgba(49, 175, 230, 0.08);
+
+    color:
+        var(--profile-accent);
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 0.68rem;
+
+    cursor: pointer;
+
+}
+
+
+.terminal-command__send:hover {
+
+    background:
+        rgba(49, 175, 230, 0.17);
+
+}
+
+
+.terminal-command__hint {
+
+    margin-top: 10px;
+
+    color:
+        var(--profile-muted);
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 0.68rem;
+
+}
+.terminal-button.is-active {
+
+    border-color:
+        var(--profile-accent);
+
+    background:
+        rgba(49, 175, 230, 0.13);
+
+    color: #ffffff;
+
+    box-shadow:
+        0 0 18px
+        rgba(49, 175, 230, 0.12);
+
+}
+/* ==========================================
+   MARTINA TERMINAL THEMES
+========================================== */
+
+.martina-theme.martina-pink {
+
+    --profile-accent: #df3c5d;
+    --profile-accent-secondary: #31afe6;
+
+}
+
+
+.martina-theme.martina-purple {
+
+    --profile-accent: #7a18c6;
+    --profile-accent-secondary: #df3c5d;
+
+}
+/* ==========================================
+   MARTINA EASTER EGG
+========================================== */
+
+.martina-theme.fatality-mode .terminal {
+
+    animation:
+        fatalityPulse
+        0.22s ease
+        3;
+
+}
+
+
+@keyframes fatalityPulse {
+
+    0%,
+    100% {
+
+        box-shadow:
+            0 0 0
+            rgba(223, 60, 93, 0);
+
+    }
+
+    50% {
+
+        box-shadow:
+            0 0 45px
+            rgba(223, 60, 93, 0.45);
+
+    }
+
+}
+/* ==========================================
+   ODIN ASSISTANT
+========================================== */
+
+.odin-assistant {
+
+    position: fixed;
+
+    right: 24px;
+    bottom: 24px;
+
+    z-index: 5000;
+
+    width:
+        min(370px, calc(100vw - 32px));
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: flex-end;
+
+    gap: 12px;
+
+    pointer-events: none;
+
+}
+
+
+.odin-assistant[hidden] {
+
+    display: none;
+
+}
+
+
+/* ==========================================
+   BURBUJA
+========================================== */
+
+.odin-assistant__message {
+
+    position: relative;
+
+    max-width: 230px;
+
+    padding: 16px 18px;
+
+    border:
+        1px solid
+        rgba(49, 175, 230, 0.28);
+
+    border-radius:
+        16px 16px 4px 16px;
+
+    background:
+        rgba(5, 9, 30, 0.96);
+
+    box-shadow:
+        0 18px 45px
+        rgba(0, 0, 0, 0.38);
+
+    backdrop-filter:
+        blur(12px);
+
+    opacity: 0;
+
+    transform:
+        translateY(20px);
+
+    animation:
+        odinMessageIn
+        0.45s ease
+        0.25s
+        forwards;
+
+}
+
+
+.odin-assistant__message::after {
+
+    content: "";
+
+    position: absolute;
+
+    right: -8px;
+    bottom: 18px;
+
+    width: 15px;
+    height: 15px;
+
+    border-top:
+        1px solid
+        rgba(49, 175, 230, 0.28);
+
+    border-right:
+        1px solid
+        rgba(49, 175, 230, 0.28);
+
+    background:
+        rgba(5, 9, 30, 0.96);
+
+    transform:
+        rotate(45deg);
+
+}
+
+
+.odin-assistant__label {
+
+    display: block;
+
+    margin-bottom: 6px;
+
+    color:
+        var(--profile-accent);
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 0.65rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.12em;
+
+}
+
+
+.odin-assistant__message p {
+
+    margin: 0;
+
+    color: #ffffff;
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 0.78rem;
+
+    line-height: 1.55;
+
+}
+
+
+/* ==========================================
+   AVATAR
+========================================== */
+
+.odin-assistant__avatar {
+
+    position: relative;
+
+    width: 145px;
+
+    flex-shrink: 0;
+
+    opacity: 0;
+
+    transform:
+        translateX(160px)
+        rotate(12deg)
+        scale(0.7);
+
+    animation:
+        odinEntrance
+        0.65s
+        cubic-bezier(.2, .8, .2, 1.2)
+        forwards;
+
+}
+
+
+.odin-assistant__avatar img {
+
+    width: 100%;
+    height: auto;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(
+            0 15px 25px
+            rgba(0, 0, 0, 0.45)
+        );
+
+}
+
+
+
+
+/* ONLINE DOT */
+
+.odin-assistant__online {
+
+    position: absolute;
+
+    right: 11px;
+    bottom: 10px;
+
+    width: 13px;
+    height: 13px;
+
+    border:
+        2px solid
+        #080d2c;
+
+    border-radius: 50%;
+
+    background:
+        #42e87a;
+
+    box-shadow:
+        0 0 12px
+        rgba(66, 232, 122, 0.8);
+
+}
+
+
+/* ==========================================
+   STATUS
+========================================== */
+
+.odin-status {
+
+    color:
+        var(--profile-muted);
+
+}
+
+
+.odin-status.is-online {
+
+    color:
+        #42e87a;
+
+    text-shadow:
+        0 0 10px
+        rgba(66, 232, 122, 0.45);
+
+}
+/* ==========================================
+   MARTINA - MODOS INTERACTIVOS
+========================================== */
+
+.martina-mode-panel {
+
+    position: fixed;
+
+    left: 24px;
+    bottom: 24px;
+
+    z-index: 4900;
+
+    width:
+        min(
+            360px,
+            calc(100vw - 32px)
+        );
+
+    padding: 18px;
+
+    border:
+        1px solid
+        rgba(49, 175, 230, 0.28);
+
+    border-radius: 16px;
+
+    background:
+        rgba(5, 9, 30, 0.96);
+
+    box-shadow:
+        0 20px 50px
+        rgba(0, 0, 0, 0.4);
+
+    backdrop-filter:
+        blur(14px);
+
+    animation:
+        martinaModeEntrance
+        0.4s ease
+        forwards;
+
+}
+
+
+.martina-mode-panel[hidden] {
+
+    display: none;
+
+}
+
+
+.martina-mode-panel__header {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 10px;
+
+    color:
+        var(--profile-accent);
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 0.68rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.12em;
+
+}
+
+
+.martina-mode-panel__status {
+
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background:
+        #42e87a;
+
+    box-shadow:
+        0 0 10px
+        rgba(66, 232, 122, 0.8);
+
+}
+
+
+.martina-mode-panel__title {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #ffffff;
+
+    font-size: 1.05rem;
+
+}
+
+
+.martina-mode-panel__text {
+
+    margin: 0 0 16px;
+
+    color:
+        var(--text-secondary);
+
+    font-size: 0.82rem;
+
+    line-height: 1.6;
+
+}
+
+
+.martina-mode-visual {
+
+    display: none;
+
+}
+
+
+@keyframes martinaModeEntrance {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(18px)
+            scale(0.97);
+
+    }
+
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+/* ==========================================
+   CAMERA MODE
+========================================== */
+
+.martina-mode-panel[data-mode="photography"]
+.martina-mode-visual--camera {
+
+    display: block;
+
+}
+
+
+.camera-viewfinder {
+
+    position: relative;
+
+    height: 120px;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(49, 175, 230, 0.4);
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(49, 175, 230, 0.06),
+            rgba(122, 24, 198, 0.08)
+        );
+
+}
+
+
+.camera-viewfinder::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 14px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.12);
+
+}
+
+
+.camera-rec {
+
+    position: absolute;
+
+    top: 10px;
+    left: 12px;
+
+    color:
+        #DF3C5D;
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 0.68rem;
+
+    font-weight: 700;
+
+}
+
+
+.camera-focus {
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    color:
+        rgba(255, 255, 255, 0.8);
+
+    font-family: monospace;
+
+    font-size: 1.5rem;
+
+}
+
+
+.camera-info {
+
+    position: absolute;
+
+    right: 12px;
+    bottom: 8px;
+    left: 12px;
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    color:
+        rgba(255, 255, 255, 0.6);
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 0.58rem;
+
+}
+/* ==========================================
+   TRAVEL MODE
+========================================== */
+
+.martina-mode-panel[data-mode="travel"]
+.martina-mode-visual--travel {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+.travel-radar {
+
+    position: relative;
+
+    width: 105px;
+    height: 105px;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(49, 175, 230, 0.4);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(49, 175, 230, 0.13),
+            transparent 68%
+        );
+
+}
+
+
+.travel-radar::before,
+.travel-radar::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 20%;
+
+    border:
+        1px solid
+        rgba(49, 175, 230, 0.18);
+
+    border-radius: 50%;
+
+}
+
+
+.travel-radar::after {
+
+    inset: 38%;
+
+}
+
+
+.travel-radar__center {
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    z-index: 2;
+
+    transform:
+        translate(-50%, -50%);
+
+    font-size: 1.4rem;
+
+}
+
+
+.travel-radar::selection {
+
+    background: transparent;
+
+}
+
+
+.travel-coordinates {
+
+    color:
+        var(--profile-accent);
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 0.65rem;
+
+    letter-spacing: 0.08em;
+
+}
+.travel-radar {
+
+    background:
+        conic-gradient(
+            from 0deg,
+            rgba(49, 175, 230, 0.38),
+            transparent 22%,
+            transparent
+        ),
+
+        radial-gradient(
+            circle,
+            rgba(49, 175, 230, 0.13),
+            transparent 68%
+        );
+
+    animation:
+        travelRadarSweep
+        2.5s linear infinite;
+
+}
+
+
+@keyframes travelRadarSweep {
+
+    to {
+        transform:
+            rotate(360deg);
+    }
+
+}
+/* ==========================================
+   DESIGN MODE
+========================================== */
+
+.martina-mode-panel[data-mode="design"]
+.martina-mode-visual--design {
+
+    display: block;
+
+}
+
+
+.design-palette {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 7px;
+
+}
+
+
+.design-color {
+
+    height: 55px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.13);
+
+    border-radius: 8px;
+
+}
+
+
+.design-color--1 {
+    background: #080D2C;
+}
+
+
+.design-color--2 {
+    background: #31AFE6;
+}
+
+
+.design-color--3 {
+    background: #DF3C5D;
+}
+
+
+.design-color--4 {
+    background: #7A18C6;
+}
+
+
+.design-palette__label {
+
+    display: block;
+
+    margin-top: 9px;
+
+    color:
+        var(--text-secondary);
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 0.62rem;
+
+    letter-spacing: 0.1em;
+
+}
+/* ==========================================
+   TERMINAL TARGET
+========================================== */
+
+.terminal-target {
+
+    animation:
+        terminalTargetFlash
+        1.1s ease;
+
+}
+
+
+@keyframes terminalTargetFlash {
+
+    0%,
+    100% {
+
+        filter:
+            drop-shadow(
+                0 0 0
+                transparent
+            );
+
+    }
+
+
+    45% {
+
+        filter:
+            drop-shadow(
+                0 0 18px
+                rgba(49, 175, 230, 0.35)
+            );
+
+    }
+
+}
+/* ==========================================
+   ANIMACIONES
+========================================== */
+
+@keyframes odinEntrance {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            translateX(160px)
+            rotate(12deg)
+            scale(0.7);
+
+    }
+
+
+    70% {
+
+        opacity: 1;
+
+        transform:
+            translateX(-8px)
+            rotate(-3deg)
+            scale(1.04);
+
+    }
+
+
+    100% {
+
+        opacity: 1;
+
+        transform:
+            translateX(0)
+            rotate(0)
+            scale(1);
+
+    }
+
+}
+
+
+@keyframes odinMessageIn {
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+/* ==========================================
+   YOUTUBE MUSIC BUTTON
+========================================== */
+
+.music-youtube-button {
+
+    min-height: 40px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    margin-top: 14px;
+
+    padding:
+        0 15px;
+
+    border:
+        1px solid
+        rgba(223, 60, 93, 0.45);
+
+    border-radius: 8px;
+
+    background:
+        rgba(223, 60, 93, 0.08);
+
+    color:
+        #ffffff;
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 0.64rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.07em;
+
+    text-decoration: none;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+
+}
+
+
+.music-youtube-button:hover,
+.music-youtube-button:focus-visible {
+
+    transform:
+        translateY(-2px);
+
+    border-color:
+        var(--profile-accent-secondary);
+
+    background:
+        rgba(223, 60, 93, 0.16);
+
+    box-shadow:
+        0 0 20px
+        rgba(223, 60, 93, 0.15);
+
+}
+
+
+@media (max-width: 600px) {
+
+    .cinema-details {
+        grid-template-columns: 1fr;
+    }
+
+    .cinema-detail strong {
+        white-space: normal;
+    }
+
+}
+
+/* ==========================================
+   TEMA DALILA
+========================================== */
+
+.dalila-theme {
+
+    --profile-bg: #080b20;
+
+    --profile-surface: #101735;
+
+    --profile-surface-light: #17214a;
+
+    --profile-accent: #64d8ff;
+
+    --profile-accent-secondary: #9d62ff;
+
+    --profile-purple: #7047eb;
+
+    --profile-text: #ffffff;
+
+    --profile-muted: #b5c2df;
+
+    --profile-border: rgba(100, 216, 255, 0.17);
+
+
+    background:
+
+        radial-gradient(circle at 85% 10%,
+            rgba(157, 98, 255, 0.17),
+            transparent 30%),
+
+        radial-gradient(circle at 12% 50%,
+            rgba(100, 216, 255, 0.09),
+            transparent 35%),
+
+        var(--profile-bg);
+
+}
+
+
+/* ==========================================
+   ESTRELLAS TITILANTES (fondo Dalila)
+========================================== */
+
+.dalila-theme::before,
+.dalila-theme::after {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    z-index: 1;
+
+    pointer-events: none;
+
+    background-repeat: repeat;
+}
+
+.dalila-theme::before {
+    background-image:
+        radial-gradient(1.5px 1.5px at 20px 30px, #ffffff, transparent),
+        radial-gradient(1.5px 1.5px at 90px 80px, #ffffff, transparent),
+        radial-gradient(1px 1px at 140px 40px, #ffffff, transparent),
+        radial-gradient(1.5px 1.5px at 180px 110px, #ffffff, transparent),
+        radial-gradient(1px 1px at 230px 60px, #ffffff, transparent);
+
+    background-size: 260px 260px;
+
+    animation: dalilaTwinkle 2.2s ease-in-out infinite alternate;
+}
+
+.dalila-theme::after {
+    background-image:
+        radial-gradient(1px 1px at 50px 150px, #ffffff, transparent),
+        radial-gradient(1.5px 1.5px at 120px 20px, #ffffff, transparent),
+        radial-gradient(1px 1px at 200px 170px, #ffffff, transparent),
+        radial-gradient(1.5px 1.5px at 250px 90px, #ffffff, transparent);
+
+    background-size: 300px 300px;
+
+    animation: dalilaTwinkle 3s ease-in-out infinite alternate;
+    animation-delay: 1s;
+}
+
+@keyframes dalilaTwinkle {
+    0% {
+        opacity: 0.1;
+    }
+
+    100% {
+        opacity: 0.9;
+    }
+}
+
+
+/* ==========================================
+   MODO ECLIPSE
+========================================== */
+
+.dalila-theme.eclipse-mode {
+
+    --profile-accent: #ff8a3d;
+    --profile-accent-secondary: #ffce54;
+    --profile-purple: #d9480f;
+
+    background:
+        radial-gradient(circle at 85% 10%,
+            rgba(255, 138, 61, 0.18),
+            transparent 30%),
+        radial-gradient(circle at 12% 50%,
+            rgba(217, 72, 15, 0.12),
+            transparent 35%),
+        var(--profile-bg);
+}
+
+/* ==========================================
+   MARCO NEÓN EN TARJETAS
+========================================== */
+
+.dalila-theme {
+    --profile-neon: #ff2ec4;
+}
+
+.dalila-theme .about-profile-card,
+.dalila-theme .skill-card,
+.dalila-theme .interest-card,
+.dalila-theme .dalila-movie-card,
+.dalila-theme .dalila-music,
+.dalila-theme .dalila-explorer__content {
+
+    border: 1px solid var(--profile-neon);
+
+    box-shadow:
+        0 0 8px rgba(255, 46, 196, 0.35),
+        0 0 20px rgba(255, 46, 196, 0.15),
+        inset 0 0 12px rgba(255, 46, 196, 0.05);
+
+    transition:
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.dalila-theme .about-profile-card:hover,
+.dalila-theme .skill-card:hover,
+.dalila-theme .interest-card:hover,
+.dalila-theme .dalila-movie-card:hover {
+
+    border-color: #ff5ed6;
+
+    box-shadow:
+        0 0 14px rgba(255, 46, 196, 0.6),
+        0 0 34px rgba(255, 46, 196, 0.3);
+}
+
+/* El logo también toma el celeste de Dalila */
+
+.dalila-theme .logo span {
+    color: var(--profile-accent);
+}
+
+
+/* Glow del avatar */
+
+.dalila-theme .avatar-glow {
+
+    background:
+
+        radial-gradient(circle,
+            rgba(157, 98, 255, 0.28),
+            rgba(100, 216, 255, 0.12),
+            transparent 70%);
+
+}
+
+/* ==========================================
+   TERMINAL DALILA (carcasa tipo consola)
+========================================== */
+
+.dalila-terminal {
+
+    max-width: 950px;
+
+    overflow: hidden;
+
+    border: 1px solid var(--profile-neon);
+
+    border-radius: 16px;
+
+    background: #05050f;
+
+    box-shadow:
+        0 0 14px rgba(255, 46, 196, 0.25),
+        0 30px 70px rgba(0, 0, 0, 0.4);
+}
+
+.dalila-terminal__header {
+
+    display: flex;
+    align-items: center;
+
+    gap: 16px;
+
+    padding: 0 18px;
+
+    min-height: 46px;
+
+    border-bottom: 1px solid var(--profile-border);
+
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.dalila-terminal__dots {
+    display: flex;
+    gap: 7px;
+}
+
+.dalila-terminal__dots span {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+}
+
+.dalila-terminal__dots span:nth-child(1) { background: #ff5f57; }
+.dalila-terminal__dots span:nth-child(2) { background: #febc2e; }
+.dalila-terminal__dots span:nth-child(3) { background: #28c840; }
+
+.dalila-terminal__filename {
+    color: var(--profile-muted);
+    font-family: "Space Mono", monospace;
+    font-size: 0.72rem;
+}
+
+.dalila-terminal__status {
+    margin-left: auto;
+
+    color: #4ade80;
+
+    font-family: "Space Mono", monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+}
+
+.dalila-terminal__boot {
+
+    padding: 20px 24px;
+
+    border-bottom: 1px solid var(--profile-border);
+
+    background: #030308;
+
+    font-family: "Space Mono", monospace;
+    font-size: 0.82rem;
+    line-height: 1.9;
+
+    color: #4ade80;
+}
+
+.dalila-terminal .dalila-explorer {
+    padding: 24px;
+}
+
+.dalila-terminal .dalila-interest-button {
+    font-family: "Space Mono", monospace;
+    text-transform: lowercase;
+}
+
+/* ==========================================
+   CARMELUCHA - ASISTENTE
+========================================== */
+
+.carmelucha-assistant {
+
+    position: fixed;
+
+    right: 24px;
+    bottom: 90px;   /* antes: 24px — la sube más arriba */
+
+    z-index: 5000;
+
+    width: min(420px, calc(100vw - 32px));   /* antes: 370px */
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+
+    gap: 12px;
+
+    pointer-events: none;
+}
+
+.carmelucha-assistant[hidden] {
+    display: none;
+}
+
+
+.carmelucha-assistant__message {
+
+    position: relative;
+
+    max-width: 260px;      /* ← cambia: era 230px */
+
+    padding: 18px 20px;    /* ← cambia: era 16px 18px */
+
+    border: 1px solid var(--profile-neon);
+
+    border-radius: 16px 16px 4px 16px;
+
+    background: rgba(8, 11, 32, 0.96);
+
+    box-shadow:
+        0 0 14px rgba(255, 46, 196, 0.3),
+        0 18px 45px rgba(0, 0, 0, 0.38);
+
+    backdrop-filter: blur(12px);
+
+    opacity: 0;
+
+    transform: translateY(20px);
+
+    animation:
+        carmeluchaMessageIn 0.45s ease 0.25s forwards;
+}
+.carmelucha-assistant__message::after {
+
+    content: "";
+
+    position: absolute;
+
+    right: -8px;
+    bottom: 18px;
+
+    width: 15px;
+    height: 15px;
+
+    border-top: 1px solid var(--profile-neon);
+    border-right: 1px solid var(--profile-neon);
+
+    background: rgba(8, 11, 32, 0.96);
+
+    transform: rotate(45deg);
+}
+
+.carmelucha-assistant__label {
+
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: var(--profile-accent);
+
+    font-family: "Space Mono", monospace;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+.carmelucha-assistant__message p {
+
+    margin: 0;
+
+    color: #ffffff;
+
+    font-family: "Space Mono", monospace;
+    font-size: 0.78rem;
+    line-height: 1.55;
+}
+
+
+.carmelucha-assistant__avatar {
+
+    position: relative;
+
+    width: 190px;   /* antes: 145px */
+
+    flex-shrink: 0;
+
+    opacity: 0;
+
+    transform: translateX(160px) rotate(12deg) scale(0.7);
+
+    animation:
+        carmeluchaEntrance 0.65s cubic-bezier(.2, .8, .2, 1.2) forwards;
+}
+
+.carmelucha-assistant__avatar img {
+
+    width: 100%;
+    height: auto;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(0 15px 25px rgba(0, 0, 0, 0.45));
+}
+
+.carmelucha-assistant__online {
+
+    position: absolute;
+
+    right: 15px;   /* antes: 11px */
+    bottom: 14px;   /* antes: 10px */
+
+    width: 16px;   /* antes: 13px */
+    height: 16px;   /* antes: 13px */
+
+    border: 2px solid var(--profile-bg);
+
+    border-radius: 50%;
+
+    background: #42e87a;
+
+    box-shadow: 0 0 12px rgba(66, 232, 122, 0.8);
+}
+
+@keyframes carmeluchaEntrance {
+
+    0% {
+        opacity: 0;
+        transform: translateX(160px) rotate(12deg) scale(0.7);
+    }
+
+    70% {
+        opacity: 1;
+        transform: translateX(-8px) rotate(-3deg) scale(1.04);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0) rotate(0) scale(1);
+    }
+}
+
+@keyframes carmeluchaMessageIn {
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .carmelucha-assistant {
+        right: 14px;
+        bottom: 14px;
+        width: calc(100vw - 28px);
+    }
+
+    .carmelucha-assistant__avatar {
+        width: 95px;
+    }
+
+    .carmelucha-assistant__message {
+        max-width: none;
+        flex: 1;
+        padding: 13px 14px;
+    }
+
+    .carmelucha-assistant__message p {
+        font-size: 0.72rem;
+    }
+}
+
+/* ==========================================
+   PELÍCULAS DALILA
+========================================== */
+
+.dalila-movies-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+
+}
+
+.dalila-albums-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 18px;
+
+    margin-top: 25px;
+
+}
+
+
+.dalila-movie-card {
+
+    position: relative;
+
+    min-height: 190px;
+
+    padding: 28px;
+
+    overflow: hidden;
+
+    border:
+        1px solid var(--profile-border);
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(145deg,
+            rgba(16, 23, 53, 0.9),
+            rgba(20, 28, 67, 0.6));
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
+
+}
+
+
+.dalila-movie-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 100px;
+    height: 100px;
+
+    top: -50px;
+    right: -50px;
+
+    border-radius: 50%;
+
+    background:
+        var(--profile-accent-secondary);
+
+    opacity: 0.06;
+
+}
+
+
+.dalila-movie-card:hover {
+
+    transform: translateY(-6px);
+
+    border-color:
+        var(--profile-accent);
+
+}
+
+
+.dalila-movie-card h3 {
+
+    margin-top: 28px;
+
+    font-family:
+        "Poppins",
+        sans-serif;
+
+}
+
+
+.dalila-movie-card p {
+
+    margin-top: 8px;
+
+    color:
+        var(--profile-muted);
+
+}
+
+
+
+/* ==========================================
+   MÚSICA
+========================================== */
+
+.dalila-music {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    margin-top: 25px;
+
+    padding: 30px;
+
+    border:
+        1px solid var(--profile-border);
+
+    border-radius: 18px;
+
+    background:
+        rgba(16, 23, 53, 0.6);
+
+}
+
+
+.dalila-music__icon {
+
+    flex-shrink: 0;
+
+    width: 65px;
+    height: 65px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 16px;
+
+    background:
+
+        linear-gradient(135deg,
+            var(--profile-purple),
+            var(--profile-accent));
+
+    color: white;
+
+    font-size: 2rem;
+
+}
+
+
+.dalila-music h3 {
+
+    margin-top: 5px;
+
+    font-family:
+        "Poppins",
+        sans-serif;
+
+}
+
+
+.dalila-music p {
+
+    max-width: 650px;
+
+    margin-top: 7px;
+
+    color:
+        var(--profile-muted);
+
+}
+
+/* ==========================================
+   VIDEOS DE YOUTUBE - ÁLBUMES DALILA
+========================================== */
+
+.dalila-albums-grid .dalila-movie-card iframe {
+
+    width: 100%;
+    aspect-ratio: 16 / 9;
+
+    height: auto;
+
+    margin-top: 20px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    display: block;
+
+}
+
+/* ==========================================
+   EXPLORADOR INTERACTIVO
+========================================== */
+
+.dalila-explorer {
+
+    display: grid;
+
+    grid-template-columns:
+        260px 1fr;
+
+    gap: 20px;
+
+    max-width: 950px;
+
+}
+
+
+.dalila-explorer__menu {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+}
+
+
+.dalila-interest-button {
+
+    width: 100%;
+
+    padding: 14px 16px;
+
+    border:
+        1px solid var(--profile-border);
+
+    border-radius: 10px;
+
+    background:
+        rgba(16, 23, 53, 0.7);
+
+    color:
+        var(--profile-muted);
+
+    text-align: left;
+
+    cursor: pointer;
+
+    font-family:
+        "Inter",
+        sans-serif;
+
+    transition:
+        0.25s ease;
+
+}
+
+
+.dalila-interest-button:hover,
+.dalila-interest-button.active {
+
+    border-color:
+        var(--profile-accent);
+
+    background:
+        rgba(100, 216, 255, 0.08);
+
+    color:
+        var(--profile-text);
+
+    transform:
+        translateX(4px);
+
+}
+
+
+.dalila-explorer__content {
+
+    min-height: 280px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+
+    padding: 40px;
+
+    border:
+        1px solid var(--profile-border);
+
+    border-radius: 20px;
+
+    background:
+
+        radial-gradient(circle at 80% 20%,
+            rgba(157, 98, 255, 0.1),
+            transparent 45%),
+
+        rgba(16, 23, 53, 0.7);
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
+
+}
+
+
+.dalila-explorer__content.fading {
+
+    opacity: 0;
+
+    transform: translateY(6px);
+
+}
+
+
+.dalila-explorer__icon {
+
+    flex-shrink: 0;
+
+    font-size: 4.5rem;
+
+}
+
+
+.dalila-explorer__content h3 {
+
+    margin-top: 7px;
+
+    font-family:
+        "Poppins",
+        sans-serif;
+
+    font-size: 1.8rem;
+
+}
+
+
+.dalila-explorer__content p {
+
+    max-width: 520px;
+
+    margin-top: 10px;
+
+    color:
+        var(--profile-muted);
+
+}
+
+
+#dalilaExplorerText::after {
+
+    content: "▌";
+
+    margin-left: 4px;
+
+    color: var(--profile-accent);
+
+    animation: dalilaCursorBlink 0.9s infinite;
+
+}
+
+
+@keyframes dalilaCursorBlink {
+
+    50% {
+        opacity: 0;
+    }
+
+}
+
+
+
+/* ==========================================
+   RESPONSIVE DALILA
+========================================== */
+
+@media (max-width: 900px) {
+
+    .dalila-explorer {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .dalila-explorer__menu {
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .dalila-movies-grid,
+    .dalila-albums-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .dalila-music {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+    }
+
+
+    .dalila-explorer__content {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 28px;
+
+    }
+
+}
+
+
+@media (max-width: 400px) {
+
+    .dalila-explorer__menu {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .dalila-interest-button:hover,
+    .dalila-interest-button.active {
+
+        transform: none;
+
+    }
+
+}
+
+/* ==========================================
+   TEMA JORGE
+========================================== */
+
+.jorge-theme {
+
+    --profile-bg: #050505;
+
+    --profile-surface: #100909;
+
+    --profile-surface-light: #1c0d08;
+
+    --profile-accent: #ff6d00;
+
+    --profile-accent-secondary: #880808;
+
+    --profile-purple: #ffde21;
+
+    --profile-text: #f8fafc;
+
+    --profile-muted: #b9aca7;
+
+    --profile-border:
+        rgba(255, 109, 0, 0.18);
+
+
+    background:
+
+        radial-gradient(circle at 85% 10%,
+            rgba(136, 8, 8, 0.25),
+            transparent 32%),
+
+        radial-gradient(circle at 5% 45%,
+            rgba(255, 109, 0, 0.08),
+            transparent 30%),
+
+        #000000;
+
+}
+
+
+
+/* LOGO */
+
+.jorge-theme .logo span {
+
+    color:
+        var(--profile-accent);
+
+}
+
+
+
+/* STATUS */
+
+.jorge-theme .profile-status__dot {
+
+    background:
+        var(--profile-accent);
+
+    box-shadow:
+        0 0 15px var(--profile-accent);
+
+}
+
+
+
+/* TÍTULO */
+
+.jorge-theme .profile-hero__title span {
+
+    background:
+
+        linear-gradient(90deg,
+            #880808,
+            #ff6d00,
+            #ffde21);
+
+    background-clip: text;
+
+    -webkit-background-clip: text;
+
+}
+
+
+
+/* AVATAR */
+
+.jorge-theme .profile-avatar {
+
+    background:
+
+        linear-gradient(145deg,
+            #880808,
+            #ff6d00,
+            #ffde21);
+
+}
+
+
+.jorge-theme .profile-avatar__placeholder {
+
+    background:
+
+        radial-gradient(circle,
+            #1a0805,
+            #000);
+
+}
+
+
+.jorge-theme .profile-avatar__placeholder span {
+
+    color: #ff6d00;
+
+}
+
+
+
+/* GLOW */
+
+.jorge-theme .avatar-glow {
+
+    background:
+
+        radial-gradient(circle,
+            rgba(255, 109, 0, 0.22),
+            rgba(136, 8, 8, 0.18),
+            transparent 70%);
+
+}
+
+
+
+/* ==========================================
+   DRAGÓN
+========================================== */
+
+.jorge-dragon {
+
+    position: absolute;
+
+    z-index: 5;
+
+    right: -5px;
+    bottom: 5%;
+
+    font-size: 5rem;
+
+    filter:
+        drop-shadow(0 0 18px rgba(255, 109, 0, 0.5));
+
+    transform: rotate(-8deg);
+
+    animation:
+        dragonFloat 4s ease-in-out infinite;
+
+}
+
+
+@keyframes dragonFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0) rotate(-8deg);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-12px) rotate(-5deg);
+
+    }
+
+}
+
+
+
+/* ==========================================
+   PERSONALIDAD
+========================================== */
+
+.jorge-personality {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+
+}
+
+
+.jorge-personality article {
+
+    padding: 30px;
+
+    border:
+        1px solid var(--profile-border);
+
+    border-radius: 18px;
+
+    background:
+        rgba(20, 8, 5, 0.65);
+
+}
+
+
+.jorge-personality article>span {
+
+    color:
+        var(--profile-accent);
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 0.7rem;
+
+}
+
+
+.jorge-personality h3 {
+
+    margin-top: 30px;
+
+    font-family:
+        "Poppins",
+        sans-serif;
+
+    font-size: 1.3rem;
+
+}
+
+
+.jorge-personality p {
+
+    margin-top: 8px;
+
+    color:
+        var(--profile-muted);
+
+}
+
+
+
+/* ==========================================
+   PELÍCULAS / ANIME
+========================================== */
+
+.jorge-media-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+
+}
+
+
+.jorge-media-card {
+
+    min-height: 270px;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 28px;
+
+    border:
+        1px solid var(--profile-border);
+
+    border-radius: 18px;
+
+    background:
+
+        linear-gradient(150deg,
+            rgba(28, 9, 5, 0.95),
+            rgba(5, 5, 5, 0.85));
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
+
+}
+
+
+.jorge-media-card:hover {
+
+    transform:
+        translateY(-8px);
+
+    border-color:
+        var(--profile-accent);
+
+}
+
+
+.jorge-media-card__type {
+
+    width: max-content;
+
+    margin-top: 20px;
+
+    padding:
+        4px 8px;
+
+    border:
+        1px solid rgba(255, 222, 33, 0.2);
+
+    border-radius: 5px;
+
+    color: #ffde21;
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 0.6rem;
+
+}
+
+
+.jorge-media-card h3 {
+
+    margin-top: 25px;
+
+    font-family:
+        "Poppins",
+        sans-serif;
+
+    font-size: 1.4rem;
+
+}
+
+
+.jorge-media-card p {
+
+    margin-top: 10px;
+
+    color:
+        var(--profile-muted);
+
+}
+
+
+
+/* ==========================================
+   ÁLBUMES
+========================================== */
+
+.jorge-albums-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+
+}
+
+
+.jorge-album-card {
+
+    min-height: 170px;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    gap: 20px;
+
+    padding: 25px;
+
+    border:
+        1px solid var(--profile-border);
+
+    border-radius: 18px;
+
+    background:
+
+        linear-gradient(135deg,
+            rgba(136, 8, 8, 0.2),
+            rgba(255, 109, 0, 0.03));
+
+}
+
+
+.jorge-album-card>span {
+
+    color:
+        var(--profile-accent);
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 0.7rem;
+
+}
+
+
+.jorge-album-card p {
+
+    color:
+        var(--profile-muted);
+
+    font-size: 0.7rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.08em;
+
+}
+
+
+.jorge-album-card h3 {
+
+    margin-top: 5px;
+
+    font-family:
+        "Poppins",
+        sans-serif;
+
+}
+
+
+
+/* ==========================================
+   DATOS RANDOM
+========================================== */
+
+.jorge-facts {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+
+}
+
+
+.jorge-facts article {
+
+    padding: 25px;
+
+    border:
+        1px solid var(--profile-border);
+
+    border-radius: 16px;
+
+    background:
+        rgba(15, 6, 4, 0.65);
+
+}
+
+
+.jorge-facts article>span {
+
+    font-size: 2rem;
+
+}
+
+
+.jorge-facts p {
+
+    margin-top: 15px;
+
+    color:
+        var(--profile-muted);
+
+}
+
+
+.jorge-facts strong {
+
+    color:
+        var(--profile-text);
+
+}
+
+
+
+/* ==========================================
+   CYBER CONSOLE
+========================================== */
+
+.jorge-console {
+
+    overflow: hidden;
+
+    max-width: 950px;
+
+    border:
+        1px solid var(--profile-border);
+
+    border-radius: 18px;
+
+    background: #030303;
+
+    box-shadow:
+
+        0 30px 70px rgba(0, 0, 0, 0.5),
+
+        0 0 30px rgba(136, 8, 8, 0.08);
+
+}
+
+
+
+.jorge-console__header {
+
+    min-height: 52px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding:
+        0 18px;
+
+    border-bottom:
+        1px solid var(--profile-border);
+
+    color:
+        var(--profile-muted);
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 0.7rem;
+
+}
+
+
+
+.jorge-console__body {
+
+    padding: 35px;
+
+}
+
+
+
+.jorge-console__buttons {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+}
+
+
+
+.jorge-console-button {
+
+    padding:
+        10px 14px;
+
+    border:
+        1px solid var(--profile-border);
+
+    border-radius: 6px;
+
+    background: transparent;
+
+    color:
+        var(--profile-text);
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 0.72rem;
+
+    cursor: pointer;
+
+    transition:
+        0.25s ease;
+
+}
+
+
+
+.jorge-console-button:hover {
+
+    border-color:
+        var(--profile-accent);
+
+    background:
+        rgba(255, 109, 0, 0.08);
+
+    color:
+        #ffde21;
+
+}
+
+
+
+.jorge-console__output {
+
+    min-height: 120px;
+
+    display: flex;
+    align-items: center;
+
+    margin-top: 30px;
+
+    padding: 25px;
+
+    border:
+        1px dashed rgba(255, 109, 0, 0.2);
+
+    background:
+        rgba(255, 109, 0, 0.025);
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+}
+
+
+
+.jorge-console__output span {
+
+    color:
+        var(--profile-accent);
+
+}
+
+
+
+/* ==========================================
+   INFERNO MODE
+========================================== */
+
+.jorge-theme.inferno-mode {
+
+    --profile-accent: #ffde21;
+
+    --profile-accent-secondary: #ff0000;
+
+    --profile-border:
+        rgba(255, 222, 33, 0.25);
+
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.85)),
+        radial-gradient(circle at 50% 20%,
+            rgba(255, 0, 0, 0.18),
+            transparent 35%),
+        radial-gradient(circle at 80% 70%,
+            rgba(255, 109, 0, 0.15),
+            transparent 35%),
+        url('../img/Scorpion_Lair.jpg') center / cover no-repeat fixed;
+
+}
+
+
+/* ==========================================
+   INFERNO FLASH EFFECT
+========================================== */
+
+.jorge-theme.inferno-flash {
+    position: relative;
+}
+
+.jorge-theme.inferno-flash::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(255, 0, 0, 0.45);
+    z-index: 9999;
+    pointer-events: none;
+    mix-blend-mode: overlay;
+    animation: flashFade 0.3s ease-out forwards;
+}
+
+@keyframes flashFade {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* ==========================================
+   RESPONSIVE JORGE
+========================================== */
+
+@media (max-width: 900px) {
+
+    .jorge-personality,
+    .jorge-media-grid,
+    .jorge-albums-grid,
+    .jorge-facts {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .jorge-personality,
+    .jorge-media-grid,
+    .jorge-albums-grid,
+    .jorge-facts {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .jorge-dragon {
+
+        font-size: 3.5rem;
+
+    }
+
+
+    .jorge-console__buttons {
+
+        flex-direction: column;
+
+    }
+
+
+    .jorge-console-button {
+
+        width: 100%;
+
+        text-align: left;
+
+    }
+
+}
+
+/* ==========================================
+   TEMA MARTÍN
+========================================== */
+
+.martin-theme {
+
+    --profile-bg: #071015;
+
+    --profile-surface: #111c22;
+
+    --profile-surface-light: #dce5e8;
+
+    --profile-accent: #42d9ff;
+
+    --profile-accent-secondary: #42e87a;
+
+    --profile-purple: #2188c9;
+
+    --profile-text: #f4f7f8;
+
+    --profile-muted: #9eb0b8;
+
+    --profile-border:
+        rgba(66, 217, 255, 0.18);
+
+
+    background:
+
+        radial-gradient(circle at 85% 12%,
+            rgba(33, 136, 201, 0.17),
+            transparent 30%),
+
+        radial-gradient(circle at 5% 55%,
+            rgba(66, 232, 122, 0.07),
+            transparent 35%),
+
+        #071015;
+
+}
+
+
+
+/* ==========================================
+   RETRO GAMER
+========================================== */
+
+.martin-theme .profile-number,
+.martin-theme .profile-kicker {
+
+    font-family:
+        "Press Start 2P",
+        monospace;
+
+    font-size: 0.58rem;
+
+    line-height: 1.8;
+
+}
+
+
+
+.martin-theme .logo span {
+
+    color:
+        var(--profile-accent);
+
+}
+
+
+
+.martin-theme .profile-hero {
+
+    position: relative;
+
+}
+
+
+
+.martin-theme .profile-hero::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: 0.05;
+
+    background:
+
+        repeating-linear-gradient(0deg,
+            transparent,
+            transparent 3px,
+            #ffffff 4px);
+
+}
+
+
+
+.martin-theme .profile-status__dot {
+
+    background:
+        var(--profile-accent-secondary);
+
+    box-shadow:
+        0 0 14px var(--profile-accent-secondary);
+
+}
+
+
+
+.martin-theme .profile-hero__title span {
+
+    background:
+
+        linear-gradient(90deg,
+            #42d9ff,
+            #2188c9,
+            #42e87a);
+
+    background-clip: text;
+
+    -webkit-background-clip: text;
+
+}
+
+
+
+.martin-theme .profile-avatar {
+
+    border-radius: 8px;
+
+    background:
+
+        linear-gradient(135deg,
+            #42d9ff,
+            #2188c9,
+            #42e87a);
+
+}
+
+
+
+.martin-theme .profile-avatar img,
+.martin-theme .profile-avatar__placeholder {
+
+    border-radius: 4px;
+
+}
+
+
+
+.martin-theme .profile-avatar__placeholder {
+
+    background:
+        #091217;
+
+}
+
+
+
+.martin-theme .profile-avatar__placeholder span {
+
+    color:
+        var(--profile-accent-secondary);
+
+    font-family:
+        "Press Start 2P",
+        monospace;
+
+    font-size: 3rem;
+
+}
+
+
+
+.martin-theme .avatar-glow {
+
+    background:
+
+        radial-gradient(circle,
+            rgba(66, 217, 255, 0.2),
+            rgba(66, 232, 122, 0.1),
+            transparent 70%);
+
+}
+
+
+
+/* ==========================================
+   STACK
+========================================== */
+
+.martin-stack-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 15px;
+
+}
+
+
+
+.martin-stack-card {
+
+    min-height: 180px;
+
+    padding: 23px;
+
+    border:
+        1px solid var(--profile-border);
+
+    border-radius: 8px;
+
+    background:
+        rgba(17, 28, 34, 0.8);
+
+    box-shadow:
+        inset 0 0 20px rgba(66, 217, 255, 0.015);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
+
+}
+
+
+
+.martin-stack-card:hover {
+
+    transform:
+        translateY(-6px);
+
+    border-color:
+        var(--profile-accent-secondary);
+
+}
+
+
+
+.martin-stack-card__level {
+
+    color:
+        var(--profile-accent-secondary);
+
+    font-family:
+        "Press Start 2P",
+        monospace;
+
+    font-size: 0.5rem;
+
+}
+
+
+
+.martin-stack-card h3 {
+
+    margin-top: 28px;
+
+    color:
+        var(--profile-accent);
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+}
+
+
+
+.martin-stack-card p {
+
+    margin-top: 8px;
+
+    color:
+        var(--profile-muted);
+
+    font-size: 0.85rem;
+
+}
+
+
+
+/* ==========================================
+   SIDE QUESTS
+========================================== */
+
+.martin-sidequests {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+
+}
+
+
+
+.martin-sidequests article {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 25px;
+
+    border:
+        1px solid var(--profile-border);
+
+    border-radius: 10px;
+
+    background:
+        rgba(17, 28, 34, 0.6);
+
+}
+
+
+
+.martin-sidequests article>span {
+
+    font-size: 2rem;
+
+}
+
+
+
+.martin-sidequests h3 {
+
+    font-family:
+        "Poppins",
+        sans-serif;
+
+}
+
+
+
+.martin-sidequests p {
+
+    color:
+        var(--profile-muted);
+
+    font-size: 0.85rem;
+
+}
+
+
+
+/* ==========================================
+   MEDIA
+========================================== */
+
+.martin-media-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+
+}
+
+
+
+.martin-media-card {
+
+    min-height: 260px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    padding: 28px;
+
+    border:
+        1px solid var(--profile-border);
+
+    border-radius: 8px;
+
+    background:
+
+        linear-gradient(145deg,
+            rgba(17, 28, 34, 0.95),
+            rgba(7, 16, 21, 0.9));
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
+
+}
+
+
+
+.martin-media-card:hover {
+
+    transform:
+        translateY(-7px);
+
+    border-color:
+        var(--profile-accent);
+
+}
+
+
+
+.martin-media-card__number {
+
+    color:
+        var(--profile-accent-secondary);
+
+    font-family:
+        "Press Start 2P",
+        monospace;
+
+    font-size: 0.5rem;
+
+}
+
+
+
+.martin-media-card__type {
+
+    width: max-content;
+
+    margin-top: 22px;
+
+    padding: 5px 8px;
+
+    border:
+        1px solid var(--profile-border);
+
+    color:
+        var(--profile-accent);
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 0.65rem;
+
+}
+
+
+
+.martin-media-card h3 {
+
+    margin-top: 25px;
+
+    font-family:
+        "Poppins",
+        sans-serif;
+
+    font-size: 1.4rem;
+
+}
+
+
+
+.martin-media-card p {
+
+    margin-top: 10px;
+
+    color:
+        var(--profile-muted);
+
+}
+
+/* ==========================================
+   FLIP CARDS (MEDIA MARTÍN)
+========================================== */
+
+.media-flip-container {
+    perspective: 1000px; /* Activa la profundidad 3D */
+    min-height: 280px;
+}
+
+.martin-media-card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 280px;
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+    background: transparent;
+    padding: 0;
+}
+
+/* Estado girado */
+.martin-media-card.is-flipped {
+    transform: rotateY(180deg);
+}
+
+/* Caras común */
+.media-card__front,
+.media-card__back {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    border-radius: 8px;
+    border: 1px solid var(--profile-border);
+    background: linear-gradient(
+        145deg,
+        rgba(17, 28, 34, 0.95),
+        rgba(7, 16, 21, 0.95)
+    );
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+/* Cara Frontal */
+.media-card__front {
+    z-index: 2;
+    transform: rotateY(0deg);
+}
+
+.media-card__front:hover {
+    border-color: var(--profile-accent);
+}
+
+/* Cara Dorsal */
+.media-card__back {
+    transform: rotateY(180deg);
+    border-color: var(--profile-accent-secondary);
+    justify-content: space-between;
+}
+
+/* Contenedor del video */
+.media-video-wrapper {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #000;
+}
+
+.media-video-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+}
+
+/* Botones de acción */
+.btn-flip,
+.btn-flip-back {
+    margin-top: auto;
+    align-self: flex-start;
+    padding: 8px 12px;
+    border: 1px solid var(--profile-border);
+    border-radius: 4px;
+    background: rgba(66, 217, 255, 0.05);
+    color: var(--profile-accent);
+    font-family: "Space Mono", monospace;
+    font-size: 0.72rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-flip:hover {
+    border-color: var(--profile-accent-secondary);
+    background: rgba(66, 232, 122, 0.1);
+    color: var(--profile-accent-secondary);
+}
+
+.btn-flip-back {
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+    color: var(--profile-muted);
+}
+
+.btn-flip-back:hover {
+    color: #ff5555;
+    border-color: rgba(255, 85, 85, 0.4);
+    background: rgba(255, 85, 85, 0.08);
+}
+
+
+/* ==========================================
+   MÚSICA
+========================================== */
+
+.martin-music-grid {
+
+    display: grid;
+
+    gap: 14px;
+
+    max-width: 850px;
+
+}
+
+
+
+.martin-track {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 18px;
+    border: 1px solid var(--profile-border);
+    border-radius: 8px;
+    background: rgba(17, 28, 34, 0.6);
+}
+
+/* Permitir que el iframe se adapte */
+.martin-track iframe {
+    margin-left: auto;
+    max-width: 280px;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 6px;
+}
+
+
+
+.martin-track__cover {
+
+    width: 60px;
+    height: 60px;
+
+    flex-shrink: 0;
+
+    display: grid;
+    place-items: center;
+
+    border:
+        1px solid var(--profile-accent);
+
+    background:
+        #091217;
+
+    color:
+        var(--profile-accent-secondary);
+
+    font-family:
+        "Press Start 2P",
+        monospace;
+
+    font-size: 0.65rem;
+
+}
+
+
+
+.martin-track span {
+
+    color:
+        var(--profile-muted);
+
+    font-size: 0.7rem;
+
+    letter-spacing: 0.1em;
+
+}
+
+
+
+.martin-track h3 {
+
+    margin-top: 3px;
+
+    font-family:
+        "Poppins",
+        sans-serif;
+
+}
+
+
+
+
+
+/* ==========================================
+   PLAYER STATS
+========================================== */
+
+.martin-stats {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 12px;
+
+}
+
+
+
+.martin-stats article {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+    padding: 22px;
+
+    border:
+        1px solid var(--profile-border);
+
+    border-radius: 8px;
+
+    background:
+        rgba(17, 28, 34, 0.6);
+
+}
+
+
+
+.martin-stats span {
+
+    color:
+        var(--profile-accent-secondary);
+
+    font-family:
+        "Press Start 2P",
+        monospace;
+
+    font-size: 0.48rem;
+
+}
+
+
+
+.martin-stats strong {
+
+    font-size: 0.9rem;
+
+}
+
+
+
+/* ==========================================
+   FACTS
+========================================== */
+
+.martin-facts {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+
+}
+
+
+
+.martin-facts article {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 25px;
+
+    border:
+        1px solid var(--profile-border);
+
+    border-radius: 8px;
+
+    background:
+        rgba(17, 28, 34, 0.65);
+
+}
+
+
+
+.martin-facts article>span {
+
+    font-size: 2rem;
+
+}
+
+
+
+.martin-facts h3 {
+
+    font-family:
+        "Poppins",
+        sans-serif;
+
+    font-size: 1rem;
+
+}
+
+
+
+.martin-facts p {
+
+    margin-top: 4px;
+
+    color:
+        var(--profile-muted);
+
+    font-size: 0.8rem;
+
+}
+
+
+
+/* ==========================================
+   CONSOLA MARTÍN
+========================================== */
+
+.martin-console {
+
+    overflow: hidden;
+
+    max-width: 950px;
+
+    border:
+        1px solid var(--profile-accent);
+
+    border-radius: 8px;
+
+    background:
+        #02090d;
+
+    box-shadow:
+
+        0 0 30px rgba(66, 217, 255, 0.08),
+
+        inset 0 0 30px rgba(66, 232, 122, 0.02);
+
+}
+
+
+
+.martin-console__header {
+
+    min-height: 50px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding:
+        0 18px;
+
+    border-bottom:
+        1px solid var(--profile-border);
+
+    background:
+        rgba(66, 217, 255, 0.04);
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 0.72rem;
+
+}
+
+
+
+.martin-console__header>span:first-child {
+
+    color:
+        var(--profile-accent-secondary);
+
+}
+
+
+
+.martin-console__status {
+
+    margin-left: auto;
+
+    color:
+        var(--profile-accent-secondary);
+
+    font-size: 0.65rem;
+
+}
+
+
+
+.martin-console__screen {
+
+    min-height: 220px;
+
+    padding: 30px;
+
+    color:
+        var(--profile-accent-secondary);
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    line-height: 1.9;
+
+}
+
+
+
+.martin-console__screen::after {
+
+    content: "█";
+
+    margin-left: 5px;
+
+    animation:
+        martinCursor 0.8s infinite;
+
+}
+
+
+
+@keyframes martinCursor {
+
+    50% {
+        opacity: 0;
+    }
+
+}
+
+
+
+.martin-console__commands {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 9px;
+
+    padding: 20px;
+
+    border-top:
+        1px solid var(--profile-border);
+
+}
+
+
+
+.martin-command {
+
+    padding:
+        9px 13px;
+
+    border:
+        1px solid var(--profile-border);
+
+    border-radius: 4px;
+
+    background:
+        transparent;
+
+    color:
+        var(--profile-text);
+
+    font-family:
+        "Press Start 2P",
+        monospace;
+
+    font-size: 0.48rem;
+
+    cursor: pointer;
+
+    transition:
+        0.2s ease;
+
+}
+
+
+
+.martin-command:hover {
+
+    border-color:
+        var(--profile-accent-secondary);
+
+    background:
+        rgba(66, 232, 122, 0.06);
+
+    color:
+        var(--profile-accent-secondary);
+
+}
+
+
+
+/* ==========================================
+   ALTERNATE GREEN MODE
+========================================== */
+
+.martin-theme.green-mode {
+
+    --profile-accent: #65ff94;
+
+    --profile-accent-secondary: #b4ffcf;
+
+    --profile-purple: #39d36e;
+
+    --profile-border:
+        rgba(101, 255, 148, 0.2);
+
+    background:
+
+        radial-gradient(circle at 85% 10%,
+            rgba(57, 211, 110, 0.15),
+            transparent 32%),
+
+        #050d08;
+
+}
+
+
+
+/* ==========================================
+   RESPONSIVE MARTÍN
+========================================== */
+
+@media (max-width: 1200px) {
+
+    .martin-stack-grid {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+    }
+
+
+    .martin-stats {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+    }
+
+}
+
+
+
+@media (max-width: 900px) {
+
+    .martin-stack-grid,
+    .martin-media-grid,
+    .martin-facts {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .martin-sidequests {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+
+@media (max-width: 600px) {
+
+    .martin-stack-grid,
+    .martin-media-grid,
+    .martin-facts,
+    .martin-stats {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .martin-console__commands {
+
+        flex-direction: column;
+
+    }
+
+
+    .martin-command {
+
+        width: 100%;
+
+        min-height: 42px;
+
+    }
+    .martin-track {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .martin-track iframe {
+        margin: 15px 0 0 0;
+        max-width: 100%;
+    }
+
+}
+
+/* ==========================================
+   TEMA LUIS
+========================================== */
+
+.luis-theme {
+
+    --profile-bg: #080b0d;
+    --profile-surface: #121719;
+    --profile-surface-light: #192124;
+
+    --profile-accent: #f4d03f;
+    --profile-accent-secondary: #48c774;
+    --profile-purple: #3da5d9;
+
+    --profile-text: #f7f5ed;
+    --profile-muted: #b7b9b1;
+
+    --profile-border:
+        rgba(244, 208, 63, 0.16);
+
+    background:
+
+        radial-gradient(circle at 85% 10%,
+            rgba(61, 165, 217, 0.12),
+            transparent 30%),
+
+        radial-gradient(circle at 10% 50%,
+            rgba(72, 199, 116, 0.07),
+            transparent 35%),
+
+        #080b0d;
+
+}
+
+
+/* ==========================================
+   IDENTIDAD VINTAGE
+========================================== */
+
+.luis-theme .profile-hero__title {
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+}
+
+
+.luis-theme .profile-hero__title span {
+
+    background:
+
+        linear-gradient(90deg,
+            #f4d03f,
+            #48c774,
+            #3da5d9);
+
+    background-clip: text;
+    -webkit-background-clip: text;
+
+}
+
+
+.luis-theme .logo span {
+
+    color: var(--profile-accent);
+
+}
+
+
+.luis-theme .profile-status__dot {
+
+    background:
+        var(--profile-accent-secondary);
+
+    box-shadow:
+        0 0 14px var(--profile-accent-secondary);
+
+}
+
+
+.luis-theme .profile-avatar {
+
+    background:
+
+        linear-gradient(145deg,
+            #f4d03f,
+            #48c774,
+            #3da5d9);
+
+}
+
+
+.luis-theme .profile-avatar__placeholder {
+
+    background:
+
+        linear-gradient(145deg,
+            #15191a,
+            #070909);
+
+}
+
+
+.luis-theme .profile-avatar__placeholder span {
+
+    color:
+        var(--profile-accent);
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+}
+
+
+.luis-theme .avatar-glow {
+
+    background:
+
+        radial-gradient(circle,
+            rgba(244, 208, 63, 0.15),
+            rgba(61, 165, 217, 0.08),
+            transparent 70%);
+
+}
+
+
+
+/* ==========================================
+   EXPERIENCIA
+========================================== */
+
+.luis-experience-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 16px;
+
+}
+
+
+.luis-experience-grid article {
+
+    min-height: 210px;
+
+    padding: 26px;
+
+    border:
+        1px solid var(--profile-border);
+
+    border-radius: 14px;
+
+    background:
+        rgba(18, 23, 25, 0.7);
+
+}
+
+
+.luis-experience-grid article>span {
+
+    color:
+        var(--profile-accent);
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 0.7rem;
+
+}
+
+
+.luis-experience-grid h3 {
+
+    margin-top: 35px;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size: 1.35rem;
+
+}
+
+
+.luis-experience-grid p {
+
+    margin-top: 8px;
+
+    color:
+        var(--profile-muted);
+
+}
+
+
+
+/* ==========================================
+   PELÍCULAS
+========================================== */
+
+.luis-movies-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+
+}
+
+
+.luis-movie-card {
+
+    min-height: 280px;
+
+    padding: 30px;
+
+    border:
+        1px solid var(--profile-border);
+
+    border-radius: 14px;
+
+    background:
+
+        linear-gradient(145deg,
+            rgba(24, 30, 31, 0.95),
+            rgba(8, 11, 13, 0.9));
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
+
+}
+
+
+.luis-movie-card:hover {
+
+    transform:
+        translateY(-7px);
+
+    border-color:
+        var(--profile-accent);
+
+}
+
+
+.luis-movie-card>span {
+
+    color:
+        var(--profile-accent-secondary);
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 0.7rem;
+
+}
+
+
+.luis-movie-card h3 {
+
+    margin-top: 35px;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size: 1.5rem;
+
+}
+
+
+.luis-movie-card p {
+
+    margin-top: 12px;
+
+    color:
+        var(--profile-muted);
+
+}
+
+
+
+/* ==========================================
+   DISCOS
+========================================== */
+
+/* Estilos para la sección de música Luis */
+.luis-music-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 16px;
+
+}
+
+
+.luis-record {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 22px;
+
+    padding: 25px;
+
+    border:
+        1px solid var(--profile-border);
+
+    border-radius: 14px;
+
+    background:
+        rgba(18, 23, 25, 0.65);
+
+}
+
+
+.luis-record__disc {
+
+    width: 72px;
+    height: 72px;
+
+    flex-shrink: 0;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    border:
+        2px solid var(--profile-accent);
+
+    background:
+        #050606;
+
+    color:
+        var(--profile-accent);
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    box-shadow:
+        inset 0 0 0 7px #131719;
+
+}
+
+
+.luis-record span {
+
+    color:
+        var(--profile-accent-secondary);
+
+    font-size: 0.68rem;
+
+    letter-spacing: 0.1em;
+
+}
+
+
+.luis-record h3 {
+
+    margin-top: 4px;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+}
+
+
+.luis-record p {
+
+    margin-top: 6px;
+
+    color:
+        var(--profile-muted);
+
+    font-size: 0.84rem;
+
+}
+
+
+/* Contenedor del reproductor de video adaptado a la estructura */
+.luis-video-container {
+
+    flex-shrink: 0;
+
+    width: 280px;
+    height: 157px;
+
+    border-radius: 8px;
+
+    overflow: hidden;
+
+    border:
+        1px solid var(--profile-border);
+
+    background:
+        #000;
+
+}
+
+
+.luis-video-container iframe {
+
+    width: 100%;
+    height: 100%;
+
+    border: none;
+
+    display: block;
+
+}
+
+
+/* ==========================================
+   PERSONALIDAD
+========================================== */
+
+.luis-personality {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 12px;
+
+}
+
+
+.luis-personality article {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+
+    padding: 22px;
+
+    border:
+        1px solid var(--profile-border);
+
+    border-radius: 12px;
+
+    background:
+        rgba(18, 23, 25, 0.65);
+
+}
+
+
+.luis-personality span {
+
+    color:
+        var(--profile-accent);
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 0.68rem;
+
+}
+
+
+
+/* ==========================================
+   FACTS
+========================================== */
+
+.luis-facts {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 16px;
+
+}
+
+
+.luis-facts article {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 24px;
+
+    border:
+        1px solid var(--profile-border);
+
+    border-radius: 14px;
+
+    background:
+        rgba(18, 23, 25, 0.6);
+
+}
+
+
+.luis-facts article>span {
+
+    font-size: 2rem;
+
+}
+
+
+.luis-facts h3 {
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+}
+
+
+.luis-facts p {
+
+    margin-top: 4px;
+
+    color:
+        var(--profile-muted);
+
+    font-size: 0.82rem;
+
+}
+
+
+
+/* ==========================================
+   VINTAGE PLAYER
+========================================== */
+
+.luis-player {
+
+    overflow: hidden;
+
+    max-width: 950px;
+
+    border:
+        1px solid var(--profile-border);
+
+    border-radius: 18px;
+
+    background:
+
+        linear-gradient(145deg,
+            #111617,
+            #080a0b);
+
+    box-shadow:
+        0 30px 70px rgba(0, 0, 0, 0.4);
+
+}
+
+
+.luis-player__display {
+
+    min-height: 280px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+
+    padding: 45px;
+
+    background:
+
+        radial-gradient(circle at 80% 20%,
+            rgba(244, 208, 63, 0.08),
+            transparent 40%);
+
+}
+
+
+.luis-player__icon {
+
+    width: 110px;
+    height: 110px;
+
+    flex-shrink: 0;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    border:
+        2px solid var(--profile-accent);
+
+    background:
+        #050606;
+
+    font-size: 3rem;
+
+    box-shadow:
+
+        inset 0 0 0 12px #151a1b,
+
+        0 0 25px rgba(244, 208, 63, 0.08);
+
+}
+
+
+.luis-player__display span {
+
+    color:
+        var(--profile-accent-secondary);
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 0.7rem;
+
+    letter-spacing: 0.1em;
+
+}
+
+
+.luis-player__display h3 {
+
+    margin-top: 7px;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size: 2rem;
+
+}
+
+
+.luis-player__display p {
+
+    max-width: 560px;
+
+    margin-top: 10px;
+
+    color:
+        var(--profile-muted);
+
+}
+
+
+.luis-player__controls {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    padding: 20px;
+
+    border-top:
+        1px solid var(--profile-border);
+
+}
+
+
+.luis-player-button {
+
+    padding: 10px 15px;
+
+    border:
+        1px solid var(--profile-border);
+
+    border-radius: 6px;
+
+    background:
+        transparent;
+
+    color:
+        var(--profile-muted);
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 0.7rem;
+
+    cursor: pointer;
+
+    transition:
+        0.25s ease;
+
+}
+
+
+.luis-player-button:hover,
+.luis-player-button.active {
+
+    border-color:
+        var(--profile-accent);
+
+    background:
+        rgba(244, 208, 63, 0.07);
+
+    color:
+        var(--profile-accent);
+
+}
+
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 1200px) {
+
+    .luis-experience-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .luis-personality {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 900px) {
+
+    .luis-movies-grid,
+    .luis-facts {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .luis-music-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .luis-experience-grid,
+    .luis-movies-grid,
+    .luis-facts,
+    .luis-personality {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .luis-player__display {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 30px;
+
+    }
+
+
+    .luis-player__controls {
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 400px) {
+
+    .luis-player__controls {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .luis-record {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+}

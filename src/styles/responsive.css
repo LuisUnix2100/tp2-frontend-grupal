@@ -1,0 +1,200 @@
+/* ===================================
+   HASTA 1200px
+=================================== */
+
+@media (max-width: 1200px) {
+
+    .hero__container {
+        gap: 50px;
+    }
+
+    .team-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .project-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* ===================================
+   HASTA 900px
+=================================== */
+
+@media (max-width: 900px) {
+
+    .section {
+        padding: 85px 0;
+    }
+
+
+    /* NAV */
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav {
+        position: absolute;
+
+        top: 76px;
+        left: 0;
+
+        width: 100%;
+
+        max-height: 0;
+
+        overflow: hidden;
+
+        border-bottom: 1px solid transparent;
+
+        background: #080b18;
+
+        transition:
+            max-height 0.35s ease,
+            border 0.35s ease;
+    }
+
+    .nav.active {
+        max-height: 520px;
+
+        border-color: var(--border);
+    }
+
+    .nav__list {
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 0;
+
+        width: min(90%, var(--container));
+
+        margin-inline: auto;
+
+        padding: 20px 0;
+    }
+
+    .nav__link {
+        display: block;
+
+        padding: 13px 0;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        min-height: auto;
+    }
+
+    .hero__container {
+        grid-template-columns: 1fr;
+
+        padding: 100px 0 80px;
+    }
+
+    .hero__content {
+        max-width: 700px;
+    }
+
+    .hero__code {
+        max-width: 650px;
+    }
+
+}
+
+
+/* ===================================
+   HASTA 600px
+=================================== */
+
+@media (max-width: 600px) {
+
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer__container {
+        flex-direction: column;
+    }
+
+    .footer__info {
+        text-align: left;
+    }
+
+}
+
+
+/* ===================================
+   HASTA 400px
+=================================== */
+
+@media (max-width: 400px) {
+
+    .container {
+        width: 92%;
+    }
+
+    .section {
+        padding: 70px 0;
+    }
+
+    .header__container {
+        min-height: 68px;
+    }
+
+
+    /* HERO */
+
+    .hero__container {
+        padding-top: 75px;
+    }
+
+    .hero__title {
+        font-size: 2.65rem;
+    }
+
+    .hero__description {
+        font-size: 0.96rem;
+    }
+
+    .hero__actions {
+        flex-direction: column;
+    }
+
+    .button {
+        width: 100%;
+    }
+
+
+    /* CODE */
+
+    .code-window__body {
+        padding: 20px 16px;
+
+        font-size: 0.77rem;
+    }
+
+
+
+    /* CARDS */
+
+    .member-card {
+        min-height: 400px;
+
+        padding: 18px;
+    }
+
+    .member-card__avatar {
+        height: 190px;
+    }
+
+}
