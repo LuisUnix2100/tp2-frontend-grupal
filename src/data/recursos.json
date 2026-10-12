@@ -1,0 +1,162 @@
+[
+  {
+    "id": 1,
+    "nombre": "HTML",
+    "categoria": "Lenguajes",
+    "descripcion": "Se utiliza para organizar el contenido y la estructura de las páginas web.",
+    "nivel": "Intermedio",
+    "integrante": "Martina Bistagnino"
+  },
+  {
+    "id": 2,
+    "nombre": "CSS",
+    "categoria": "Lenguajes",
+    "descripcion": "Permite definir los colores, diseños, tamaños y estilos de una página web.",
+    "nivel": "Intermedio",
+    "integrante": "Martina Bistagnino"
+  },
+  {
+    "id": 3,
+    "nombre": "JavaScript",
+    "categoria": "Lenguajes",
+    "descripcion": "Agrega interactividad y comportamiento dinámico a las páginas web.",
+    "nivel": "Intermedio",
+    "integrante": "Martina Bistagnino"
+  },
+  {
+    "id": 4,
+    "nombre": "Figma",
+    "categoria": "Herramientas",
+    "descripcion": "Herramienta para diseñar interfaces, prototipos y experiencias de usuario.",
+    "nivel": "Intermedio",
+    "integrante": "Martina Bistagnino"
+  },
+  {
+    "id": 5,
+    "nombre": "C#",
+    "categoria": "Lenguajes",
+    "descripcion": "Lenguaje utilizado para desarrollar aplicaciones y programas.",
+    "nivel": "En aprendizaje",
+    "integrante": "Gabriela Dalila Contrera"
+  },
+  {
+    "id": 6,
+    "nombre": "Java",
+    "categoria": "Lenguajes",
+    "descripcion": "Lenguaje de programación utilizado en aplicaciones y sistemas multiplataforma.",
+    "nivel": "En aprendizaje",
+    "integrante": "Gabriela Dalila Contrera"
+  },
+  {
+    "id": 7,
+    "nombre": "Kotlin",
+    "categoria": "Lenguajes",
+    "descripcion": "Lenguaje empleado principalmente en el desarrollo de aplicaciones Android.",
+    "nivel": "En aprendizaje",
+    "integrante": "Gabriela Dalila Contrera"
+  },
+  {
+    "id": 8,
+    "nombre": "Python",
+    "categoria": "Lenguajes",
+    "descripcion": "Lenguaje versátil utilizado en automatización, desarrollo web y análisis de datos.",
+    "nivel": "Intermedio",
+    "integrante": "Jorge Caliz"
+  },
+  {
+    "id": 9,
+    "nombre": "Git",
+    "categoria": "Herramientas",
+    "descripcion": "Sistema de control de versiones para registrar y organizar cambios en el código.",
+    "nivel": "En aprendizaje",
+    "integrante": "Jorge Caliz"
+  },
+  {
+    "id": 10,
+    "nombre": "React",
+    "categoria": "Frameworks",
+    "descripcion": "Biblioteca de JavaScript utilizada para construir interfaces mediante componentes.",
+    "nivel": "En aprendizaje",
+    "integrante": "Martín Roige"
+  },
+  {
+    "id": 11,
+    "nombre": "Node.js",
+    "categoria": "Herramientas",
+    "descripcion": "Entorno que permite ejecutar JavaScript fuera del navegador.",
+    "nivel": "En aprendizaje",
+    "integrante": "Martín Roige"
+  },
+  {
+    "id": 12,
+    "nombre": "Django",
+    "categoria": "Frameworks",
+    "descripcion": "Framework de Python que facilita la creación de aplicaciones web.",
+    "nivel": "En aprendizaje",
+    "integrante": "Martín Roige"
+  },
+  {
+    "id": 13,
+    "nombre": "Visual Studio",
+    "categoria": "Herramientas",
+    "descripcion": "Entorno de desarrollo que permite escribir, ejecutar y depurar programas.",
+    "nivel": "En aprendizaje",
+    "integrante": "Gabriela Dalila Contrera"
+  },
+  {
+    "id": 14,
+    "nombre": "Visual Studio Code",
+    "categoria": "Herramientas",
+    "descripcion": "Editor de código con extensiones para distintos lenguajes y tecnologías.",
+    "nivel": "Intermedio",
+    "integrante": "Martín Roige"
+  },
+  {
+    "id": 15,
+    "nombre": "Android Studio",
+    "categoria": "Herramientas",
+    "descripcion": "Entorno de desarrollo para crear, ejecutar y probar aplicaciones Android.",
+    "nivel": "En aprendizaje",
+    "integrante": "Gabriela Dalila Contrera"
+  },
+  {
+    "id": 16,
+    "nombre": "GitHub",
+    "categoria": "Herramientas",
+    "descripcion": "Plataforma para alojar repositorios y colaborar en proyectos de software.",
+    "nivel": "Intermedio",
+    "integrante": "Jorge Caliz"
+  },
+  {
+    "id": 17,
+    "nombre": "Express",
+    "categoria": "Frameworks",
+    "descripcion": "Framework de Node.js que facilita la creación de servidores y API web.",
+    "nivel": "En aprendizaje",
+    "integrante": "Francisco Luis Bronzi"
+  },
+  {
+    "id": 18,
+    "nombre": "SQL",
+    "categoria": "Lenguajes",
+    "descripcion": "Lenguaje utilizado para consultar y administrar bases de datos relacionales.",
+    "nivel": "En aprendizaje",
+    "integrante": "Francisco Luis Bronzi"
+  },
+  {
+    "id": 19,
+    "nombre": "MySQL",
+    "categoria": "Herramientas",
+    "descripcion": "Sistema de gestión de bases de datos relacionales.",
+    "nivel": "En aprendizaje",
+    "integrante": "Francisco Luis Bronzi"
+  },
+  {
+    "id": 20,
+    "nombre": "Bootstrap",
+    "categoria": "Frameworks",
+    "descripcion": "Framework CSS que ofrece componentes y estilos para crear interfaces adaptables.",
+    "nivel": "En aprendizaje",
+    "integrante": "Martina Bistagnino"
+  }
+]
