@@ -1,0 +1,359 @@
+/* ================================
+   GITHUB API
+================================ */
+
+.github-page {
+  min-height: 100vh;
+  padding: 3rem 2rem 5rem;
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(99, 102, 241, 0.12),
+      transparent 35%
+    ),
+    #080b18;
+  color: #f8fafc;
+}
+
+.github-page__header {
+  width: min(100%, 950px);
+  margin: 0 auto 2rem;
+}
+
+.github-page__eyebrow {
+  display: inline-block;
+  margin-bottom: 0.6rem;
+  color: #22d3ee;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.github-page__header h1 {
+  margin: 0 0 0.8rem;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1;
+}
+
+.github-page__header p {
+  max-width: 720px;
+  margin: 0;
+  color: #a8b0c7;
+  line-height: 1.7;
+}
+
+
+/* ================================
+   SELECTOR
+================================ */
+
+.github-selector {
+  width: min(100%, 950px);
+  margin: 0 auto 2rem;
+  padding: 1.2rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+
+  background: rgba(17, 24, 48, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+}
+
+.github-selector label {
+  color: #a8b0c7;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.github-selector select {
+  width: 100%;
+  padding: 0.85rem 1rem;
+
+  color: #f8fafc;
+  background: #10152b;
+
+  border: 1px solid rgba(34, 211, 238, 0.35);
+  border-radius: 10px;
+
+  font: inherit;
+  cursor: pointer;
+  outline: none;
+}
+
+.github-selector select:focus {
+  border-color: #22d3ee;
+  box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.12);
+}
+
+
+/* ================================
+   RESULTADO
+================================ */
+
+.github-result {
+  width: min(100%, 950px);
+  margin: 0 auto;
+}
+
+
+/* ================================
+   TARJETA GITHUB
+================================ */
+
+.github-card {
+  overflow: hidden;
+
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 2rem;
+
+  padding: 2rem;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(17, 24, 48, 0.95),
+      rgba(8, 11, 24, 0.95)
+    );
+
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 20px;
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.25),
+    0 0 40px rgba(34, 211, 238, 0.04);
+}
+
+
+/* Forzamos el tamaño para evitar
+   conflictos con estilos globales */
+
+.github-card .github-avatar {
+  width: 180px;
+  height: 180px;
+  max-width: 180px;
+
+  display: block;
+  object-fit: cover;
+
+  border-radius: 18px;
+  border: 2px solid rgba(34, 211, 238, 0.55);
+
+  box-shadow:
+    0 0 0 5px rgba(34, 211, 238, 0.06),
+    0 0 35px rgba(34, 211, 238, 0.12);
+}
+
+.github-card__content {
+  min-width: 0;
+}
+
+.github-card__content h2 {
+  margin: 0;
+  font-size: clamp(1.7rem, 4vw, 2.5rem);
+}
+
+.github-username {
+  margin: 0.25rem 0 1rem;
+  color: #22d3ee;
+  font-weight: 600;
+}
+
+.github-bio {
+  margin-bottom: 1.5rem;
+  color: #a8b0c7;
+  line-height: 1.7;
+}
+
+
+/* ================================
+   ESTADÍSTICAS
+================================ */
+
+.github-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.8rem;
+
+  margin: 1.5rem 0;
+}
+
+.github-stat {
+  padding: 1rem;
+  text-align: center;
+
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+}
+
+.github-stat__value {
+  display: block;
+
+  color: #f8fafc;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.github-stat__label {
+  display: block;
+  margin-top: 0.25rem;
+
+  color: #a8b0c7;
+  font-size: 0.8rem;
+}
+
+
+/* ================================
+   DETALLES
+================================ */
+
+.github-details {
+  margin: 1.5rem 0;
+  color: #a8b0c7;
+}
+
+.github-details p {
+  margin: 0.4rem 0;
+}
+
+.github-details strong {
+  color: #f8fafc;
+}
+
+
+/* ================================
+   BOTONES
+================================ */
+
+.github-profile-link,
+.github-refresh-button,
+.github-retry-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.8rem 1.2rem;
+
+  border: 0;
+  border-radius: 10px;
+
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.github-profile-link {
+  color: #080b18;
+  background: #22d3ee;
+}
+
+.github-refresh-button,
+.github-retry-button {
+  margin-top: 1rem;
+  color: #f8fafc;
+  background: #6366f1;
+}
+
+.github-profile-link:hover,
+.github-refresh-button:hover,
+.github-retry-button:hover {
+  transform: translateY(-2px);
+}
+
+.github-profile-link:hover {
+  box-shadow: 0 8px 25px rgba(34, 211, 238, 0.22);
+}
+
+.github-refresh-button:hover,
+.github-retry-button:hover {
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.22);
+}
+
+
+/* ================================
+   LOADING / ERROR
+================================ */
+
+.github-status {
+  padding: 2rem;
+
+  text-align: center;
+
+  background: rgba(17, 24, 48, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+}
+
+.github-status p {
+  margin: 0 0 0.4rem;
+  font-weight: 700;
+}
+
+.github-status span {
+  color: #a8b0c7;
+}
+
+.github-status--loading {
+  border-color: rgba(34, 211, 238, 0.25);
+}
+
+.github-status--error {
+  border-color: rgba(223, 60, 93, 0.35);
+}
+
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 700px) {
+  .github-page {
+    padding: 2rem 1rem 4rem;
+  }
+
+
+  .github-card {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1.4rem;
+  }
+
+  .github-card .github-avatar {
+    width: 120px;
+    height: 120px;
+    max-width: 120px;
+  }
+
+  .github-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .github-profile-link,
+  .github-refresh-button,
+  .github-retry-button {
+    width: 100%;
+  }
+  .github-actions {
+  flex-direction: column;
+}
+}
+.github-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+}
+
+.github-actions .github-refresh-button {
+  margin-top: 0;
+}

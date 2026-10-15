@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Integrantes from './pages/Integrantes';
 import Perfil from './pages/Perfil';
 import Recursos from './pages/Recursos';
+import Api from './pages/Api';
 
 export default function App() {
   return (
@@ -11,6 +12,7 @@ export default function App() {
         <span style={{ fontWeight: 'bold', color: '#22d3ee' }}>&lt;EquipoDev/&gt;</span>
         <Link to="/integrantes" style={{ color: '#fff' }}>Integrantes</Link>
         <Link to="/recursos" style={{ color: '#fff' }}>Recursos</Link>
+        <Link to="/api" style={{ color: '#fff' }}>API</Link>
       </header>
 
       <main>
@@ -20,6 +22,7 @@ export default function App() {
           {/* Ruta dinámica para cada perfil */}
           <Route path="/integrantes/:id" element={<Perfil />} />
           <Route path="/recursos" element={<Recursos />} />
+          <Route path="/api" element={<Api />} />
         </Routes>
       </main>
     </BrowserRouter>
