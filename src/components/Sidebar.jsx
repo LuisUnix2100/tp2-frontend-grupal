@@ -6,39 +6,38 @@ export const Sidebar = () => {
     <>
       <style>{`
         @keyframes borderGlow {
-          0% { border-color: #22d3ee; box-shadow: 0 0 10px rgba(34, 211, 238, 0.6); }
-          50% { border-color: #38bdf8; box-shadow: 0 0 18px rgba(56, 189, 248, 0.9); }
-          100% { border-color: #22d3ee; box-shadow: 0 0 10px rgba(34, 211, 238, 0.6); }
+          0% { border-color: #f97316; box-shadow: 0 0 10px rgba(249, 115, 22, 0.6); }
+          50% { border-color: #fb923c; box-shadow: 0 0 18px rgba(251, 146, 60, 0.9); }
+          100% { border-color: #f97316; box-shadow: 0 0 10px rgba(249, 115, 22, 0.6); }
         }
 
-        /* Fuerza a los botones a NO tener caja negra de fondo */
+        /* Botón inactivo con un tono cobre suave */
         .sidebar-container .neon-button {
           position: relative;
-          color: #94a3b8 !important;
+          color: #d1d5db !important;
           text-decoration: none;
           font-weight: 500;
           padding: 0.75rem 1.2rem;
           border-radius: 10px;
-          background: transparent !important; /* CERO fondo negro */
-          background-color: transparent !important;
-          border: 1px solid transparent !important;
+          background: rgba(180, 83, 9, 0.15) !important; /* Tono cobre suave */
+          border: 1px solid rgba(217, 119, 6, 0.25) !important;
           transition: all 0.3s ease;
         }
 
-        /* Hover sutil */
+        /* Hover estilo cobre encendido */
         .sidebar-container .neon-button:hover {
-          color: #22d3ee !important;
-          border-color: rgba(34, 211, 238, 0.3) !important;
+          color: #ffedd5 !important;
+          background: rgba(180, 83, 9, 0.3) !important;
+          border-color: rgba(245, 158, 11, 0.5) !important;
         }
 
-        /* Estado ACTIVO: solo marco de luz neón, fondo totalmente transparente */
+        /* Botón ACTIVO: Relleno cobre vivo con resplandor cálido */
         .sidebar-container .neon-button.active {
           color: #ffffff !important;
           font-weight: 600;
-          background: transparent !important;
-          background-color: transparent !important;
+          background: linear-gradient(135deg, rgba(180, 83, 9, 0.5) 0%, rgba(217, 119, 6, 0.35) 100%) !important;
           animation: borderGlow 2.5s infinite ease-in-out;
-          text-shadow: 0 0 8px rgba(34, 211, 238, 0.7);
+          text-shadow: 0 0 8px rgba(251, 146, 60, 0.8);
         }
       `}</style>
 
@@ -49,9 +48,9 @@ export const Sidebar = () => {
         padding: '1.5rem 1rem', 
         display: 'flex', 
         flexDirection: 'column',
-        borderRight: '1px solid rgba(34, 211, 238, 0.15)'
+        borderRight: '1px solid rgba(217, 119, 6, 0.25)'
       }}>
-        {/* Título de la app con resplandor neón */}
+        {/* Logo con detalle en celeste neón original */}
         <div style={{ 
           fontWeight: 'bold', 
           color: '#22d3ee', 
@@ -63,7 +62,7 @@ export const Sidebar = () => {
           &lt;EquipoDev/&gt;
         </div>
         
-        {/* Navegación con los botones sin caja negra */}
+        {/* Navegación con el estilo Cobre */}
         <nav style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
           <NavLink to="/integrantes" className="neon-button">
             Integrantes
@@ -78,13 +77,13 @@ export const Sidebar = () => {
           </NavLink>
         </nav>
 
-        {/* Footer de la Sidebar */}
+        {/* Footer */}
         <div style={{ 
           marginTop: 'auto', 
           paddingTop: '1rem', 
           fontSize: '0.78rem', 
-          color: '#475569', 
-          borderTop: '1px solid rgba(255,255,255,0.05)',
+          color: '#78350f', 
+          borderTop: '1px solid rgba(217, 119, 6, 0.15)',
           textAlign: 'center'
         }}>
           TP2 - Frontend Grupal
