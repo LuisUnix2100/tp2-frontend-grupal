@@ -6,38 +6,39 @@ export const Sidebar = () => {
     <>
       <style>{`
         @keyframes borderGlow {
-          0% { border-color: #f97316; box-shadow: 0 0 10px rgba(249, 115, 22, 0.6); }
-          50% { border-color: #fb923c; box-shadow: 0 0 18px rgba(251, 146, 60, 0.9); }
-          100% { border-color: #f97316; box-shadow: 0 0 10px rgba(249, 115, 22, 0.6); }
+          0% { border-color: #22d3ee; box-shadow: 0 0 12px rgba(34, 211, 238, 0.8), inset 0 0 8px rgba(34, 211, 238, 0.3); }
+          50% { border-color: #38bdf8; box-shadow: 0 0 22px rgba(56, 189, 248, 1), inset 0 0 12px rgba(56, 189, 248, 0.4); }
+          100% { border-color: #22d3ee; box-shadow: 0 0 12px rgba(34, 211, 238, 0.8), inset 0 0 8px rgba(34, 211, 238, 0.3); }
         }
 
-        /* Botón inactivo con un tono cobre suave */
+        /* Botones con fondo violáceo sutil y elegante */
         .sidebar-container .neon-button {
           position: relative;
-          color: #d1d5db !important;
+          color: #cbd5e1 !important;
           text-decoration: none;
           font-weight: 500;
           padding: 0.75rem 1.2rem;
           border-radius: 10px;
-          background: rgba(180, 83, 9, 0.15) !important; /* Tono cobre suave */
-          border: 1px solid rgba(217, 119, 6, 0.25) !important;
+          background: rgba(88, 28, 135, 0.25) !important; /* Fondo violáceo traslúcido */
+          border: 1px solid rgba(147, 51, 234, 0.3) !important;
           transition: all 0.3s ease;
         }
 
-        /* Hover estilo cobre encendido */
+        /* Hover con destello violeta e inicio de luz celeste */
         .sidebar-container .neon-button:hover {
-          color: #ffedd5 !important;
-          background: rgba(180, 83, 9, 0.3) !important;
-          border-color: rgba(245, 158, 11, 0.5) !important;
+          color: #ffffff !important;
+          background: rgba(126, 34, 206, 0.4) !important;
+          border-color: rgba(34, 211, 238, 0.6) !important;
+          box-shadow: 0 0 10px rgba(34, 211, 238, 0.4);
         }
 
-        /* Botón ACTIVO: Relleno cobre vivo con resplandor cálido */
+        /* Botón ACTIVO: Fondo violáceo vivo con el borde intenso celeste y animación fluida */
         .sidebar-container .neon-button.active {
           color: #ffffff !important;
           font-weight: 600;
-          background: linear-gradient(135deg, rgba(180, 83, 9, 0.5) 0%, rgba(217, 119, 6, 0.35) 100%) !important;
+          background: linear-gradient(135deg, rgba(88, 28, 135, 0.6) 0%, rgba(126, 34, 206, 0.4) 100%) !important;
           animation: borderGlow 2.5s infinite ease-in-out;
-          text-shadow: 0 0 8px rgba(251, 146, 60, 0.8);
+          text-shadow: 0 0 10px rgba(34, 211, 238, 0.9);
         }
       `}</style>
 
@@ -48,9 +49,9 @@ export const Sidebar = () => {
         padding: '1.5rem 1rem', 
         display: 'flex', 
         flexDirection: 'column',
-        borderRight: '1px solid rgba(217, 119, 6, 0.25)'
+        borderRight: '1px solid rgba(147, 51, 234, 0.25)'
       }}>
-        {/* Logo con detalle en celeste neón original */}
+        {/* Título de la app con resplandor */}
         <div style={{ 
           fontWeight: 'bold', 
           color: '#22d3ee', 
@@ -62,7 +63,7 @@ export const Sidebar = () => {
           &lt;EquipoDev/&gt;
         </div>
         
-        {/* Navegación con el estilo Cobre */}
+        {/* Navegación */}
         <nav style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
           <NavLink to="/integrantes" className="neon-button">
             Integrantes
@@ -82,8 +83,8 @@ export const Sidebar = () => {
           marginTop: 'auto', 
           paddingTop: '1rem', 
           fontSize: '0.78rem', 
-          color: '#78350f', 
-          borderTop: '1px solid rgba(217, 119, 6, 0.15)',
+          color: '#a855f7', 
+          borderTop: '1px solid rgba(147, 51, 234, 0.15)',
           textAlign: 'center'
         }}>
           TP2 - Frontend Grupal
