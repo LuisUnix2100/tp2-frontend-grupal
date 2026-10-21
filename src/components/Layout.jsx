@@ -4,12 +4,14 @@ import Sidebar from './Sidebar';
 
 export const Layout = () => {
   return (
-    <div className="d-flex">
-      {/* Sidebar fija a la izquierda */}
-      <Sidebar />
-      
-      {/* Área principal donde se cargará cada sección/página */}
-      <main className="flex-grow-1 p-4 bg-light" style={{ minHeight: '100vh' }}>
+    <div style={{ display: 'flex', minHeight: '100vh', background: '#0a0e1a' }}>
+      {/* Sidebar fija sin deformarse */}
+      <div style={{ flexShrink: 0 }}>
+        <Sidebar />
+      </div>
+
+      {/* Área principal donde se renderiza cada vista */}
+      <main style={{ flexGrow: 1, minWidth: 0, overflowY: 'auto' }}>
         <Outlet />
       </main>
     </div>
