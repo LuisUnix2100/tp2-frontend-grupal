@@ -22,6 +22,9 @@ export const Sidebar = () => {
           background: rgba(88, 28, 135, 0.25) !important; /* Fondo violáceo traslúcido */
           border: 1px solid rgba(147, 51, 234, 0.3) !important;
           transition: all 0.3s ease;
+          display: flex;
+          align-items: center;
+          gap: 0.6rem;
         }
 
         /* Hover con destello violeta e inicio de luz celeste */
@@ -63,18 +66,30 @@ export const Sidebar = () => {
           &lt;EquipoDev/&gt;
         </div>
         
-        {/* Navegación */}
+        {/* Navegación según Consigna TP2 */}
         <nav style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
+          <NavLink to="/" className="neon-button">
+            <span>🏠</span> Inicio
+          </NavLink>
+
           <NavLink to="/integrantes" className="neon-button">
-            Integrantes
+            <span>👥</span> Integrantes
           </NavLink>
           
           <NavLink to="/recursos" className="neon-button">
-            Recursos
+            <span>🛠️</span> Recursos
           </NavLink>
           
           <NavLink to="/api" className="neon-button">
-            API
+            <span>🌐</span> API
+          </NavLink>
+
+          <NavLink to="/arbol" className="neon-button">
+            <span>🌳</span> Árbol de componentes
+          </NavLink>
+
+          <NavLink to="/bitacora" className="neon-button">
+            <span>📖</span> Bitácora
           </NavLink>
         </nav>
 
