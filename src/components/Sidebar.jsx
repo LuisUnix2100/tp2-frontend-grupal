@@ -3,35 +3,45 @@ import { NavLink } from 'react-router-dom';
 
 export const Sidebar = () => {
   return (
-    <aside className="bg-dark text-white p-3 vh-100 d-flex flex-column" style={{ width: '250px' }}>
-      <h3 className="fs-5 mb-4 text-primary fw-bold">Equipo 11</h3>
+    <aside style={{ width: '250px', minHeight: '100vh', background: '#10152b', padding: '1.5rem', color: '#fff', display: 'flex', flexDirection: 'column' }}>
+      <div style={{ fontWeight: 'bold', color: '#22d3ee', fontSize: '1.2rem', marginBottom: '2rem' }}>
+        &lt;EquipoDev/&gt;
+      </div>
       
-      <nav className="nav nav-pills flex-column mb-auto">
-        <NavLink 
-          to="/" 
-          className={({ isActive }) => `nav-link text-white mb-2 ${isActive ? 'active bg-primary' : ''}`}
-        >
-          Inicio
-        </NavLink>
-        
+      <nav style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
         <NavLink 
           to="/integrantes" 
-          className={({ isActive }) => `nav-link text-white mb-2 ${isActive ? 'active bg-primary' : ''}`}
+          style={({ isActive }) => ({
+            color: isActive ? '#22d3ee' : '#fff',
+            textDecoration: 'none',
+            fontWeight: isActive ? 'bold' : 'normal'
+          })}
         >
           Integrantes
         </NavLink>
         
         <NavLink 
           to="/recursos" 
-          className={({ isActive }) => `nav-link text-white mb-2 ${isActive ? 'active bg-primary' : ''}`}
+          style={({ isActive }) => ({
+            color: isActive ? '#22d3ee' : '#fff',
+            textDecoration: 'none',
+            fontWeight: isActive ? 'bold' : 'normal'
+          })}
         >
           Recursos
         </NavLink>
+        
+        <NavLink 
+          to="/api" 
+          style={({ isActive }) => ({
+            color: isActive ? '#22d3ee' : '#fff',
+            textDecoration: 'none',
+            fontWeight: isActive ? 'bold' : 'normal'
+          })}
+        >
+          API
+        </NavLink>
       </nav>
-      
-      <div className="border-top pt-3 text-muted small">
-        TP2 - Frontend Grupal
-      </div>
     </aside>
   );
 };
