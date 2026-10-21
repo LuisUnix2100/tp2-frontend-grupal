@@ -1,3 +1,4 @@
+// src/components/profiles/LuisOS.jsx
 import { useState } from 'react';
 
 const COMMANDS = {
