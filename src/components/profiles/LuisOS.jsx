@@ -1,7 +1,14 @@
 // src/components/profiles/LuisOS.jsx
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const COMMANDS = {
+  boot: [
+    "Initializing system...",
+    "Loading React...... OK",
+    "Checking Francisco Luis Bronzi profile... OK",
+    "SYSTEM CONSOLE READY.",
+    "Bienvenido. Selecciona un comando para inspeccionar mis habilidades."
+  ],
   stack: [
     "> Cargando stack de tecnologías...",
     "HTML5 / CSS3 / JavaScript (ES6+)",
@@ -33,28 +40,28 @@ const COMMANDS = {
 };
 
 export const LuisOS = ({ onToggleTheme }) => {
-  const [output, setOutput] = useState([
-    "Initializing system...",
-    "Loading React...... OK",
-    "Checking Francisco Luis Bronzi profile... OK",
-    "SYSTEM CONSOLE READY.",
-    "Bienvenido. Selecciona un comando para inspeccionar mis habilidades."
-  ]);
+  const [output, setOutput] = useState([]);
   const [activeTab, setActiveTab] = useState('BOOT');
+
+  // Función para simular la animación línea por línea
+  const triggerTypingEffect = (lines) => {
+    setOutput([]); // Limpiamos la pantalla antes de empezar a escribir
+    lines.forEach((line, index) => {
+      setTimeout(() => {
+        setOutput((prev) => [...prev, line]);
+      }, index * 250); // Escribe una línea cada 250ms (cuarto de segundo)
+    });
+  };
+
+  // Efecto inicial al cargar la consola (ejecuta BOOT)
+  useEffect(() => {
+    triggerTypingEffect(COMMANDS.boot);
+  }, []);
 
   const handleCommand = (cmdKey, label) => {
     setActiveTab(label);
-    if (COMMANDS[cmdKey]) {
-      setOutput(COMMANDS[cmdKey]);
-    } else {
-      setOutput([
-        "Initializing system...",
-        "Loading React...... OK",
-        "Checking Francisco Luis Bronzi profile... OK",
-        "SYSTEM CONSOLE READY.",
-        "Bienvenido. Selecciona un comando para inspeccionar mis habilidades."
-      ]);
-    }
+    const targetLines = COMMANDS[cmdKey] || COMMANDS.boot;
+    triggerTypingEffect(targetLines);
   };
 
   return (
