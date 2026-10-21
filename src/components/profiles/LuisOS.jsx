@@ -32,7 +32,7 @@ const COMMANDS = {
   ]
 };
 
-export const LuisOS = () => {
+export const LuisOS = ({ onToggleTheme }) => {
   const [output, setOutput] = useState([
     "Initializing system...",
     "Loading React...... OK",
@@ -111,7 +111,10 @@ export const LuisOS = () => {
           MOBILE
         </button>
         <button 
-          onClick={() => handleCommand('equipo', 'EQUIPO')}
+          onClick={() => {
+            handleCommand('equipo', 'EQUIPO');
+            if (onToggleTheme) onToggleTheme();
+          }}
           style={buttonStyle(activeTab === 'EQUIPO')}
         >
           EQUIPO 8
