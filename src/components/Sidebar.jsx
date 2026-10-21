@@ -6,38 +6,43 @@ export const Sidebar = () => {
     <>
       <style>{`
         @keyframes borderGlow {
-          0% { border-color: #22d3ee; box-shadow: 0 0 10px rgba(34, 211, 238, 0.5); }
-          50% { border-color: #38bdf8; box-shadow: 0 0 18px rgba(56, 189, 248, 0.8); }
-          100% { border-color: #22d3ee; box-shadow: 0 0 10px rgba(34, 211, 238, 0.5); }
+          0% { border-color: #22d3ee; box-shadow: 0 0 10px rgba(34, 211, 238, 0.6); }
+          50% { border-color: #38bdf8; box-shadow: 0 0 18px rgba(56, 189, 248, 0.9); }
+          100% { border-color: #22d3ee; box-shadow: 0 0 10px rgba(34, 211, 238, 0.6); }
         }
 
-        .neon-button {
+        /* Fuerza a los botones a NO tener caja negra de fondo */
+        .sidebar-container .neon-button {
           position: relative;
-          color: #94a3b8;
+          color: #94a3b8 !important;
           text-decoration: none;
           font-weight: 500;
           padding: 0.75rem 1.2rem;
           border-radius: 10px;
-          background: transparent; /* Sin fondo molesto */
-          border: 1px solid transparent;
+          background: transparent !important; /* CERO fondo negro */
+          background-color: transparent !important;
+          border: 1px solid transparent !important;
           transition: all 0.3s ease;
         }
 
-        .neon-button:hover {
-          color: #22d3ee;
-          background: rgba(34, 211, 238, 0.05); /* Un destello mínimo al pasar el mouse */
-          border-color: rgba(34, 211, 238, 0.3);
+        /* Hover sutil */
+        .sidebar-container .neon-button:hover {
+          color: #22d3ee !important;
+          border-color: rgba(34, 211, 238, 0.3) !important;
         }
 
-        .neon-button.active {
+        /* Estado ACTIVO: solo marco de luz neón, fondo totalmente transparente */
+        .sidebar-container .neon-button.active {
           color: #ffffff !important;
           font-weight: 600;
-          background: transparent !important; /* Cero fondo sólido */
+          background: transparent !important;
+          background-color: transparent !important;
           animation: borderGlow 2.5s infinite ease-in-out;
+          text-shadow: 0 0 8px rgba(34, 211, 238, 0.7);
         }
       `}</style>
 
-      <aside style={{ 
+      <aside className="sidebar-container" style={{ 
         width: '250px', 
         minHeight: '100vh', 
         background: '#090d16', 
@@ -46,6 +51,7 @@ export const Sidebar = () => {
         flexDirection: 'column',
         borderRight: '1px solid rgba(34, 211, 238, 0.15)'
       }}>
+        {/* Título de la app con resplandor neón */}
         <div style={{ 
           fontWeight: 'bold', 
           color: '#22d3ee', 
@@ -57,6 +63,7 @@ export const Sidebar = () => {
           &lt;EquipoDev/&gt;
         </div>
         
+        {/* Navegación con los botones sin caja negra */}
         <nav style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
           <NavLink to="/integrantes" className="neon-button">
             Integrantes
@@ -71,6 +78,7 @@ export const Sidebar = () => {
           </NavLink>
         </nav>
 
+        {/* Footer de la Sidebar */}
         <div style={{ 
           marginTop: 'auto', 
           paddingTop: '1rem', 
