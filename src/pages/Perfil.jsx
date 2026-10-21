@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { teamMembers } from '../data/teamData';
 import MartinOS from '../components/profiles/MartinOS';
+import LuisOS from '../components/profiles/LuisOS';
 
 export default function Perfil() {
   const { id } = useParams();
@@ -144,6 +145,8 @@ export default function Perfil() {
 
           {member.id === 'martin' ? (
             <MartinOS onToggleTheme={() => setAltTheme((prev) => !prev)} />
+          ) : member.id === 'luis' || member.id === 'francisco' ? (
+            <LuisOS />
           ) : (
             <div className="martin-console">
               <div className="martin-console__header">
