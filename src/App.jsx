@@ -1,10 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
-<<<<<<< Updated upstream
-import Home from './pages/Home'; // 1. Acá importamos Home
-=======
 import ScrollToTop from './components/ScrollToTop';
->>>>>>> Stashed changes
+import Home from './pages/Home';
 import Integrantes from './pages/Integrantes';
 import Perfil from './pages/Perfil';
 import Recursos from './pages/Recursos';
