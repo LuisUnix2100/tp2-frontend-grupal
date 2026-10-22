@@ -29,7 +29,7 @@ export default function Home() {
         margin: '0 0 1rem 0',
         lineHeight: '1.2'
       }}>
-        Bienvenidos a <span style={{ color: '#22d3ee', textShadow: '0 0 15px rgba(34, 211, 238, 0.6)' }}>&lt;EquipoDev/&gt;</span>
+        Bienvenidos a <span style={{ color: '#22d3ee', textShadow: '0 0 15px rgba(34, 211, 238, 0.6)' }}>{"<EquipoDev/>"}</span>
       </h1>
 
       <p style={{ color: '#94a3b8', fontSize: '1.2rem', marginBottom: '3rem' }}>
