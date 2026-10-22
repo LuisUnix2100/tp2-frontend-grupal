@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-// Importamos las imágenes reales directamente desde src/assets/avatares/
+// Importamos las imágenes reales desde tus assets
 import dalilaImg from '../assets/avatares/dalila.jpg';
 import jorgeImg from '../assets/avatares/jorge.jpg';
 import luisImg from '../assets/avatares/luis.jpg';
@@ -9,7 +9,6 @@ import martinImg from '../assets/avatares/martin.jpg';
 import martinaImg from '../assets/avatares/martina.jpg';
 
 export default function Home() {
-  // Arreglo con las 5 fotos de los integrantes del equipo
   const integrantes = [
     { id: 1, nombre: 'Dalila', img: dalilaImg },
     { id: 2, nombre: 'Jorge', img: jorgeImg },
@@ -24,25 +23,54 @@ export default function Home() {
       flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'center',
-      minHeight: '80vh',
+      minHeight: '82vh',
       textAlign: 'center',
       color: '#ffffff',
       padding: '2rem'
     }}>
-      {/* Contenedor de avatares reales superpuestos y chiquitos */}
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '1.2rem' }}>
-        {integrantes.map((persona, index) => (
+      <span style={{ 
+        color: '#22d3ee', 
+        fontSize: '0.9rem', 
+        letterSpacing: '2px', 
+        fontWeight: 'bold',
+        marginBottom: '0.8rem' 
+      }}>
+        TP2 · DESARROLLO FRONTEND
+      </span>
+
+      <h1 style={{ 
+        fontSize: '3.2rem', 
+        fontWeight: '800', 
+        margin: '0 0 0.8rem 0',
+        lineHeight: '1.2'
+      }}>
+        Bienvenidos a <span style={{ color: '#22d3ee', textShadow: '0 0 15px rgba(34, 211, 238, 0.6)' }}>{"<EquipoDev/>"}</span>
+      </h1>
+
+      <p style={{ color: '#94a3b8', fontSize: '1.1rem', marginBottom: '2rem' }}>
+        Construimos este sitio como equipo.
+      </p>
+
+      {/* Avatares grandes y bien destacados en fila */}
+      <div style={{ 
+        display: 'flex', 
+        justifyContent: 'center', 
+        alignItems: 'center', 
+        gap: '1.2rem', 
+        marginBottom: '2rem',
+        flexWrap: 'wrap'
+      }}>
+        {integrantes.map((persona) => (
           <div 
             key={persona.id} 
             style={{
-              width: '42px',
-              height: '42px',
+              width: '76px',
+              height: '76px',
               borderRadius: '50%',
               overflow: 'hidden',
-              border: '2px solid #0f172a',
-              boxShadow: '0 0 10px rgba(34, 211, 238, 0.4)',
-              marginLeft: index > 0 ? '-12px' : '0', // Efecto solapado chiquito
-              zIndex: integrantes.length - index
+              border: '2px solid #22d3ee',
+              boxShadow: '0 0 15px rgba(34, 211, 238, 0.4)',
+              transition: 'transform 0.3s ease',
             }}
           >
             <img 
@@ -53,29 +81,6 @@ export default function Home() {
           </div>
         ))}
       </div>
-
-      <span style={{ 
-        color: '#22d3ee', 
-        fontSize: '0.9rem', 
-        letterSpacing: '2px', 
-        fontWeight: 'bold',
-        marginBottom: '1rem' 
-      }}>
-        TP2 · DESARROLLO FRONTEND
-      </span>
-
-      <h1 style={{ 
-        fontSize: '3.5rem', 
-        fontWeight: '800', 
-        margin: '0 0 1rem 0',
-        lineHeight: '1.2'
-      }}>
-        Bienvenidos a <span style={{ color: '#22d3ee', textShadow: '0 0 15px rgba(34, 211, 238, 0.6)' }}>{"<EquipoDev/>"}</span>
-      </h1>
-
-      <p style={{ color: '#94a3b8', fontSize: '1.2rem', marginBottom: '3rem' }}>
-        Construimos este sitio como equipo.
-      </p>
 
       <p style={{ color: '#cbd5e1', fontSize: '1.1rem', marginBottom: '2rem', fontWeight: '500' }}>
         Cinco perfiles. Cinco estilos. Un solo equipo.
