@@ -62,12 +62,34 @@ export const teamMembers = [
     number: "05",
     name: "Martín Roige",
     role: "WebApps · Fullstack",
-    avatar: martinImg, 
+    avatar: martinImg,
     age: "49 años",
     location: "Pilar, Buenos Aires",
     bio: "De la logística al desarrollo de software. Construcción de aplicaciones web frontend y backend.",
     skills: ["HTML", "CSS", "JavaScript", "React", "Node.js", "Python", "Django"],
-    movies: ["Mr. Robot", "Foundation", "Alien"],
+    stories: [
+      {
+        number: "01",
+        type: "SERIE",
+        title: "Mr. Robot",
+        description: "Un muy buen drama ambientado en el mundo hacker.",
+        videoUrl: "https://www.youtube-nocookie.com/embed/xIBiJ_SzJTA"
+      },
+      {
+        number: "02",
+        type: "SERIE",
+        title: "Foundation",
+        description: "Ciencia ficción épica basada en la monumental obra de Isaac Asimov.",
+        videoUrl: "https://www.youtube-nocookie.com/embed/X4QYV5GTz7c"
+      },
+      {
+        number: "03",
+        type: "PELÍCULA",
+        title: "Alien",
+        description: "Terror, ciencia ficción y una amenaza en medio del espacio.",
+        videoUrl: "https://www.youtube-nocookie.com/embed/LjLamj-b0I8"
+      }
+    ],
     music: ["Metallica", "Roxette", "Imagine Dragons"]
   }
 ];

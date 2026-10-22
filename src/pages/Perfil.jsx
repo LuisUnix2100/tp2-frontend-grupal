@@ -4,6 +4,7 @@ import { useParams, Link, Navigate } from 'react-router-dom';
 import { teamMembers } from '../data/teamData';
 import MartinOS from '../components/profiles/MartinOS';
 import LuisOS from '../components/profiles/LuisOS';
+import MediaFlipCard from '../components/profiles/MediaFlipCard';
 
 export default function Perfil() {
   const { id } = useParams();
@@ -82,11 +83,11 @@ export default function Perfil() {
           <div className="profile-hero__visual">
             <div className="avatar-glow"></div>
             <div className="profile-avatar">
-              <img 
-                src={member.avatar} 
-                alt={`Avatar de ${member.name}`} 
-                width="220" 
-                height="220" 
+              <img
+                src={member.avatar}
+                alt={`Avatar de ${member.name}`}
+                width="220"
+                height="220"
                 loading="eager"
               />
             </div>
@@ -166,26 +167,26 @@ export default function Perfil() {
       {/* ============================================================
           SECCIÓN FAVORITOS (PELÍCULAS Y MÚSICA)
       ============================================================ */}
-      <section className="profile-section" id="favoritos">
+      <section className="profile-section profile-section--alternative" id="favoritos">
         <div className="container">
           <div className="profile-section__heading">
             <span>03</span>
             <div>
-              <p className="profile-kicker">FAVORITOS</p>
-              <h2>Historias y música preferida</h2>
+              <p className="profile-kicker">WATCH LIST</p>
+              <h2>Tres historias favoritas</h2>
             </div>
           </div>
 
           <div className="martin-media-grid">
-            {member.movies?.map((movie, index) => (
-              <article key={index} className="martin-media-card">
-                <span className="martin-media-card__number">
-                  {String(index + 1).padStart(2, '0')}
-                </span>
-                <span className="martin-media-card__type">HISTORIA</span>
-                <h3>{movie}</h3>
-                <p>Selección destacada en la watchlist personal.</p>
-              </article>
+            {member.stories?.map((story, index) => (
+              <MediaFlipCard
+                key={index}
+                number={story.number}
+                type={story.type}
+                title={story.title}
+                description={story.description}
+                videoUrl={story.videoUrl}
+              />
             ))}
           </div>
         </div>
@@ -196,8 +197,8 @@ export default function Perfil() {
       ============================================================ */}
       <nav className="profile-navigation" aria-label="Navegación entre perfiles">
         <div className="container profile-navigation__container">
-          <Link 
-            to={`/integrantes/${prevMember.id}`} 
+          <Link
+            to={`/integrantes/${prevMember.id}`}
             aria-label={`Ir al perfil anterior: ${prevMember.name}`}
           >
             <span aria-hidden="true">←</span> {prevMember.name.split(' ')[0]}
@@ -209,8 +210,8 @@ export default function Perfil() {
 
           <span>Perfil {member.number} / 05</span>
 
-          <Link 
-            to={`/integrantes/${nextMember.id}`} 
+          <Link
+            to={`/integrantes/${nextMember.id}`}
             aria-label={`Ir al siguiente perfil: ${nextMember.name}`}
           >
             {nextMember.name.split(' ')[0]} <span aria-hidden="true">→</span>
