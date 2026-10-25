@@ -1,5 +1,6 @@
 
 import { useState, useRef, useEffect } from 'react';
+import carmeluchaImg from '../../assets/avatares/carmelucha.png';
 
 const COMMANDS = {
   tecnologias: [
@@ -65,6 +66,11 @@ export default function DalilaOS({ onToggleTheme }) {
   ]);
 
   const [booting, setBooting] = useState(false);
+  const [showCarmelucha, setShowCarmelucha] = useState(false);
+  const [carmeluchaMessage, setCarmeluchaMessage] = useState(
+    '¡Guau! Todo tranquilo por acá, cuidando el proyecto. 🐾'
+  );
+
   const bootIntervalRef = useRef(null);
 
   useEffect(() => {
@@ -108,6 +114,15 @@ export default function DalilaOS({ onToggleTheme }) {
       return;
     }
 
+    if (command === 'carmelucha') {
+      setShowCarmelucha(true);
+      setCarmeluchaMessage(
+        '¡Guau! Todo tranquilo por acá, cuidando el proyecto. 🐾'
+      );
+      setLines(COMMANDS.carmelucha);
+      return;
+    }
+
     if (COMMANDS[command]) {
       setLines(COMMANDS[command]);
     }
@@ -125,38 +140,61 @@ export default function DalilaOS({ onToggleTheme }) {
   ];
 
   return (
-    <div className="martin-console" style={{ marginTop: '2rem' }}>
-      <div className="martin-console__header">
-        <span>●</span>
-        <p>dalila@equipo:~$</p>
-        <span className="martin-console__status">
-          {booting ? 'BOOTING...' : 'ONLINE'}
-        </span>
+    <>
+      <div className="martin-console" style={{ marginTop: '2rem' }}>
+        <div className="martin-console__header">
+          <span>●</span>
+          <p>dalila@equipo:~$</p>
+          <span className="martin-console__status">
+            {booting ? 'BOOTING...' : 'ONLINE'}
+          </span>
+        </div>
+
+        <div
+          className="martin-console__screen"
+          aria-live="polite"
+          aria-atomic="true"
+        >
+          {lines.map((line, index) => (
+            <p key={index}>{line}</p>
+          ))}
+        </div>
+
+        <div className="martin-console__commands">
+          {buttons.map((button) => (
+            <button
+              key={button.key}
+              type="button"
+              className="martin-command"
+              onClick={() => handleCommand(button.key)}
+              disabled={booting}
+            >
+              {button.label}
+            </button>
+          ))}
+        </div>
       </div>
 
-      <div
-        className="martin-console__screen"
-        aria-live="polite"
-        aria-atomic="true"
-      >
-        {lines.map((line, index) => (
-          <p key={index}>{line}</p>
-        ))}
-      </div>
+ 
+      {showCarmelucha && (
+        <div className="carmelucha-assistant">
+          <div className="carmelucha-assistant__avatar">
+            <img
+              src={carmeluchaImg}
+              alt="Carmelucha, asistente del perfil"
+            />
+            <span className="carmelucha-assistant__online"></span>
+          </div>
 
-      <div className="martin-console__commands">
-        {buttons.map((button) => (
-          <button
-            key={button.key}
-            type="button"
-            className="martin-command"
-            onClick={() => handleCommand(button.key)}
-            disabled={booting}
-          >
-            {button.label}
-          </button>
-        ))}
-      </div>
-    </div>
+          <div className="carmelucha-assistant__message">
+            <span className="carmelucha-assistant__label">
+              CARMELUCHA · ASISTENTE VIRTUAL
+            </span>
+            <p>{carmeluchaMessage}</p>
+          </div>
+        </div>
+      )}
+
+    </>
   );
 }
