@@ -274,8 +274,8 @@ export const teamMembers = [
       "Actualmente trabajo en logística y mi objetivo es dar el salto profesional hacia el mundo del desarrollo de software."
     ],
     aboutCards: [
-      { icon: "</>", title: "Desarrollo", desc: "Construir aplicaciones web trabajando tanto frontend como backend." },
-      { icon: "↑", title: "Evolución", desc: "Continuar aprendiendo y convertir la programación en mi carrera profesional." }
+      { icon: "</>", title: "Desarrollo", desc: "Me interesa construir aplicaciones web trabajando tanto frontend como backend." },
+      { icon: "↑", title: "Evolución", desc: "Mi objetivo es continuar aprendiendo y convertir la programación en mi carrera profesional." }
     ],
     skills: [
       { name: "HTML", desc: "Estructura de aplicaciones web." },

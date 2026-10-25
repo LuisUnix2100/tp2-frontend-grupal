@@ -1,11 +1,35 @@
 // src/components/profiles/MediaFlipCard.jsx
-import { useState } from 'react';
+// Tarjeta giratoria con trailer bajo demanda (WATCH LIST de Martín).
+// El estado "abierta/cerrada" lo maneja el padre (Perfil.jsx) para que,
+// como en el TP1, al abrir una tarjeta se cierren las demás.
+import { useState, useEffect } from 'react';
 
-export default function MediaFlipCard({ number, type, title, description, videoUrl }) {
-  const [isFlipped, setIsFlipped] = useState(false);
+const IFRAME_ALLOW =
+  'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
 
-  const handleOpen = () => setIsFlipped(true);
-  const handleClose = () => setIsFlipped(false);
+export default function MediaFlipCard({
+  number,
+  type,
+  title,
+  description,
+  videoUrl,
+  isFlipped = false,
+  onOpen,
+  onClose
+}) {
+  // El iframe se monta al abrir y se quita 300 ms después de cerrar:
+  // así el trailer se corta, pero no desaparece durante la animación de giro.
+  const [showVideo, setShowVideo] = useState(false);
+
+  useEffect(() => {
+    if (isFlipped) {
+      setShowVideo(true);
+      return undefined;
+    }
+
+    const timer = setTimeout(() => setShowVideo(false), 300);
+    return () => clearTimeout(timer);
+  }, [isFlipped]);
 
   return (
     <div className="media-flip-container">
@@ -21,7 +45,7 @@ export default function MediaFlipCard({ number, type, title, description, videoU
             className="btn-flip"
             aria-expanded={isFlipped}
             aria-label={`Ver trailer de ${title}`}
-            onClick={handleOpen}
+            onClick={onOpen}
           >
             Ver trailer ▶
           </button>
@@ -30,11 +54,11 @@ export default function MediaFlipCard({ number, type, title, description, videoU
         {/* CARA TRASERA */}
         <div className="media-card__back">
           <div className="media-video-wrapper">
-            {isFlipped && (
+            {showVideo && (
               <iframe
                 src={`${videoUrl}?autoplay=1&rel=0`}
-                title={`Trailer oficial de ${title}`}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                title={`Trailer de ${title}`}
+                allow={IFRAME_ALLOW}
                 allowFullScreen
               />
             )}
@@ -43,7 +67,7 @@ export default function MediaFlipCard({ number, type, title, description, videoU
             type="button"
             className="btn-flip-back"
             aria-label={`Cerrar trailer de ${title}`}
-            onClick={handleClose}
+            onClick={onClose}
           >
             ✕ Cerrar trailer
           </button>

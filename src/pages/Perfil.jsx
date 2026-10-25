@@ -1,8 +1,8 @@
 // src/pages/Perfil.jsx
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { teamMembers } from '../data/teamData';
-import DalilaOS from '../components/profiles/DalilaOS';
+
 // Componentes interactivos individuales
 import MartinaCinema from '../components/profiles/MartinaCinema';
 import MartinaMusic from '../components/profiles/MartinaMusic';
@@ -27,6 +27,14 @@ export default function Perfil() {
   const { id } = useParams();
   const [altTheme, setAltTheme] = useState(false);
   const [eclipseMode, setEclipseMode] = useState(false);
+  const [openStory, setOpenStory] = useState(null); // tarjeta de Martín con el trailer abierto
+
+  // Al cambiar de perfil se reinician los estados propios de cada uno
+  useEffect(() => {
+    setAltTheme(false);
+    setEclipseMode(false);
+    setOpenStory(null);
+  }, [id]);
 
   const memberIndex = teamMembers.findIndex((m) => m.id === id);
   const member = teamMembers[memberIndex];
@@ -79,7 +87,7 @@ export default function Perfil() {
                 <strong>{member.location}</strong>
               </div>
               <div className="profile-meta__item">
-                <span>{member.id === 'luis' ? 'Objetivo' : member.id === 'martina' ? 'Área' : 'Perfil'}</span>
+                <span>{member.id === 'luis' || member.id === 'martin' ? 'Objetivo' : member.id === 'martina' ? 'Área' : 'Perfil'}</span>
                 <strong>{member.area || member.role.split('·')[0].trim()}</strong>
               </div>
             </div>
@@ -425,6 +433,9 @@ export default function Perfil() {
                   title={story.title}
                   description={story.description}
                   videoUrl={story.videoUrl}
+                  isFlipped={openStory === index}
+                  onOpen={() => setOpenStory(index)}
+                  onClose={() => setOpenStory(null)}
                 />
               ))}
             </div>
@@ -804,10 +815,15 @@ export default function Perfil() {
             </>
           )}
 
-         {member.id === 'dalila' && <DalilaOS onToggleTheme={() => setEclipseMode((prev) => !prev)} />}
+          {member.id === 'dalila' && <DalilaExplorer />}
           {member.id === 'jorge' && <JorgeConsole />}
           {member.id === 'luis' && <LuisOS onToggleTheme={() => setAltTheme((prev) => !prev)} />}
-          {member.id === 'martin' && <MartinOS onToggleTheme={() => setAltTheme((prev) => !prev)} />}
+          {member.id === 'martin' && (
+            <MartinOS
+              isGreenMode={altTheme}
+              onToggleTheme={() => setAltTheme((prev) => !prev)}
+            />
+          )}
         </div>
       </section>
 
