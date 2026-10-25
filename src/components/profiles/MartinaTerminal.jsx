@@ -2,6 +2,7 @@
 // Port a React de "MARTINA TERMINAL 2.0" (martina.js del TP1).
 import { useState, useRef, useEffect } from 'react';
 import { createPortal } from 'react-dom';
+import odinImg from '../../assets/avatares/odin.jpg';
 
 /* ==========================================
    DATOS
@@ -706,9 +707,9 @@ export default function MartinaTerminal() {
           </div>
 
           <div className="odin-assistant__avatar">
-            {/* Requiere public/img/avatares/odin.jpg */}
+            {/* Requiere src/assets/avatares/odin.jpg */}
             <img
-              src={`${import.meta.env.BASE_URL}src/assets/avatares/odin.jpg`}
+              src={odinImg}
               alt="Caricatura de Odin, el gato de Martina"
             />
             <span className="odin-assistant__online" aria-hidden="true"></span>
