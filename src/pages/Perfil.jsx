@@ -826,13 +826,13 @@ export default function Perfil() {
             </>
           )}
 
-HEAD
+
           {member.id === 'dalila' && (
           <DalilaOS onToggleTheme={() => setEclipseMode((prev) => !prev)} />
           )}
           {member.id === 'jorge' && <JorgeConsole />}
-=======
-          {member.id === 'dalila' && <DalilaExplorer />}
+
+         
 
           {member.id === 'jorge' && (
             <JorgeConsole
@@ -841,7 +841,7 @@ HEAD
             />
           )}
 
- eccbade5b9397291e9eb405a294c328d6b8149c3
+ 
           {member.id === 'luis' && <LuisOS onToggleTheme={() => setAltTheme((prev) => !prev)} />}
           
           {member.id === 'martin' && (
