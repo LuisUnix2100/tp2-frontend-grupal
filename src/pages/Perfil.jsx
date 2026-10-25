@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { teamMembers } from '../data/teamData';
+import DalilaOS from '../components/profiles/DalilaOS';
 
 // Componentes interactivos individuales
 import MartinaCinema from '../components/profiles/MartinaCinema';
@@ -815,7 +816,9 @@ export default function Perfil() {
             </>
           )}
 
-          {member.id === 'dalila' && <DalilaExplorer />}
+          {member.id === 'dalila' && (
+          <DalilaOS onToggleTheme={() => setEclipseMode((prev) => !prev)} />
+          )}
           {member.id === 'jorge' && <JorgeConsole />}
           {member.id === 'luis' && <LuisOS onToggleTheme={() => setAltTheme((prev) => !prev)} />}
           {member.id === 'martin' && (

@@ -67,9 +67,31 @@ export default function DalilaOS({ onToggleTheme }) {
 
   const [booting, setBooting] = useState(false);
   const [showCarmelucha, setShowCarmelucha] = useState(false);
-  const [carmeluchaMessage, setCarmeluchaMessage] = useState(
-    '¡Guau! Todo tranquilo por acá, cuidando el proyecto. 🐾'
-  );
+ 
+const carmeluchaMessages = [
+  '¡Guau! Todo tranquilo por acá, cuidando el proyecto. 🐾',
+  '¡Hola! Carmelucha está vigilando el código.',
+  '¿Un error? ¡Yo tengo olfato para los bugs!',
+  'No te preocupes, ¡pasito a pasito sale el proyecto!',
+  'STATUS: GOOD COMPANION FOUND 🐶',
+  '¡Guau! Ese código huele a éxito.',
+  'Modo guardiana activado. ¡Todo bajo control!',
+  'Un descanso, un mate y seguimos programando. 🧉'
+];
+
+const [carmeluchaMessage, setCarmeluchaMessage] = useState(
+  carmeluchaMessages[0]
+);
+
+  useEffect(() => {
+  if (!showCarmelucha) return;
+
+  const timer = setTimeout(() => {
+    setShowCarmelucha(false);
+  }, 5000);
+
+  return () => clearTimeout(timer);
+}, [showCarmelucha, carmeluchaMessage]);
 
   const bootIntervalRef = useRef(null);
 
@@ -77,6 +99,7 @@ export default function DalilaOS({ onToggleTheme }) {
     return () => clearInterval(bootIntervalRef.current);
   }, []);
 
+ 
   const handleCommand = (command) => {
     if (booting) return;
 
@@ -115,18 +138,22 @@ export default function DalilaOS({ onToggleTheme }) {
     }
 
     if (command === 'carmelucha') {
-      setShowCarmelucha(true);
-      setCarmeluchaMessage(
-        '¡Guau! Todo tranquilo por acá, cuidando el proyecto. 🐾'
+      const randomIndex = Math.floor(
+        Math.random() * carmeluchaMessages.length
       );
+
+      setCarmeluchaMessage(carmeluchaMessages[randomIndex]);
+      setShowCarmelucha(true);
       setLines(COMMANDS.carmelucha);
       return;
     }
 
     if (COMMANDS[command]) {
+      setShowCarmelucha(false);
       setLines(COMMANDS[command]);
     }
   };
+
 
   const buttons = [
     { key: 'boot', label: 'BOOT' },
