@@ -30,8 +30,8 @@ Este repositorio contiene el código fuente del **Trabajo Práctico N.º 2**, el
 
 ## 🌐 2. Despliegue en Producción (Vercel)
 El proyecto se encuentra desplegado y accesible públicamente sin necesidad de autenticación:
-* **URL de Producción:** [https://tp2-frontend-grupal-eight.vercel.app/](https://tp2-frontend-grupal.vercel.app/) 
-* **Repositorio en GitHub:** [https://github.com/LuisUnix2100/tp2-frontend-grupal](https://github.com/tu-usuario/tp2-frontend-react) 
+* **URL de Producción:** [https://tp2-frontend-grupal-eight.vercel.app/](https://tp2-frontend-grupal-eight.vercel.app/) 
+* **Repositorio en GitHub:** [https://github.com/LuisUnix2100/tp2-frontend-grupal](https://github.com/LuisUnix2100/tp2-frontend-grupal) 
 
 ---
 
