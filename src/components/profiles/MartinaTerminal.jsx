@@ -708,7 +708,7 @@ export default function MartinaTerminal() {
           <div className="odin-assistant__avatar">
             {/* Requiere public/img/avatares/odin.webp */}
             <img
-              src={`${import.meta.env.BASE_URL}img/avatares/odin.webp`}
+              src={`${import.meta.env.BASE_URL}src/assets/avatares/odin.webp`}
               alt="Caricatura de Odin, el gato de Martina"
             />
             <span className="odin-assistant__online" aria-hidden="true"></span>
