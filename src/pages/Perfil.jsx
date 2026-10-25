@@ -4,7 +4,7 @@ import { useParams, Link, Navigate } from 'react-router-dom';
 import { teamMembers } from '../data/teamData';
 import MartinOS from '../components/profiles/MartinOS';
 import LuisOS from '../components/profiles/LuisOS';
-import MediaFlipCard from '../components/profiles/MediaFlipCard';
+import DalilaOS from '../components/profiles/DalilaOS';import MediaFlipCard from '../components/profiles/MediaFlipCard';
 
 export default function Perfil() {
   const { id } = useParams();
@@ -144,21 +144,19 @@ export default function Perfil() {
             </div>
           </div>
 
-          {member.id === 'martin' ? (
-            <MartinOS onToggleTheme={() => setAltTheme((prev) => !prev)} />
+                   {member.id === 'martin' ? (
+            <MartinOS
+              onToggleTheme={() => setAltTheme((prev) => !prev)}
+            />
+          ) : member.id === 'dalila' ? (
+            <DalilaOS
+              onToggleTheme={() => setAltTheme((prev) => !prev)}
+            />
           ) : member.id === 'luis' || member.id === 'francisco' ? (
             <LuisOS />
           ) : (
             <div className="martin-console">
-              <div className="martin-console__header">
-                <span>●</span>
-                <p>{member.id}@equipo:~$</p>
-                <span className="martin-console__status">STANDBY</span>
-              </div>
-              <div className="martin-console__screen">
-                <p>&gt; Inicializando componente individual...</p>
-                <p>Interacción personalizada de {member.name} lista para integrar.</p>
-              </div>
+              <p>Consola en preparación.</p>
             </div>
           )}
         </div>
@@ -187,6 +185,15 @@ export default function Perfil() {
                 description={story.description}
                 videoUrl={story.videoUrl}
               />
+            ))}
+            {member.music?.map((album, index) => (
+              <article className="martin-stack-card" key={index}>
+                <span className="martin-stack-card__level">
+                  MÚSICA · {String(index + 1).padStart(2, '0')}
+                </span>
+                <h3>{album}</h3>
+                <p>Uno de mis álbumes y artistas favoritos.</p>
+              </article>
             ))}
           </div>
         </div>

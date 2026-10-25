@@ -18,19 +18,81 @@ export const teamMembers = [
     movies: ["Interestelar", "El viaje de Chihiro", "Inception"],
     music: ["Coldplay", "Dua Lipa", "Arctic Monkeys"]
   },
+  
   {
     id: "dalila",
     number: "02",
     name: "Gabriela Dalila Contrera",
-    role: "Desarrollo de Software · Creatividad",
+    role: "Desarrollo de Software · Diseño · Tecnología",
     avatar: dalilaImg,
-    age: "26 años",
-    location: "Buenos Aires",
-    bio: "Creatividad aplicada al desarrollo de software y aplicaciones interactivas.",
-    skills: ["HTML", "C#", "Java", "Kotlin"],
-    movies: ["Coraline", "El cadáver de la novia", "Harry Potter"],
-    music: ["Taylor Swift", "Lorde", "Billie Eilish"]
+    age: "49 años",
+    location: "Argüello, Córdoba",
+    bio: "No necesito saberlo todo, solo tener ganas de aprender.",
+    skills: [
+      "HTML",
+      "CSS",
+      "C#",
+      "Kotlin",
+      "Java",
+      "Git/GitHub",
+      "Bases de datos",
+      "Figma",
+      "Diseño web",
+      "Videojuegos"
+    ],
+    movies: [
+      "Esperando la carroza",
+      "Star Wars",
+      "El Código Da Vinci",
+      "The Big Bang Theory"
+    ],
+    music: [
+      "Look Sharp! — Roxette (1988)",
+      "Like a Virgin — Madonna (1984)",
+      "Appetite for Destruction — Guns N' Roses (1987)"
+    ],
+    interests: [
+      "Música",
+      "Dibujo",
+      "Amigurumis",
+      "Películas",
+      "Tortugas",
+      "Astronomía",
+      "Antiguo Egipto"
+    ],
+    softSkills: [
+      "Trabajo en equipo",
+      "Creatividad",
+      "Organización",
+      "Comunicación",
+      "Resolución de problemas",
+      "Liderazgo"
+    ],
+    stories: [
+      {
+        number: "01",
+        type: "PELÍCULA",
+        title: "Esperando la carroza",
+        description: "Una comedia argentina clásica, llena de humor y situaciones familiares inolvidables.",
+        videoUrl: ""
+      },
+      {
+        number: "02",
+        type: "PELÍCULA",
+        title: "Star Wars",
+        description: "Aventuras, ciencia ficción y una galaxia llena de historias.",
+        videoUrl: ""
+      },
+      {
+        number: "03",
+        type: "PELÍCULA",
+        title: "El Código Da Vinci",
+        description: "Misterios, símbolos y enigmas que conectan arte e historia.",
+        videoUrl: ""
+      }
+    ]
   },
+
   {
     id: "jorge",
     number: "03",
