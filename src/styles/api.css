@@ -281,34 +281,105 @@
 
 
 /* ================================
-   LOADING / ERROR
+   LOADING / ERROR / ESTADOS
 ================================ */
 
+.github-state-bar {
+  width: min(100%, 950px);
+  margin: 0 auto 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.github-state-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.github-state-badge--loading {
+  background: rgba(34, 211, 238, 0.12);
+  border: 1px solid rgba(34, 211, 238, 0.4);
+  color: #38bdf8;
+}
+
+.github-state-badge--success {
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  color: #34d399;
+}
+
+.github-state-badge--error {
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  color: #f87171;
+}
+
 .github-status {
-  padding: 2rem;
-
+  padding: 3.5rem 2rem;
   text-align: center;
-
-  background: rgba(17, 24, 48, 0.8);
+  background: rgba(17, 24, 48, 0.85);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 16px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.github-spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid rgba(34, 211, 238, 0.15);
+  border-top-color: #22d3ee;
+  border-right-color: #818cf8;
+  border-radius: 50%;
+  animation: spin 0.9s cubic-bezier(0.6, 0.2, 0.4, 0.9) infinite;
+  margin-bottom: 0.5rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .github-status p {
-  margin: 0 0 0.4rem;
+  margin: 0;
+  font-size: 1.15rem;
   font-weight: 700;
+  color: #f8fafc;
 }
 
 .github-status span {
   color: #a8b0c7;
+  font-size: 0.92rem;
+}
+
+.github-status__icon {
+  font-size: 3rem;
+  margin-bottom: 0.25rem;
 }
 
 .github-status--loading {
-  border-color: rgba(34, 211, 238, 0.25);
+  border-color: rgba(34, 211, 238, 0.35);
+  box-shadow: 0 0 25px rgba(34, 211, 238, 0.08);
 }
 
 .github-status--error {
-  border-color: rgba(223, 60, 93, 0.35);
+  border-color: rgba(239, 68, 68, 0.4);
+  box-shadow: 0 0 25px rgba(239, 68, 68, 0.08);
 }
 
 

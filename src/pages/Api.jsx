@@ -67,8 +67,8 @@ function Api() {
 
     try {
       const data = await getGithubUser(selectedUser);
-
       setGithubUser(data);
+      setError("");
     } catch (err) {
       setGithubUser(null);
       setError(getErrorMessage(err));
@@ -81,17 +81,48 @@ function Api() {
     <main className="github-page">
       <header className="github-page__header">
         <span className="github-page__eyebrow">
-          API PÚBLICA
+          API PÚBLICA & ESTADOS
         </span>
 
         <h1>GitHub del equipo</h1>
 
         <p>
-          Esta sección utiliza la API REST pública de GitHub para
-          consultar información actualizada de los perfiles de los
-          integrantes del equipo.
+          Esta sección consume la API REST pública de GitHub para obtener métricas,
+          repositorios públicos y estadísticas actualizadas de los integrantes.
+          Implementa control asíncrono y los tres estados visuales requeridos:
+          <strong> Cargando</strong>, <strong>Éxito</strong> y <strong>Error</strong> con opción de reintento.
         </p>
       </header>
+
+      <div className="github-state-bar">
+        {loading && (
+          <span className="github-state-badge github-state-badge--loading">
+            <span aria-hidden="true">⏳</span> Estado: Cargando datos...
+          </span>
+        )}
+
+        {!loading && !error && githubUser && (
+          <span className="github-state-badge github-state-badge--success">
+            <span aria-hidden="true">✅</span> Estado: Datos cargados con éxito
+          </span>
+        )}
+
+        {!loading && error && (
+          <span className="github-state-badge github-state-badge--error">
+            <span aria-hidden="true">⚠️</span> Estado: Error al consultar API
+          </span>
+        )}
+
+        <button
+          type="button"
+          onClick={handleRefresh}
+          disabled={loading}
+          className="github-refresh-button"
+          style={{ marginTop: 0 }}
+        >
+          {loading ? "Actualizando..." : "🔄 Actualizar datos"}
+        </button>
+      </div>
 
       <GithubSelector
         users={githubUsers}
@@ -103,29 +134,32 @@ function Api() {
         className="github-result"
         aria-live="polite"
       >
+        {/* ESTADO 1: CARGANDO */}
         {loading && (
           <div className="github-status github-status--loading">
-            <p>Consultando GitHub...</p>
-            <span>Cargando información del perfil.</span>
+            <div className="github-spinner" aria-hidden="true"></div>
+            <p>Consultando la API pública de GitHub...</p>
+            <span>Obteniendo repositorios, biografía y seguidores en tiempo real.</span>
           </div>
         )}
 
+        {/* ESTADO 2: ERROR */}
         {!loading && error && (
           <div className="github-status github-status--error">
+            <div className="github-status__icon" aria-hidden="true">⚠️</div>
             <h2>No pudimos cargar el perfil</h2>
-
             <p>{error}</p>
-
             <button
               type="button"
               onClick={handleRefresh}
               className="github-retry-button"
             >
-              Reintentar
+              🔄 Reintentar
             </button>
           </div>
         )}
 
+        {/* ESTADO 3: ÉXITO */}
         {!loading && !error && githubUser && (
           <GithubCard
             user={githubUser}

@@ -3,160 +3,240 @@
     "id": 1,
     "nombre": "HTML",
     "categoria": "Lenguajes",
-    "descripcion": "Se utiliza para organizar el contenido y la estructura de las páginas web.",
+    "descripcion": "Se utiliza para organizar el contenido y la estructura semántica de las páginas web.",
     "nivel": "Intermedio",
-    "integrante": "Martina Bistagnino"
+    "integrante": "Martina Bistagnino",
+    "usoEnProyecto": "Estructuración semántica del Layout, vistas de navegación y contenedores accesibles con etiquetas nativas.",
+    "caracteristicas": "Semántica web, compatibilidad estándar W3C y accesibilidad ARIA integrada.",
+    "tags": ["Frontend", "Semántica", "W3C", "Estructura"],
+    "documentacion": "https://developer.mozilla.org/es/docs/Web/HTML"
   },
   {
     "id": 2,
     "nombre": "CSS",
     "categoria": "Lenguajes",
-    "descripcion": "Permite definir los colores, diseños, tamaños y estilos de una página web.",
+    "descripcion": "Permite definir los colores, diseños, tamaños, animaciones y estilos de una página web.",
     "nivel": "Intermedio",
-    "integrante": "Martina Bistagnino"
+    "integrante": "Martina Bistagnino",
+    "usoEnProyecto": "Diseño de paleta neon/cyberpunk, animaciones de brillo, flexbox, css grid y layout responsive.",
+    "caracteristicas": "Variables CSS personalizadas (:root), Flexbox, CSS Grid y Media Queries.",
+    "tags": ["Estilos", "Diseño", "Responsive", "Animaciones"],
+    "documentacion": "https://developer.mozilla.org/es/docs/Web/CSS"
   },
   {
     "id": 3,
     "nombre": "JavaScript",
     "categoria": "Lenguajes",
-    "descripcion": "Agrega interactividad y comportamiento dinámico a las páginas web.",
+    "descripcion": "Agrega interactividad, lógica asíncrona y comportamiento dinámico a las aplicaciones.",
     "nivel": "Intermedio",
-    "integrante": "Martina Bistagnino"
+    "integrante": "Martina Bistagnino",
+    "usoEnProyecto": "Lógica interactiva de las consolas retro, hooks de React, promesas asíncronas y filtrado en tiempo real.",
+    "caracteristicas": "ES6+, Async/Await, manipulación de estructuras de datos y promesas.",
+    "tags": ["Frontend", "ES6+", "Asincronismo", "Interactividad"],
+    "documentacion": "https://developer.mozilla.org/es/docs/Web/JavaScript"
   },
   {
     "id": 4,
     "nombre": "Figma",
     "categoria": "Herramientas",
-    "descripcion": "Herramienta para diseñar interfaces, prototipos y experiencias de usuario.",
+    "descripcion": "Herramienta en la nube para diseñar interfaces, prototipos interactivos y sistemas de diseño.",
     "nivel": "Intermedio",
-    "integrante": "Martina Bistagnino"
+    "integrante": "Martina Bistagnino",
+    "usoEnProyecto": "Prototipado del layout con sidebar compartida, paleta de colores del equipo y componentes de UI.",
+    "caracteristicas": "Diseño colaborativo en tiempo real, auto-layout y prototipado navegable.",
+    "tags": ["UI/UX", "Prototipado", "Diseño", "Colaboración"],
+    "documentacion": "https://help.figma.com/"
   },
   {
     "id": 5,
     "nombre": "C#",
     "categoria": "Lenguajes",
-    "descripcion": "Lenguaje utilizado para desarrollar aplicaciones y programas.",
+    "descripcion": "Lenguaje fuertemente tipado orientado a objetos utilizado para desarrollar aplicaciones robustas y software de backend.",
     "nivel": "En aprendizaje",
-    "integrante": "Gabriela Dalila Contrera"
+    "integrante": "Gabriela Dalila Contrera",
+    "usoEnProyecto": "Exploración de conceptos de programación orientada a objetos (POO) y tipado estricto transferidos a la arquitectura.",
+    "caracteristicas": "Tipado fuerte, soporte multiplataforma con .NET y gestión automática de memoria.",
+    "tags": ["Backend", ".NET", "POO", "Tipado Estricto"],
+    "documentacion": "https://learn.microsoft.com/es-es/dotnet/csharp/"
   },
   {
     "id": 6,
     "nombre": "Java",
     "categoria": "Lenguajes",
-    "descripcion": "Lenguaje de programación utilizado en aplicaciones y sistemas multiplataforma.",
+    "descripcion": "Lenguaje de programación robusto utilizado en aplicaciones corporativas y sistemas multiplataforma.",
     "nivel": "En aprendizaje",
-    "integrante": "Gabriela Dalila Contrera"
+    "integrante": "Gabriela Dalila Contrera",
+    "usoEnProyecto": "Patrones de diseño de software y estructuras de control aplicadas en la organización de componentes modulares.",
+    "caracteristicas": "JVM multiplataforma, tipado estático y amplio ecosistema empresarial.",
+    "tags": ["Backend", "Multiplataforma", "POO", "JVM"],
+    "documentacion": "https://docs.oracle.com/en/java/"
   },
   {
     "id": 7,
     "nombre": "Kotlin",
     "categoria": "Lenguajes",
-    "descripcion": "Lenguaje empleado principalmente en el desarrollo de aplicaciones Android.",
+    "descripcion": "Lenguaje moderno y conciso empleado principalmente en el desarrollo de aplicaciones móviles Android nativas.",
     "nivel": "En aprendizaje",
-    "integrante": "Gabriela Dalila Contrera"
+    "integrante": "Gabriela Dalila Contrera",
+    "usoEnProyecto": "Prácticas de inmutabilidad, sintaxis funcional y programación declarativa aplicadas al desarrollo en React.",
+    "caracteristicas": "Null-safety, interoperabilidad total con Java y sintaxis declarativa concisa.",
+    "tags": ["Mobile", "Android", "Funcional", "Moderno"],
+    "documentacion": "https://kotlinlang.org/docs/home.html"
   },
   {
     "id": 8,
     "nombre": "Python",
     "categoria": "Lenguajes",
-    "descripcion": "Lenguaje versátil utilizado en automatización, desarrollo web y análisis de datos.",
+    "descripcion": "Lenguaje versátil y legible utilizado en automatización, scripting, desarrollo web y ciencia de datos.",
     "nivel": "Intermedio",
-    "integrante": "Jorge Caliz"
+    "integrante": "Jorge Caliz",
+    "usoEnProyecto": "Simulación interactiva de terminal en el perfil individual de Jorge (JorgeConsole) y scripts de procesamiento de datos.",
+    "caracteristicas": "Sintaxis limpia y legible, tipado dinámico y vasta librería estándar.",
+    "tags": ["Backend", "Scripting", "Automatización", "Datos"],
+    "documentacion": "https://docs.python.org/es/3/"
   },
   {
     "id": 9,
     "nombre": "Git",
     "categoria": "Herramientas",
-    "descripcion": "Sistema de control de versiones para registrar y organizar cambios en el código.",
-    "nivel": "En aprendizaje",
-    "integrante": "Jorge Caliz"
+    "descripcion": "Sistema de control de versiones distribuido para registrar, ramificar y coordinar cambios en el código en equipo.",
+    "nivel": "Intermedio",
+    "integrante": "Jorge Caliz",
+    "usoEnProyecto": "Control de versiones del repositorio grupal, ramas de trabajo (feature branches), pull requests y resolución de conflictos.",
+    "caracteristicas": "Descentralizado, branching ultrarrápido, historial criptográfico y trazabilidad de cambios.",
+    "tags": ["VCS", "Control de Versiones", "Colaboración", "Terminal"],
+    "documentacion": "https://git-scm.com/doc"
   },
   {
     "id": 10,
     "nombre": "React",
     "categoria": "Frameworks",
-    "descripcion": "Biblioteca de JavaScript utilizada para construir interfaces mediante componentes.",
-    "nivel": "En aprendizaje",
-    "integrante": "Martín Roige"
+    "descripcion": "Biblioteca declarativa de JavaScript basada en componentes reutilizables y estado reactivo para interfaces modernas.",
+    "nivel": "Intermedio",
+    "integrante": "Martín Roige",
+    "usoEnProyecto": "Núcleo de toda la SPA del TP2: rutas con React Router, hooks (useState, useEffect, useParams) y modularidad completa.",
+    "caracteristicas": "Virtual DOM, arquitectura de componentes, hooks reactivos y flujo de datos unidireccional.",
+    "tags": ["SPA", "Componentes", "Virtual DOM", "Frontend"],
+    "documentacion": "https://react.dev/"
   },
   {
     "id": 11,
     "nombre": "Node.js",
     "categoria": "Herramientas",
-    "descripcion": "Entorno que permite ejecutar JavaScript fuera del navegador.",
+    "descripcion": "Entorno de ejecución asíncrono que permite ejecutar JavaScript fuera del navegador sobre el motor V8 de Google.",
     "nivel": "En aprendizaje",
-    "integrante": "Martín Roige"
+    "integrante": "Martín Roige",
+    "usoEnProyecto": "Entorno de ejecución de herramientas de construcción (Vite), gestión de paquetes npm y scripts de automatización.",
+    "caracteristicas": "I/O sin bloqueo orientada a eventos, motor V8 ultrarrápido y ecosistema npm.",
+    "tags": ["Runtime", "JavaScript", "npm", "Backend"],
+    "documentacion": "https://nodejs.org/es/docs"
   },
   {
     "id": 12,
     "nombre": "Django",
     "categoria": "Frameworks",
-    "descripcion": "Framework de Python que facilita la creación de aplicaciones web.",
+    "descripcion": "Framework web de alto nivel en Python que fomenta un desarrollo rápido, diseño limpio y arquitectura MVC/MVT.",
     "nivel": "En aprendizaje",
-    "integrante": "Martín Roige"
+    "integrante": "Martín Roige",
+    "usoEnProyecto": "Estudio de arquitectura de backend robusta, ORM relacional y diseño de API REST seguras.",
+    "caracteristicas": "Baterías incluidas (ORM, panel admin, autenticación, seguridad integrada contra CSRF/SQLi).",
+    "tags": ["Backend", "Python", "ORM", "API"],
+    "documentacion": "https://docs.djangoproject.com/es/"
   },
   {
     "id": 13,
     "nombre": "Visual Studio",
     "categoria": "Herramientas",
-    "descripcion": "Entorno de desarrollo que permite escribir, ejecutar y depurar programas.",
+    "descripcion": "Entorno de desarrollo integrado (IDE) completo para programar, depurar y compilar soluciones complejas.",
     "nivel": "En aprendizaje",
-    "integrante": "Gabriela Dalila Contrera"
+    "integrante": "Gabriela Dalila Contrera",
+    "usoEnProyecto": "Pruebas de entornos de desarrollo, compilación y depuración avanzada de código orientado a objetos.",
+    "caracteristicas": "Depurador avanzado con breakpoints condicionales, profiling de memoria y soporte multiplataforma.",
+    "tags": ["IDE", "Depuración", "Microsoft", "Compilación"],
+    "documentacion": "https://learn.microsoft.com/es-es/visualstudio/"
   },
   {
     "id": 14,
     "nombre": "Visual Studio Code",
     "categoria": "Herramientas",
-    "descripcion": "Editor de código con extensiones para distintos lenguajes y tecnologías.",
-    "nivel": "Intermedio",
-    "integrante": "Martín Roige"
+    "descripcion": "Editor de código fuente ligero y potente con soporte para extensiones, depuración y control de versiones integrado.",
+    "nivel": "Avanzado",
+    "integrante": "Martín Roige",
+    "usoEnProyecto": "Editor principal del equipo para programar los componentes de React, estilos CSS, depuración con ESLint y commits de Git.",
+    "caracteristicas": "Extensiones comunitarias, terminal integrada, IntelliSense para JSX y debugger nativo.",
+    "tags": ["Editor", "Productividad", "IntelliSense", "Desarrollo"],
+    "documentacion": "https://code.visualstudio.com/docs"
   },
   {
     "id": 15,
     "nombre": "Android Studio",
     "categoria": "Herramientas",
-    "descripcion": "Entorno de desarrollo para crear, ejecutar y probar aplicaciones Android.",
+    "descripcion": "El entorno de desarrollo integrado oficial para el desarrollo de aplicaciones para la plataforma Android de Google.",
     "nivel": "En aprendizaje",
-    "integrante": "Gabriela Dalila Contrera"
+    "integrante": "Gabriela Dalila Contrera",
+    "usoEnProyecto": "Exploración del diseño de interfaces móviles adaptables, emulación de dispositivos y layouts responsivos.",
+    "caracteristicas": "Emulador de hardware en vivo, layout inspector y compilación basada en Gradle.",
+    "tags": ["Mobile", "Android", "IDE", "Emulación"],
+    "documentacion": "https://developer.android.com/studio"
   },
   {
     "id": 16,
     "nombre": "GitHub",
     "categoria": "Herramientas",
-    "descripcion": "Plataforma para alojar repositorios y colaborar en proyectos de software.",
+    "descripcion": "Plataforma de alojamiento en la nube para control de versiones y colaboración con Git en proyectos de software.",
     "nivel": "Intermedio",
-    "integrante": "Jorge Caliz"
+    "integrante": "Jorge Caliz",
+    "usoEnProyecto": "Alojamiento del repositorio central del equipo, gestión colaborativa del código y consumo de su API pública REST en vivo.",
+    "caracteristicas": "Pull Requests con code review, integración continua, issues y API pública REST v3.",
+    "tags": ["Cloud", "Git", "Colaboración", "API"],
+    "documentacion": "https://docs.github.com/es"
   },
   {
     "id": 17,
     "nombre": "Express",
     "categoria": "Frameworks",
-    "descripcion": "Framework de Node.js que facilita la creación de servidores y API web.",
+    "descripcion": "Framework web minimalista y flexible para Node.js que proporciona un conjunto robusto de características para API HTTP.",
     "nivel": "En aprendizaje",
-    "integrante": "Francisco Luis Bronzi"
+    "integrante": "Francisco Luis Bronzi",
+    "usoEnProyecto": "Modelado de endpoints de servicios, arquitectura de middleware y comprensión del ciclo de petición-respuesta HTTP.",
+    "caracteristicas": "Enrutamiento modular, soporte de middlewares ligeros y respuestas JSON estandarizadas.",
+    "tags": ["Backend", "Node.js", "API REST", "Servidor"],
+    "documentacion": "https://expressjs.com/es/"
   },
   {
     "id": 18,
     "nombre": "SQL",
     "categoria": "Lenguajes",
-    "descripcion": "Lenguaje utilizado para consultar y administrar bases de datos relacionales.",
+    "descripcion": "Lenguaje de consulta estructurado estándar para acceder, consultar y manipular bases de datos relacionales.",
     "nivel": "En aprendizaje",
-    "integrante": "Francisco Luis Bronzi"
+    "integrante": "Francisco Luis Bronzi",
+    "usoEnProyecto": "Diseño de modelos de entidad-relación y consultas selectivas para estructurar la persistencia de datos del proyecto.",
+    "caracteristicas": "Consultas relacionales DDL/DML, transacciones ACID y normalización de esquemas.",
+    "tags": ["Base de Datos", "Relacional", "Consultas", "Backend"],
+    "documentacion": "https://developer.mozilla.org/es/docs/Glossary/SQL"
   },
   {
     "id": 19,
     "nombre": "MySQL",
     "categoria": "Herramientas",
-    "descripcion": "Sistema de gestión de bases de datos relacionales.",
+    "descripcion": "Sistema de gestión de bases de datos relacional de código abierto ampliamente utilizado en el desarrollo web.",
     "nivel": "En aprendizaje",
-    "integrante": "Francisco Luis Bronzi"
+    "integrante": "Francisco Luis Bronzi",
+    "usoEnProyecto": "Gestión de tablas, claves foráneas e índices para entender la persistencia de datos en aplicaciones completas.",
+    "caracteristicas": "Almacenamiento InnoDB con soporte transaccional ACID, replicación y alta concurrencia.",
+    "tags": ["Base de Datos", "RDBMS", "SQL", "Persistencia"],
+    "documentacion": "https://dev.mysql.com/doc/"
   },
   {
     "id": 20,
     "nombre": "Bootstrap",
     "categoria": "Frameworks",
-    "descripcion": "Framework CSS que ofrece componentes y estilos para crear interfaces adaptables.",
+    "descripcion": "Framework CSS y toolkit frontend que ofrece componentes preestilizados y un sistema de grilla adaptable para diseño web.",
     "nivel": "En aprendizaje",
-    "integrante": "Martina Bistagnino"
+    "integrante": "Martina Bistagnino",
+    "usoEnProyecto": "Análisis comparativo de sistemas de diseño de grilla (Grid system) frente a soluciones personalizadas en CSS moderno.",
+    "caracteristicas": "Sistema de 12 columnas flexbox, utilidades utilitarias y componentes interactivos.",
+    "tags": ["CSS", "Framework", "Grid", "Componentes"],
+    "documentacion": "https://getbootstrap.com/docs/"
   }
 ]

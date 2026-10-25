@@ -5,18 +5,29 @@ import SearchBar from '../components/SearchBar';
 
 export default function Recursos() {
   const [busqueda, setBusqueda] = useState('');
-  const [categoria, setCategoria] = useState('Todas');
+  const [categoria, setCategoria] = useState('Todos');
+
+  const handleResetFilters = () => {
+    setBusqueda('');
+    setCategoria('Todos');
+  };
 
   const recursosFiltrados = recursos.filter((recurso) => {
     const texto = busqueda.toLowerCase().trim();
 
     const coincideBusqueda =
+      !texto ||
       recurso.nombre.toLowerCase().includes(texto) ||
       recurso.descripcion.toLowerCase().includes(texto) ||
-      recurso.integrante.toLowerCase().includes(texto);
+      recurso.integrante.toLowerCase().includes(texto) ||
+      (recurso.tags && recurso.tags.some((t) => t.toLowerCase().includes(texto))) ||
+      (recurso.caracteristicas && recurso.caracteristicas.toLowerCase().includes(texto)) ||
+      (recurso.usoEnProyecto && recurso.usoEnProyecto.toLowerCase().includes(texto));
 
     const coincideCategoria =
-      categoria === 'Todas' || recurso.categoria === categoria;
+      categoria === 'Todos' ||
+      categoria === 'Todas' ||
+      recurso.categoria === categoria;
 
     return coincideBusqueda && coincideCategoria;
   });
@@ -26,14 +37,15 @@ export default function Recursos() {
       <div className="container">
         <div className="section-heading">
           <span className="section-heading__eyebrow">
-            Recursos del equipo
+            Recursos y Tecnologías
           </span>
 
-          <h1>Tecnologías y herramientas</h1>
+          <h1>Catálogo Tecnológico del Equipo</h1>
 
           <p>
-            Conocé los lenguajes, frameworks y herramientas que forman
-            parte de nuestro equipo de desarrollo.
+            Explorá los lenguajes, frameworks, librerías y herramientas que
+            dominamos y utilizamos en nuestro flujo de desarrollo. Cada recurso
+            incluye información extendida, casos de uso en el proyecto y documentación oficial.
           </p>
         </div>
 
@@ -42,19 +54,52 @@ export default function Recursos() {
           setBusqueda={setBusqueda}
           categoria={categoria}
           setCategoria={setCategoria}
+          onReset={handleResetFilters}
         />
 
-        <p className="resources-count" aria-live="polite">
-          {recursosFiltrados.length === 0
-            ? 'No se encontraron recursos.'
-            : `${recursosFiltrados.length} recursos encontrados`}
-        </p>
+        <div className="resources-status-bar">
+          <p className="resources-count" aria-live="polite">
+            {recursosFiltrados.length === 0
+              ? 'No se encontraron recursos que coincidan con tu búsqueda.'
+              : `Mostrando ${recursosFiltrados.length} de ${recursos.length} recursos disponibles`}
+          </p>
 
-        <div className="resources-grid">
-          {recursosFiltrados.map((recurso) => (
-            <ResourceCard key={recurso.id} recurso={recurso} />
-          ))}
+          {(busqueda.trim() !== '' || (categoria !== 'Todos' && categoria !== 'Todas')) && (
+            <button
+              type="button"
+              onClick={handleResetFilters}
+              className="resources-clear-inline"
+            >
+              Limpiar filtros
+            </button>
+          )}
         </div>
+
+        {recursosFiltrados.length === 0 ? (
+          <div className="resources-empty-box">
+            <div className="resources-empty-icon" aria-hidden="true">🔎</div>
+            <h3>Sin resultados disponibles</h3>
+            <p className="resources-empty-message">
+              No se encontraron recursos que coincidan con tu búsqueda.
+            </p>
+            <p className="resources-empty-subtext">
+              Probá modificando los términos de búsqueda o cambiando la categoría seleccionada.
+            </p>
+            <button
+              type="button"
+              onClick={handleResetFilters}
+              className="resource-reset-btn resource-reset-btn--active"
+            >
+              🔄 Restablecer filtros
+            </button>
+          </div>
+        ) : (
+          <div className="resources-grid">
+            {recursosFiltrados.map((recurso) => (
+              <ResourceCard key={recurso.id} recurso={recurso} />
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );
