@@ -1,16 +1,7 @@
 
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 const COMMANDS = {
-  boot: [
-    'DALILA OS v1.0',
-    'Inicializando sistema...',
-    'Cargando perfil de Gabriela Dalila Contrera... OK',
-    'Verificando tecnologías y creatividad... OK',
-    'SYSTEM READY.',
-    '¡Bienvenido! Seleccioná una opción.'
-  ],
-
   tecnologias: [
     '> Cargando tecnologías...',
     'HTML / CSS / Diseño web',
@@ -57,21 +48,69 @@ const COMMANDS = {
   ]
 };
 
+const BOOT_LINES = [
+  'DALILA OS v1.0',
+  'Inicializando sistema...',
+  'Cargando perfil de Gabriela Dalila Contrera... OK',
+  'Verificando tecnologías y creatividad... OK',
+  'SYSTEM READY.',
+  '¡Bienvenida! Seleccioná una opción.'
+];
+
 export default function DalilaOS({ onToggleTheme }) {
-  const [lines, setLines] = useState(COMMANDS.boot);
+  const [lines, setLines] = useState([
+    'DALILA OS v1.0',
+    'Sistema listo.',
+    'Seleccioná un comando_'
+  ]);
+
+  const [booting, setBooting] = useState(false);
+  const bootIntervalRef = useRef(null);
+
+  useEffect(() => {
+    return () => clearInterval(bootIntervalRef.current);
+  }, []);
 
   const handleCommand = (command) => {
+    if (booting) return;
+
+    if (command === 'boot') {
+      clearInterval(bootIntervalRef.current);
+      setBooting(true);
+      setLines([]);
+
+      let index = 0;
+
+      bootIntervalRef.current = setInterval(() => {
+        const line = BOOT_LINES[index];
+
+        setLines((prev) => [...prev, line]);
+        index += 1;
+
+        if (index >= BOOT_LINES.length) {
+          clearInterval(bootIntervalRef.current);
+          setBooting(false);
+        }
+      }, 250);
+
+      return;
+    }
+
     if (command === 'eclipse') {
       onToggleTheme?.();
+
       setLines([
         '> CAMBIANDO MODO VISUAL...',
         'Paleta del perfil actualizada.',
         'STATUS: THEME SWITCHED'
       ]);
+
       return;
     }
 
-    setLines(COMMANDS[command] || COMMANDS.boot);
+    if (COMMANDS[command]) {
+      setLines(COMMANDS[command]);
+    }
   };
 
   const buttons = [
@@ -90,7 +129,9 @@ export default function DalilaOS({ onToggleTheme }) {
       <div className="martin-console__header">
         <span>●</span>
         <p>dalila@equipo:~$</p>
-        <span className="martin-console__status">ONLINE</span>
+        <span className="martin-console__status">
+          {booting ? 'BOOTING...' : 'ONLINE'}
+        </span>
       </div>
 
       <div
@@ -110,6 +151,7 @@ export default function DalilaOS({ onToggleTheme }) {
             type="button"
             className="martin-command"
             onClick={() => handleCommand(button.key)}
+            disabled={booting}
           >
             {button.label}
           </button>
