@@ -18,7 +18,6 @@ const IFRAME_ALLOW =
   'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
 
 // Las skills pueden ser strings ("HTML") u objetos ({ name, desc }).
-// Este helper devuelve siempre { name, desc } para no renderizar nunca un objeto.
 function normalizeSkill(skill) {
   if (typeof skill === 'string') return { name: skill, desc: null };
   return { name: skill?.name ?? '', desc: skill?.desc ?? null };
@@ -28,13 +27,17 @@ export default function Perfil() {
   const { id } = useParams();
   const [altTheme, setAltTheme] = useState(false);
   const [eclipseMode, setEclipseMode] = useState(false);
-  const [openStory, setOpenStory] = useState(null); // tarjeta de Martín con el trailer abierto
+  const [openStory, setOpenStory] = useState(null);
+  const [infernoMode, setInfernoMode] = useState(false);
+  const [infernoFlash, setInfernoFlash] = useState(false);
 
   // Al cambiar de perfil se reinician los estados propios de cada uno
   useEffect(() => {
     setAltTheme(false);
     setEclipseMode(false);
     setOpenStory(null);
+    setInfernoMode(false);
+    setInfernoFlash(false);
   }, [id]);
 
   const memberIndex = teamMembers.findIndex((m) => m.id === id);
@@ -47,9 +50,18 @@ export default function Perfil() {
   const prevMember = teamMembers[(memberIndex - 1 + teamMembers.length) % teamMembers.length];
   const nextMember = teamMembers[(memberIndex + 1) % teamMembers.length];
 
+  const handleToggleInferno = () => {
+    const next = !infernoMode;
+    setInfernoMode(next);
+    if (next) {
+      setInfernoFlash(true);
+      setTimeout(() => setInfernoFlash(false), 300);
+    }
+  };
+
   return (
     <article
-      className={`profile-page ${member.id}-theme ${altTheme ? 'green-mode' : ''} ${eclipseMode ? 'eclipse-mode' : ''}`}
+      className={`profile-page ${member.id}-theme ${altTheme ? 'green-mode' : ''} ${eclipseMode ? 'eclipse-mode' : ''} ${infernoMode ? 'inferno-mode' : ''} ${infernoFlash ? 'inferno-flash' : ''}`}
     >
       {/* ============================================================
           HERO DEL PERFIL
@@ -385,7 +397,6 @@ export default function Perfil() {
 
       {/* ============================================================
           FAVORITOS / CINE / HISTORIAS
-          (Martina no tiene sección 03 propia, así que sus favoritos son la 03)
       ============================================================ */}
       <section className="profile-section profile-section--alternative" id="favoritos">
         <div className="container">
@@ -588,7 +599,6 @@ export default function Perfil() {
             <div className="luis-music-grid">
               {member.music.map((item, index) => (
                 <article key={index} className="luis-record">
-                  {/* Si falta "disc" en teamData, usa la inicial del artista */}
                   <div className="luis-record__disc">
                     {item.disc || String(item.artist ?? '').charAt(0)}
                   </div>
@@ -816,11 +826,24 @@ export default function Perfil() {
             </>
           )}
 
+HEAD
           {member.id === 'dalila' && (
           <DalilaOS onToggleTheme={() => setEclipseMode((prev) => !prev)} />
           )}
           {member.id === 'jorge' && <JorgeConsole />}
+=======
+          {member.id === 'dalila' && <DalilaExplorer />}
+
+          {member.id === 'jorge' && (
+            <JorgeConsole
+              isInfernoMode={infernoMode}
+              onToggleInferno={handleToggleInferno}
+            />
+          )}
+
+ eccbade5b9397291e9eb405a294c328d6b8149c3
           {member.id === 'luis' && <LuisOS onToggleTheme={() => setAltTheme((prev) => !prev)} />}
+          
           {member.id === 'martin' && (
             <MartinOS
               isGreenMode={altTheme}
