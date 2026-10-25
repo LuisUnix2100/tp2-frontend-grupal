@@ -1,5 +1,5 @@
 // src/components/profiles/LuisOS.jsx
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 const COMMANDS = {
   boot: [
@@ -39,29 +39,51 @@ const COMMANDS = {
   ]
 };
 
-export const LuisOS = ({ onToggleTheme }) => {
+// Estilo de los botones interactivos
+const buttonStyle = (isActive) => ({
+  background: isActive ? '#22d3ee' : 'transparent',
+  color: isActive ? '#070a12' : '#22d3ee',
+  border: '1px solid #22d3ee',
+  padding: '0.4rem 0.8rem',
+  borderRadius: '4px',
+  cursor: 'pointer',
+  fontWeight: 'bold',
+  fontSize: '0.8rem',
+  transition: 'all 0.2s ease'
+});
+
+export default function LuisOS({ onToggleTheme }) {
   const [output, setOutput] = useState([]);
   const [activeTab, setActiveTab] = useState('BOOT');
+  const timersRef = useRef([]);
 
-  // Función para simular la animación línea por línea
-  const triggerTypingEffect = (lines) => {
-    setOutput([]); // Limpiamos la pantalla antes de empezar a escribir
-    lines.forEach((line, index) => {
-      setTimeout(() => {
-        setOutput((prev) => [...prev, line]);
-      }, index * 250); // Escribe una línea cada 250ms (cuarto de segundo)
-    });
+  const clearTimers = () => {
+    timersRef.current.forEach(clearTimeout);
+    timersRef.current = [];
   };
 
-  // Efecto inicial al cargar la consola (ejecuta BOOT)
+  // Simula la escritura línea por línea.
+  // Cancela los timers anteriores para que no se mezclen líneas de dos comandos.
+  const triggerTypingEffect = (lines) => {
+    clearTimers();
+    setOutput([]);
+    timersRef.current = lines.map((line, index) =>
+      setTimeout(() => {
+        setOutput((prev) => [...prev, line]);
+      }, index * 250)
+    );
+  };
+
+  // Arranque inicial (BOOT). El cleanup cancela los timers al desmontar
+  // y evita el doble texto que provoca StrictMode en desarrollo.
   useEffect(() => {
     triggerTypingEffect(COMMANDS.boot);
+    return clearTimers;
   }, []);
 
   const handleCommand = (cmdKey, label) => {
     setActiveTab(label);
-    const targetLines = COMMANDS[cmdKey] || COMMANDS.boot;
-    triggerTypingEffect(targetLines);
+    triggerTypingEffect(COMMANDS[cmdKey] || COMMANDS.boot);
   };
 
   return (
@@ -83,7 +105,11 @@ export const LuisOS = ({ onToggleTheme }) => {
       </div>
 
       {/* Salida de la Pantalla */}
-      <div style={{ minHeight: '180px', marginBottom: '1.5rem', lineHeight: '1.6' }}>
+      <div
+        style={{ minHeight: '180px', marginBottom: '1.5rem', lineHeight: '1.6' }}
+        aria-live="polite"
+        aria-atomic="false"
+      >
         {output.map((line, index) => (
           <p key={index} style={{ margin: '0.3rem 0', color: line.startsWith('>') ? '#a855f7' : '#e2e8f0' }}>
             {line}
@@ -93,31 +119,36 @@ export const LuisOS = ({ onToggleTheme }) => {
 
       {/* Botones de Comandos */}
       <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
-        <button 
+        <button
+          type="button"
           onClick={() => handleCommand('boot', 'BOOT')}
           style={buttonStyle(activeTab === 'BOOT')}
         >
           BOOT
         </button>
-        <button 
+        <button
+          type="button"
           onClick={() => handleCommand('stack', 'STACK')}
           style={buttonStyle(activeTab === 'STACK')}
         >
           STACK
         </button>
-        <button 
+        <button
+          type="button"
           onClick={() => handleCommand('sistemas', 'SISTEMAS')}
           style={buttonStyle(activeTab === 'SISTEMAS')}
         >
           SISTEMAS
         </button>
-        <button 
+        <button
+          type="button"
           onClick={() => handleCommand('mobile', 'MOBILE')}
           style={buttonStyle(activeTab === 'MOBILE')}
         >
           MOBILE
         </button>
-        <button 
+        <button
+          type="button"
           onClick={() => {
             handleCommand('equipo', 'EQUIPO');
             if (onToggleTheme) onToggleTheme();
@@ -129,19 +160,4 @@ export const LuisOS = ({ onToggleTheme }) => {
       </div>
     </div>
   );
-};
-
-// Estilo de los botones interactivos
-const buttonStyle = (isActive) => ({
-  background: isActive ? '#22d3ee' : 'transparent',
-  color: isActive ? '#070a12' : '#22d3ee',
-  border: '1px solid #22d3ee',
-  padding: '0.4rem 0.8rem',
-  borderRadius: '4px',
-  cursor: 'pointer',
-  fontWeight: 'bold',
-  fontSize: '0.8rem',
-  transition: 'all 0.2s ease'
-});
-
-export default LuisOS;
+}
