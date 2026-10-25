@@ -1,5 +1,5 @@
 // src/components/profiles/MartinOS.jsx
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 const COMMANDS = {
   stack: [
@@ -32,7 +32,8 @@ const COMMANDS = {
   ]
 };
 
-export const BOOT_LINES = [
+// Sin "export": exportar valores junto al componente rompe el hot reload de Vite.
+const BOOT_LINES = [
   "MARTIN OS v1.0",
   "Initializing system...",
   "Loading React....... OK",
@@ -50,16 +51,23 @@ export default function MartinOS({ onToggleTheme }) {
   const [booting, setBooting] = useState(false);
   const bootIntervalRef = useRef(null);
 
+  // Si el usuario sale del perfil mientras arranca, se detiene el intervalo.
+  useEffect(() => {
+    return () => clearInterval(bootIntervalRef.current);
+  }, []);
+
   const handleCommand = (cmd) => {
     if (booting) return;
 
     if (cmd === 'boot') {
+      clearInterval(bootIntervalRef.current);
       setBooting(true);
       setLines([]);
       let index = 0;
       bootIntervalRef.current = setInterval(() => {
-        setLines((prev) => [...prev, BOOT_LINES[index]]);
-        index++;
+        const line = BOOT_LINES[index];
+        setLines((prev) => [...prev, line]);
+        index += 1;
         if (index >= BOOT_LINES.length) {
           clearInterval(bootIntervalRef.current);
           setBooting(false);
