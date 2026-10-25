@@ -223,7 +223,9 @@ export const teamMembers = [
       { artist: "LE JAZZ CAFÉ FRANCAIS", title: "Outdoor Jazz", desc: "Música ideal para crear una atmósfera tranquila.", video: "https://www.youtube.com/embed/6HdrWrGSS8I", disc: "♫" },
       { artist: "IL DIVO", title: "Regresa a mí", desc: "Una de las interpretaciones que disfruta escuchar.", video: "https://www.youtube.com/embed/OkYnq1iOVdE", disc: "ID" },
       { artist: "SARAH BRIGHTMAN & ANDREA BOCELLI", title: "Time To Say Goodbye", desc: "Colaboración e interpretación icónica.", video: "https://www.youtube.com/embed/4L_yCwFD6Jo", disc: "SB" },
-      { artist: "ANDRÉ RIEU & CARLOS BUONO", title: "Adiós Nonino - Libertango", desc: "Magistral interpretación en vivo desde Maastricht.", video: "https://www.youtube.com/embed/juZitGFjKd4", disc: "AR" }
+      { artist: "ANDRÉ RIEU & CARLOS BUONO", title: "Adiós Nonino - Libertango", desc: "Magistral interpretación en vivo desde Maastricht.", video: "https://www.youtube.com/embed/juZitGFjKd4", disc: "AR" },
+      { artist: "LARA FABIAN", title: "Adagio", desc: "Impresionante interpretación vocal (Live).", video: "https://www.youtube.com/embed/jKtNuLG5jAo", disc: "LF" },
+      { artist: "HAUSER", title: "Rebel With a Cello", desc: "Show en vivo desde Budapest (Full Concert).", video: "https://www.youtube.com/embed/JkPUS0Zdwd8", disc: "H" }
     ],
     personality: [
       { number: "01", title: "Creativo" },
